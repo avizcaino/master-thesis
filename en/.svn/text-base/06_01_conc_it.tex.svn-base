@@ -1,0 +1,2 @@
+
+The purpose of this work is to supply tools for future \ac{MAC} protocol design, providing efficient algorithms for parameter estimation and bounds in the estimation error with respect the number of samples acquired. Future works will include a simulation of the entire estimation process, conducted by sensors deployed inside the area of a \ac{WLAN} that operates with realistic traffic patterns. Then we will deploy a \ac{WSN} with Cognitive \ac{MAC} that uses our tools and we will evaluate the performance gains in terms of throughput and energy saving.

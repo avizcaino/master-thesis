@@ -1,0 +1,2 @@
+
+We also include an evaluation based on \acs{NS}-based simulation and we provide the support software for the simulations, featuring the implementation of the proposed algorithms, the channel sensing functions, and also a modular traffic generator that covers different traffic models. This will allow us not only to proceed with the evaluation for our algorithms, but also it could be employed for testing the performance of future \acs{MAC} implementations.

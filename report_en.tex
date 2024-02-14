@@ -1,0 +1,106 @@
+\documentclass[a4paper,13pt,openright,english,twoside]{report}
+
+\usepackage[T1]{fontenc}     			             		% font encoding
+\usepackage[utf8]{inputenc} 			          		% input encoding
+
+% KTH colors
+
+% site:
+% {0.435294118,0.647058824,0.831372549}
+% {0.88627451,0.88627451,0.88627451}
+% {0.705882353,0.784313725,0.882352941}
+% {0.666666667,0.717647059,0.8}
+% {0.866666667,0.866666667,0.866666667}
+
+\usepackage[	
+	language=english,															% language
+	author={Alexandre Vizcaino Luna},											% author
+	title={Characterizing WLAN Channel Occupancy},								% title
+	subtitle={for Cognitive Networking},										% subtitle
+	degree={Master's Degree Project},											% thesis type
+	university={KTH Royal Institute of Technology},								% university
+%	university={Kungliga Tekniska högskolan},									% university
+	faculty={School of Electrical Engineering},									% faculty
+	department={Laboratory of Communication Networks},							% department
+	proffirst={Ioannis Glaropoulos},									% advisor
+	profsecond={Assoc. Prof. Viktoria Fodor},											% examiner
+%	proffirstloc={Kungliga Tekniska högskolan},									% second adviser location
+	location=Stockholm,															% where
+	date={June 2012},														% when
+%	year={A/A 2010/2011},														% academic year
+%	colorbase={0.003921569,0.388235294,0.682352941},							% default color [blue]
+	colorbase={0,0,0},															% default color [black]
+	colordark={0.666666667,0.717647059,0.8},									% darker color
+	colorlight={0.866666667,0.866666667,0.866666667},							% lighter color
+	bibpath=bibliography,														% bibliography database path
+%	xmppath=metadata_it,														% license metadata path
+]{thesis}
+
+\usepackage{epstopdf}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+
+%\addbibresource{bibliography}
+
+\begin{document}
+
+	\pagenumbering{roman}
+	
+	\include{tikz_style}
+	\include{en/00_00_title}
+	
+	\include{en/00_01_copyright}
+	\include{en/00_02_abstract}
+	\include{en/00_03_ack}
+	
+	\cleardoublepage
+
+	\tableofcontents
+	\thispagestyle{begin}		% bug on tocloftpagestyle
+
+	\cleardoublepage
+	\pagenumbering{arabic}
+	\setcounter{page}{1}
+
+	\input{en/introduction/01_introduction}
+		\input{en/introduction/01_01_scenario}
+		\input{en/introduction/01_02_related_work}
+		\input{en/introduction/01_03_main_contribution}
+
+	\part{Models}
+	\input{en/models/model}
+	\input{en/models/globalview/01_model_globalview}	
+		\input{en/models/globalview/01_01_gv_scenario}	
+		\input{en/models/globalview/01_02_gv_estimation}
+	\input{en/models/localview/02_model_localview}
+		\input{en/models/localview/02_01_scenario}
+		\input{en/models/localview/02_02_laplace_estimator}
+	\input{en/models/traffic/03_traffic_model}
+	
+	\part{Simulation Results}
+	\input{en/simulation/simulation}
+	\input{en/results/globalview/globalview}
+		\input{en/results/globalview/01-gv_methodology}
+		\input{en/results/globalview/02-gv_results}
+			\input{en/results/globalview/0201-gv_results_idle}
+			\input{en/results/globalview/0202-gv_results_mle}
+			\input{en/results/globalview/0203-gv_results_ks}
+			\input{en/results/globalview/0205-gv_results_final}
+			\input{en/results/globalview/0206-gv_autocorrelation_active}
+	\input{en/results/localview/localview}
+		\input{en/results/localview/01-lv_methodology}
+		\input{en/results/localview/02-lv_results}
+			\input{en/results/localview/0201-lv_acf_localview_experiment}
+			\input{en/results/localview/0202-lv_final_localview_experiment}
+	
+	\input{en/00_04_conclusions}
+
+	\input{en/99_acronyms}
+	\listoffigures
+	\listoftables
+%	\lstlistoflistings
+%
+
+	\printbibliography
+	
+\end{document}

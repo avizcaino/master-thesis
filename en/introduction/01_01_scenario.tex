@@ -1,0 +1,24 @@
+\section{Scenario} \label{sec:intro_scenario}
+As it has been introduced, the scenario under study in this project is a heterogeneous network in which \acs{WLAN} and \acs{WSN} technologies coexist in the shared spectrum, overlapping their communication bands. The model used during the tests consists in a single \acs{WLAN} access point providing access to different \acs{WLAN} users. Inside the \acs{WLAN} coverage area a \acs{WSN} is deployed (represented in Figure \ref{fig:scenario}). The transmit power of the \acs{WLAN} is much higher than the \acs{WSN} system.
+
+\begin{figure}
+	\centering
+	\includegraphics[scale=0.5]{images/introduction/scenario}
+	\caption{Networking Scenario}
+	\label{fig:scenario}
+\end{figure}
+
+A cognitive access scheme (presented in \cite{ioannis}) is implemented in the sensor nodes in order to increase the efficiency to sense the channel and make the proper estimations of the traffic using the semi-Markovian model presented in \cite{DSA-Emp}.
+
+The power consumption is a critical issue due to the hardware limitations in the \acs{WSN} technology. For this, the sensors should be awake the shortest time possible while sensing the channel. During these awake periods, the sensor, using the cognitive capability implemented, should be able to sense the \acs{WLAN} traffic. Then, offline, model the traffic with the semi-Markovian model and make the proper estimations in order to estimate the idle distribution. The prediction process presents a series of challenges: it should be fast and real-time in order to be able to predict the traffic behaviour before this changes. In addition, it should be as accurate as possible in order to model the traffic in the best way possible. The detailed process will be presented in following chapters. Since our aim is to study the sensing and estimation capabilities of the sensors, at the beginning we will not consider transmissions between the \acs{WSN} nodes.
+
+In addition, two different models for the sensor nodes are tested in function of the observable capabilities. An ideal case will be studied, in which the sensors are able to observe all the traffic of the network. On the other hand, another model will be also tested, in which the sensors only have the capacity of observe part of the network due to hardware limitations. For the last case, the 2-state semi-Markovian model has been extended in \cite{marcello} to a 3-state semi-Markov model.
+
+The multi-layer traffic model presented in \cite{Campus-WLAN} and extended in \cite{marcello} is composed by the session, flow and packet levels as it is represented in Figure \ref{fig:layers}. In \cite{Campus-WLAN}, it has been demonstrated that the session and flow levels can be approximated following some determined distributions with specific parameters. The configuration of these levels will be introduced later.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.5]{images/introduction/wlan_stack}
+	\caption{Multi-layer traffic model \cite{Campus-WLAN}}
+	\label{fig:layers}
+\end{figure}

@@ -1,0 +1,129 @@
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\defcounter {refsection}{0}\relax 
+\select@language {english}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1.1}Scenario}{2}{section.1.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1.2}Related Work on WLAN Spectrum Usage Modeling}{2}{section.1.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1.3}Thesis Contribution}{4}{section.1.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {part}{I\hspace {1em}Models}{7}{part.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {2}Spectrum Occupancy Model}{9}{chapter.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.1}Global View Model}{11}{section.2.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.1.1}Case study}{11}{subsection.2.1.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.1.2}Estimation}{11}{subsection.2.1.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.2}Local View: The Model}{12}{section.2.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.2.1}Scenario and model}{12}{subsection.2.2.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.2.2}Laplace Estimator}{13}{subsection.2.2.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Algorithm for the Laplace estimator}{14}{subsubsection*.10}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {3}Multi-Layer WLAN Usage Model}{17}{chapter.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.1}Session Level}{18}{section.3.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.2}Flow level}{18}{section.3.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.3}Packet level}{18}{section.3.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.4}MAC/PHY layers}{19}{section.3.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {part}{II\hspace {1em}Simulation Results}{21}{part.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {4}Simulation}{23}{chapter.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.1}Network Simulation 2}{23}{section.4.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.2}Traffic generator}{23}{section.4.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.3}Estimation Library}{24}{section.4.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.4}Validation Test}{25}{section.4.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.5}Simulation configuration}{25}{section.4.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {5}Global View: Results}{27}{chapter.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.1}Methodology}{27}{section.5.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.1.1}Scenario setup}{27}{subsection.5.1.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.1.2}Study of the extraction of the Idle Distribution}{28}{subsection.5.1.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.1.3}Estimation Process}{28}{subsection.5.1.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.1.4}Model Validation}{29}{subsection.5.1.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.1.5}Effect of the number of samples in the Kolmogorov-Smirnov validation test}{29}{subsection.5.1.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.1.6}Session and in-Session Experiments}{29}{subsection.5.1.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.1.7}Autocorrelation study of the Active periods for the Global View model}{30}{subsection.5.1.7}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.2}Results}{30}{section.5.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.2.1}Study of the extraction of the Idle Distribution - Results}{30}{subsection.5.2.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Mixture Idle Distribution}{30}{subsubsection*.16}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Idle Distribution Sensitivity}{32}{subsubsection*.20}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.2.2}Estimation Process - Results}{33}{subsection.5.2.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.2.3}Model validation - Results}{34}{subsection.5.2.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Effect of the number of samples in the Kolmogorov-Smirnov validation test}{36}{subsubsection*.28}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.3}Session and in-Session Experiments - Results}{37}{section.5.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.3.1}Session Number Experiment}{37}{subsection.5.3.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.3.2}In-session statistics}{38}{subsection.5.3.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.3.3}Autocorrelation study of the time sequence of sources of activity in the WLAN - Results}{42}{subsection.5.3.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Session Experiment - Results}{42}{subsubsection*.41}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{In-Session Experiment - Results}{43}{subsubsection*.43}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {6}Local View: Results}{45}{chapter.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {6.1}Methodology}{45}{section.6.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {6.1.1}Scenario Setup}{46}{subsection.6.1.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {6.1.2}Active Distribution}{46}{subsection.6.1.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {6.1.3}Session and Load Experiments}{46}{subsection.6.1.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {6.2}Results}{46}{section.6.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {6.2.1}Scenario setup}{47}{subsection.6.2.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {6.2.2}Autocorrelation of the IN/OUT sequence of DATA packets in Local View - Results}{47}{subsection.6.2.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {6.2.3}Density study of the consecutive skipped Active periods in Local View - Results}{48}{subsection.6.2.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Goodness-of-fit test for the consecutive skipped active periods}{50}{subsubsection*.50}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {6.3}Session Experiment - Results}{52}{section.6.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {6.4}Load Experiment - Results}{56}{section.6.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {7}Conclusions}{59}{chapter.7}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {7.1}Future Work}{60}{section.7.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{Acronyms}{61}{chapter*.62}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{Bibliography}{65}{chapter*.63}

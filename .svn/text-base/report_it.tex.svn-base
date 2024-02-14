@@ -1,0 +1,91 @@
+\documentclass[a4paper,12pt,english,oneside]{report}
+
+\usepackage[T1]{fontenc}     			             		% font encoding
+\usepackage[utf8]{inputenc} 			          		% input encoding
+
+% RGB 111 10 25
+% def:		{0.509803922,0.141176471,0.2}
+% comp1:	{0.843137255,0.82745098,0.780392157}
+% comp2:	{0.666666667,0.639215686,0.556862745}
+
+% {0.43529412 0.039215688 0.098039217}
+% {0.874509804,0.51372549,0.568627451}
+% {0.82745098,0.431372549,0.490196078}
+\usepackage[
+	language=english,						% language
+	author={Marcello Laganà},					% author
+	title={WSN: accesso cognitivo},					% title
+	subtitle={basato su stime locali del traffico WLAN},		% subtitle
+	degree={Tesi di laurea specialistica},				% tipo di tesi
+	university={Sapienza - Università di Roma},			% university
+	faculty={Facoltà di Ingegneria dell'Informazione, Informatica e Statistica},	% faculty
+	department={Dipartimento di Informatica},			% department
+	course={Corso di Laurea in Informatica Specialistica},		%course
+	chair={Cattedra di Sistemi Wireless},				% chair
+	proffirst={Prof. Chiara Petrioli},				% advisor
+	proffirstloc={Sapienza - Università di Roma},			% advisor location
+	profsecond={Prof. Viktoria Fodor},				% second adviser
+	profsecondloc={Kungliga Tekniska högskolan},			% second adviser location
+	location=Roma,							% where
+	date={Settembre 2011},						% when
+	year={A/A 2010/2011},						% academic year
+	colorbase={0.509803922,0.141176471,0.2},			% default color
+	colorlight={0.843137255,0.82745098,0.780392157},		% darker color
+	colordark={0.666666667,0.639215686,0.556862745},		% ligther color
+	bibpath=bibliography,						% bibliography database path
+	xmppath=metadata_it,						% license metadata path
+]{thesis}
+
+
+\begin{document}
+
+	\pagenumbering{roman}
+
+	\include{tikz_style}
+	\include{it/00_00_title}
+	
+	\include{it/00_01_copyright}
+	\include{it/00_02_sommario}
+	\include{en/00_02_abstract}
+	\include{en/00_03_ack}
+
+	\tableofcontents
+
+	\cleardoublepage
+	\pagenumbering{arabic}
+	\setcounter{page}{1}
+	
+	\input{en/01_00_intro}
+%	\include{en/01_00_intro_sim}
+	\input{en/01_00_intro_conc_it}
+	\input{en/01_01_scenario}
+	\input{en/01_03_contr}
+%	\include{en/01_04_contr_sim}
+	\input{en/01_05_related}
+
+
+%	\part{Estimation}
+	\input{en/02_model}
+	\input{en/03_global}
+	\input{en/04_00_local}
+	\input{en/04_01_analysis}
+	\input{en/04_02_neuralnet}
+	\input{en/04_03_result}
+
+%	\part{Simulation}
+%	\include{en/05_00_simulation}
+%	\include{en/05_01_structure}
+%	\include{en/05_02_result}
+
+	\input{en/06_00_conclusion}
+	\input{en/06_01_conc_it}
+%	\include{en/06_01_simulation}
+
+	\input{en/99_acronyms}
+%	\listoffigures
+%	\listoftables
+%	\lstlistoflistings
+
+	\printbibliography
+	
+\end{document}

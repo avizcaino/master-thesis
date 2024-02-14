@@ -1,0 +1,56 @@
+This is BibTeX, Version 0.99c (TeX Live 2009/Debian)
+The top-level auxiliary file: report_en.aux
+The style file: biblatex.bst
+A level-1 auxiliary file: tikz_style.aux
+A level-1 auxiliary file: en/00_00_title.aux
+A level-1 auxiliary file: en/00_01_copyright.aux
+A level-1 auxiliary file: en/00_02_abstract.aux
+A level-1 auxiliary file: en/00_03_ack.aux
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Database file #1: report_en-blx.bib
+Database file #2: bibliography.bib
+Warning--I didn't find a database entry for "chi_square"
+Biblatex version: 1.7
+Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
+You've used 12 entries,
+            6019 wiz_defined-function locations,
+            1208 strings with 10979 characters,
+and the built_in function-call counts, 43248 in all, are:
+= -- 1883
+> -- 1621
+< -- 560
++ -- 657
+- -- 607
+* -- 3244
+:= -- 2614
+add.period$ -- 0
+call.type$ -- 12
+change.case$ -- 308
+chr.to.int$ -- 64
+cite$ -- 22
+duplicate$ -- 4622
+empty$ -- 4114
+format.name$ -- 877
+if$ -- 9915
+int.to.chr$ -- 0
+int.to.str$ -- 31
+missing$ -- 0
+newline$ -- 368
+num.names$ -- 643
+pop$ -- 3545
+preamble$ -- 1
+purify$ -- 353
+quote$ -- 0
+skip$ -- 2693
+stack$ -- 0
+substring$ -- 1399
+swap$ -- 1643
+text.length$ -- 382
+text.prefix$ -- 11
+top$ -- 1
+type$ -- 444
+warning$ -- 0
+while$ -- 259
+width$ -- 0
+write$ -- 355
+(There was 1 warning)

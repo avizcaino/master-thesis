@@ -1,0 +1,128 @@
+\newpage
+
+\section{Results} \label{sec:sim_results}
+
+% Scenario  / sensor placement
+For our simulation we consider a \acs{IEEE} 802.11b \ac{WLAN} constituted by a single \ac{AP} and 5 \acp{WU} placed according to a uniform distribution in the coverage area with a radius of $100$ meters. The \acp{WU} are stationary and operate in a ``high \acs{SNR} regime'', thus we could consider the collision probability in the \ac{WLAN} negligible. The scenario parameters are shown in Table \ref{tab:wlan_parameters}.
+
+\begin{table}[htb]
+	\begin{center}
+		\begin{tabular}{ c c | c c}
+%		\multicolumn{4}{c}{\textbf{\ac{WLAN}}} \\ \hline
+		\ac{WLAN} range & $100$ m & Tx-Rate ($\rho_{\text{WLAN}}$) & $11$Mbps \\
+		Number of Users & $5$ & Path-Loss Exp. ($\alpha$)  & $2.5$ \\
+		\ac{WU} Tx-Power ($P_{\text{WU}}$) & $15$ dBm & Ref. Distance ($d_0$) & $1$ m \\
+		\ac{AP} Tx-Power ($P_{\text{AP}}$) & $15$ dBm &	Noise Power ($\sigma_N^2$) & $-174$ dB/Hz
+		\end{tabular}
+		\caption{\ac{WLAN} Configuration Parameters}
+		\label{tab:wlan_parameters}
+	\end{center}
+\end{table}
+
+For the \ac{WSN} we consider a fixed network on a square grid, where the distance between adjacent sensors is $30$ meters. For each sensor we implement the spectrum measuring process using the modules described in the previous section.
+
+\begin{figure}[htb]
+	\begin{center}
+		\includegraphics[scale=0.651]{images/grid_range35_all.pdf}
+	\end{center}
+	\caption{The considered scenario with the \ac{WLAN} and the \ac{WSN} node placement.}
+	\label{fig:sim_all_sensors}
+\end{figure}
+
+We consider a simple, path-loss propagation model in the physical layer for both the \ac{WLAN} and the \ac{WSN}, and set the \ac{WSN} node sensitivity so that each sensor has a disc shaped \ac{CCA} area with a radius of $35$ meters. For acquiring a statistically meaningfull set of results, we repeat the simulation $10\,000$ times, each time changing the traffic parameters but keeping the \acp{WU} fixed. Excluding the sensors that do not have any \ac{WU} in range and hence they are unable to receive the \ac{WLAN} signals, we obtain the scenario depicted in Figure \ref{fig:sim_all_sensors}.
+
+\subsection{Model Compliant Traffic} \label{sec:sim_model}
+
+We test the proposed scenario by injecting \ac{WLAN} traffic in the simulator by generating active and idle periods according to the Global View parameters in Table \ref{tab:glob_param}, assigning each active period to the \ac{AP} and each of the \acp{WU} with equal probability.
+
+To achieve this we used the structure described in Section \ref{sec:sim_traffic}, using a session arrival fixed at the simulation start, a single flow inside each session and all the packet arrival processes are managed by a single global scheduler that assigns delays according to a predefined idle distribution.
+
+Since the previous results in Section \ref{sec:loc_results} give us an idea of the achievable estimation accuracy, with the simulation we can also search for a common behavior among the sensor in terms of under- or over-estimation, meaning a similar understanding of the idle or active distribution.
+
+\begin{figure}[htb]
+	\begin{center}
+		\includegraphics[scale=0.651]{images/grid_range35_pcca.pdf}
+	\end{center}
+	\caption{The selected subsets of sensor that have similar $p_{\text{CCA}}$ values, but seeing different \ac{WU}.}
+	\label{fig:sim_sensors_group}
+\end{figure}
+
+The \ac{WSN} nodes are deployed in the simulator with the same neural network for parameter estimation described in Section \ref{sec:loc_nn_results}. Since we aim at comparing the estimation results of all these sensors, we group the nodes that have similar $p_{\text{CCA}}$ values, but see different \ac{WLAN} devices. Since the traffic is distributed with equal probability among the \ac{WLAN} stations, we only create two subset of sensors as depicted in Figure \ref{fig:sim_sensors_group}.
+
+\begin{figure}[htbp]
+	\centering
+	\subfloat[$\xi$-estimation]{
+		\label{fig:sim_nn_xi}
+		\includegraphics[width=0.7\textwidth]{images/sensor_range35bis_xi_new.pdf}
+	} \\
+	\subfloat[$\sigma$-estimation]{
+		\includegraphics[width=0.7\textwidth]{images/sensor_range35bis_sigma_new.pdf}
+	} \\
+	\subfloat[$p$-estimation]{
+		\includegraphics[width=0.7\textwidth]{images/sensor_range35bis_p_new.pdf}
+	} \\
+	\subfloat[$p_{\text{CCA}}$-estimation]{
+		\includegraphics[width=0.7\textwidth]{images/sensor_range35bis_pcca_new.pdf}
+	}
+	\caption{Simulation performances of the Neural Network estimation, that show the achieved accuracy on each sensor pointing out the common understanding of the channel activity.}
+	\label{fig:sim_nn}
+\end{figure}
+
+The results show for each \ac{WSN} node the \ac{MPE} and \ac{MAE} values are quite higher than the values depicted in Figure \ref{fig:local_est_nn_1000}, \textit{e.~g.} $MPE^+$ value of $0.114092$ vs. $0.126057$ for $\xi$ estimation (Figure \ref{fig:sim_nn_xi}). This is an effect of the over-learning, since in the simulator we need to discard the $p_{\text{CCA}}$ value from the testing vectors because of the fixed sensor positions. Thus, the partial parameter vectors distort the expected input of the neural network, leading to the higher error typical of the over-learning.
+
+However, the achieved accuracy is still close to the one predicted by the numerical evaluation, but what is more important it is similar across the sensors. With Figure \ref{fig:sim_cv} we evaluate how close the sensor estimation results are to the parameter values within a simulation run. We calculate the \ac{CV} of the estimation errors (\ac{MAE} or \ac{MPE}) across the sensors for each simulation run, and show the mean and the standard deviation of the \ac{CV} over $10^4$ runs.
+
+\begin{figure}[htb]
+	\begin{center}
+		\includegraphics{images/coeff_variation_range35bis.pdf}
+	\end{center}
+	\caption{The \ac{CV} of the estimation errors within a simulation run. Mean value and standard deviation over $10^4$ random parameter vectors.}
+	\label{fig:sim_cv}
+\end{figure}
+
+The small values for both the mean and standard deviation of the \ac{CV} show that the sensors achieve a consensus for all the parameters, with slightly larger variance for sensors with different observable load parameter $p_{\text{CCA}}$. From these results we can conclude, that the traffic parameter values estimated by the individual sensors are sufficiently close to each other, and sensors estimate a similar Global View, despite their limited sensing capabilities.
+
+\subsection{Complex Traffic Model} \label{sec:sim_real}
+
+In the previous section we employed a traffic pattern that complies with the proposed modeling of the spectrum activities. Even if it has been shown in \cite{DSA-TD} that the mixture distribution approximates well the idle periods for particular traffic models, it has never been demonstrated that the distribution is also valid for complex traffic models (multi-level models).
+
+We use the structure described in the Section \ref{sec:sim_traffic} to inject the packets in the simulator according to the complex traffic model derived from real data trace of a campus \ac{WLAN}, presented in \cite{Campus-WLAN}. We use the parameters\footnote{Since the order of magnitude of user arrivals is usually higher than the fluctuations of the mixture distribution parameters, we are only interested in a \textit{small} window where all the users are already active when the simulation starts. Thus we exclude the session arrival process and we instantiate all the users at the beginning of the simulation.} depicted in Table \ref{tab:sim_real_param} to generate packets for $10^4$ different simulation runs and, for each run, we evaluated the \ac{K-S} test \cite{Massey1951} to check the goodness-of-fit against the  proposed mixture distribution, estimated by the \ac{WSN} nodes.
+
+\begin{table}[htb]
+	\begin{center}
+		\begin{tabular}{ l c c }
+			Modeled Variable & Distribution & Parameters \\ \hline
+			Session Arrival	 & Fixed & At simulator start \\
+			Flow inter-arrival & Log-normal & $\mu = -1.6355$, $\sigma = 2.6286$ \\
+			Flow number & Bi-Pareto & $\alpha = 0.07$, $\beta = 1.75$, $c = 295.38$, $k = 1$ \\
+			Flow Size & Bi-Pareto & $\alpha = 0.00$, $\beta = 1.02$, $c = 15.56$, $k = 111$ \\
+			Packet inter-arrival & Exponential & $\mu = 0.2$ \\
+			Packet Size & Uniform & $\alpha = 512$, $\beta = 1024$
+		\end{tabular}
+		\caption{The parameters used for generating traffic according to the model in \cite{Campus-WLAN}.}
+		\label{tab:sim_real_param}
+	\end{center}
+\end{table}
+
+The \ac{K-S} test returns the $d$-value, called also the critical value, calculated over all the samples $s_i$ of the empirical distribution as:
+\begin{equation}
+	d = \max_{0 < i \le N} \left( \frac{i}{n} - F(s_i), F(s_i) - \frac{i - 1}{n} \right),
+\end{equation}
+and the $p$-value that represents how likely those samples come from the proposed distribution. Usually, a $p$-value $ \approx 0.1$ is considered high enough to assume that the observations comes from the proposed distribution.
+
+\begin{table}[H]
+	\begin{center}
+		\begin{tabular}{ l c c }
+				& Mean		& Stddev \\ \hline
+		$d$-value:	& $0.084499600$	& $0.000401217$ \\
+		$p$-value:	& $0.487579217$	& $0.065955917$ \\
+		\end{tabular}
+		\caption{\ac{K-S} test values averaged over $10^4$ runs.}
+		\label{tab:sim_fitting}
+	\end{center}
+\end{table}
+
+
+In Table \ref{tab:sim_fitting} we depict the mean and the standard deviation of the \ac{K-S} tests for all the simulations. From the values in this table, we can safely conclude that even the complex model proposed in \cite{Campus-WLAN} produces a spectrum activity compliant with the model proposed in \cite{DSA-TD}, and this allows us to safely use the simple mixture distribution for the idle durations.
+
+

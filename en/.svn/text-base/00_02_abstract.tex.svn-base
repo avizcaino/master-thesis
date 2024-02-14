@@ -1,0 +1,18 @@
+\pdfbookmark{Abstract}{Abstract}
+\chapter*{Abstract}
+\thispagestyle{begin}
+
+%problem definition - different tech, same band, concurrent access. different power
+The recent growth in the deployment of wireless networks that access the unlicensed \acs{ISM} bands has introduced the issue of co-existence between different kinds of wireless technologies. In this work we address the enhancement of the performance of the low-cost \acl{WSN} nodes competing for spectrum access with the \acs{WLAN} devices, that are more powerful in terms of transmission and computational power.
+%motivation - optimization: energy saving, throughput 
+Those low-cost \acs{WSN} nodes are usually battery powered devices with low computational capabilities and limited battery capacity, thus the traditional methods for accessing the wireless spectrum should be revised, including throughput and energy efficiency optimization while considering the hardware constraints of the nodes.
+%how
+In this work we provide tools for spectrum activity prediction that will be used by a \acs{WSN} cognitive \acs{MAC} to minimize the collision probability with \acs{WLAN} transmissions, hence the number of retransmissions, increasing consequently the energy efficiency of communication.
+%by models definition
+We propose two approaches for \acs{WLAN} spectrum activity modeling considering different probability distributions for the idle \acs{WLAN} spectrum periods. The first considers the universal activity of the \acs{WLAN}, while the second takes into account the hardware limitations of the sensors in terms of the detection range.
+%algorithms
+For both modeling options we provide low-complexity algorithms based on either numerical estimation methods or neural networks for the parameter estimation that are suitable for the employment in the \acs{WSN}.
+% conclusions
+We complete the work with an extensive performance analysis in terms of estimation accuracy and we show that, even with a spatial \textit{limited} knowledge of the \acs{WLAN} traffic, the sensors could derive a good approximation of the universal activity model.
+
+\acresetall

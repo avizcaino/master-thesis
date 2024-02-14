@@ -1,0 +1,43 @@
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\defcounter {refsection}{0}\relax 
+\select@language {english}
+\defcounter {refsection}{0}\relax 
+\addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {3.1}{\ignorespaces Session level traffic configuration according to the model in \cite {Campus-WLAN}.\relax }}{18}{table.caption.12}
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {3.2}{\ignorespaces Flow size traffic configuration according to the model in \cite {Campus-WLAN}.\relax }}{18}{table.caption.13}
+\defcounter {refsection}{0}\relax 
+\addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {4.1}{\ignorespaces Main simulation configuration files\relax }}{26}{table.caption.15}
+\defcounter {refsection}{0}\relax 
+\addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {5.1}{\ignorespaces The parameters used for generating traffic according to the model in \cite {Campus-WLAN}.\relax }}{31}{table.caption.18}
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {5.2}{\ignorespaces Estimation parameters statistics - 5 users - Uniform Packet Size (mean: 384 bytes), Exponential Interarrival (mean: 100 ms) - 100 runs\relax }}{34}{table.caption.23}
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {5.3}{\ignorespaces The parameters used for generating traffic according to the model in \cite {Campus-WLAN}.\relax }}{34}{table.caption.24}
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {5.4}{\ignorespaces \acs {K-S} ${P(P-value<0.05)}$ - Uniform Packet Size (mean: 386 bytes)\relax }}{35}{table.caption.25}
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {5.5}{\ignorespaces \acs {K-S} performance for different packet interarrival distributions and uniform packet size with mean 386 bytes.\relax }}{36}{table.caption.30}
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {5.6}{\ignorespaces Estimation parameters statistics for different number of sessions\relax }}{38}{table.caption.33}
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {5.7}{\ignorespaces The parameters used for generating traffic according to the model in \cite {Campus-WLAN}.\relax }}{39}{table.caption.34}
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {5.8}{\ignorespaces Average load for each one of the sub-experiments\relax }}{40}{table.caption.36}
+\defcounter {refsection}{0}\relax 
+\addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {6.1}{\ignorespaces Traffic configuration for the Local View session experiment according to \cite {Campus-WLAN}.\relax }}{53}{table.caption.55}
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {6.2}{\ignorespaces \acs {K-S} failure rate for the Local View session experiment (over 200 runs)\relax }}{53}{table.caption.56}
+\defcounter {refsection}{0}\relax 
+\addvspace {10\p@ }

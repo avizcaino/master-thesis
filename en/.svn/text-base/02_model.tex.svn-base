@@ -1,0 +1,119 @@
+\chapter{Model} \label{sec:model}
+
+WLAN spectrum activity requires continuous time modeling, since \ac{WLAN} does not have a slot structure. The model should include both the channel's states with their transition behavior and the duration of time that the system resides in each of the states. A \textit{semi-Markovian} model has been proposed in \cite{DSA-TD}, that is an extension of a \ac{CTMC} with arbitrary occupancy periods.
+
+\begin{figure}[H]
+	\begin{center}
+		\input{images/full_model}
+	\end{center}
+	\caption{The general model with all its states.}
+	\label{fig:model_full}
+\end{figure}
+
+Figure \ref{fig:model_full} shows all the states of the \ac{WLAN} channels and their merging in a two-state semi-Markovian chain. The states of Data, \ac{SIFS} and \ac{ACK} transmission are grouped together into a single \textit{Active} state, since their transition is effectively deterministic because the probability of observing the sequence Data $\rightarrow$ \ac{SIFS} $\rightarrow$ \ac{ACK} is close to one (this also holds when \ac{WLAN} uses the \ac{RTS/CTS} mechanism). Although the small gap between data packets and their \ac{ACK} corresponds to an idle channel, it is too short to be used for any WSN transmission or even to be detected.
+
+Similarly the states of the channel being in the \ac{CW} or \ac{WS} are merged into a single \textit{Idle} state.
+
+To predict how long the system remains in either state, we need to find distributions $f_A(t)$ and $f_I(t)$ for the holding (or sojourn) times in the Active and Idle state, respectively  \cite{CMA-Exp}. As proposed in \cite{CMA-Exp}, a \textit{uniform} distribution in the range $[\alpha_{on}, \beta]$ sufficiently models the active spectrum periods,
+\begin{equation}
+	f_A(t) =
+	\begin{cases}
+		0 & \quad t < \alpha_{on}, \\
+		\frac{1}{\beta - \alpha_{on}} & \quad \alpha_{on} \le t \le \beta, \\
+		0 & \quad t > \beta
+	\end{cases} \label{eqn:active_distr}
+\end{equation}
+while the idle spectrum distribution in \cite{CMA-Exp} incorporates the effects from both \ac{CW} and \ac{WS} states. According to \cite{CMA-Exp}, the contention period shows an almost \textit{uniformly} distributed sojourn time, while a free state exhibits heavy-tailed behavior that is well approximated by a \textit{generalized Pareto} distribution.
+
+\begin{figure}[!h]
+	\begin{center}
+		\input{images/global_view}
+	\end{center}
+	\caption{The reduced model for Global View.}
+	\label{fig:model_global}
+\end{figure}
+
+We call the resulting model in Figure \ref{fig:model_global} as the ``Global View`` since it models the status of the whole \ac{WLAN} coverage area and is the model that is observed if sensors can see the whole (global) \ac{WLAN} activity. We can express the mixture distribution of the Idle state as \cite{CFH-Theo}:
+\begin{equation}
+	f_I(t) \triangleq
+	\begin{cases}
+		p \, f^{(CW)}_I(t) + (1 - p) \, f^{(WS)}_I & t \le \alpha_{bk} \\
+		p \, f^{(WS)}_I(t) & t > \alpha_{bk}
+	\end{cases}
+\end{equation}
+
+where the $f^{(CW)}_I(t)$ is the uniform distribution in the back-off range in $[0, \alpha_{bk}]$ and $f^{(WS)}_I(t)$ is a generalized Pareto distribution for the white spaces where its \ac{PDF} and \ac{CDF} are:
+\begin{subequations}
+\begin{align}
+	g_{[\xi, \sigma]}(t) &= \frac{1}{\sigma} \, \left(1 + \xi \, \frac{t}{\sigma} \right)^{( -\frac{1}{\xi} - 1)} \label{eqn:pareto_pdf} \\
+	G_{[\xi, \sigma]}(t) &= 1 - \left(1 + \xi \, \frac{t}{\sigma} \right)^{-\frac{1}{\xi}} \label{eqn:pareto_cdf}
+\end{align}
+\end{subequations}
+
+The literature suggests location parameter $\mu = 0$, so we have:
+\begin{subequations}
+	\begin{align}
+		f^{(CW)}_I(t) & = \frac{1}{\alpha_{bk}} \\
+		f^{(WS)}_I(t) &\triangleq g_{[\xi,\mu,\sigma]}(t) 
+		  = \dfrac{1}{\sigma}\left(1 + \xi \dfrac{t}{\sigma} \right)^{\left(-\frac{1}{\xi} - 1\right)}  \label{eqn:white_space}
+	\end{align}
+\end{subequations}
+
+Thus we get for the mixture distribution:
+\begin{equation}
+	\label{eqn:global_view}
+	f_I(t) \triangleq
+	\begin{cases}
+		p \, \dfrac{1}{\alpha_{bk}} +
+		(1 - p) \cdot \dfrac{1}{\sigma}\left(1 + \xi \dfrac{t}{\sigma} \right)^{\left(-\frac{1}{\xi} - 1\right)}
+		  & t \le \alpha_{bk} \\
+		p \, \dfrac{1}{\sigma}\left(1 + \xi \dfrac{t}{\sigma} \right)^{\left(-\frac{1}{\xi} - 1\right)}
+		  & t > \alpha_{bk}
+	\end{cases}
+\end{equation}
+
+Throughout this work, we use a fixed value of $\alpha_{bk}$. As a matter of fact, let $\tau = 20 \mu s$ be the 802.11 slot time, so $\alpha_{bk} = \hat{CW} \cdot \tau$. Assuming a low-load wireless environment we can put $\hat{CW} = CW_{min} = 32$. Thus we have a $\alpha_{bk} \simeq 0.7 ms$.
+
+Although \eqref{eqn:global_view} shows an excellent fit with the \ac{E-CDF} $f_e(t)$ built on \ac{WLAN} traffic samples \cite{DSA-TD}, due to hardware limitations we consider that sensors can only observe a \textit{partial} amount of the \ac{WLAN} traffic, since their detection area is reasonably smaller than the whole \ac{WLAN} area and they can rely only on their own \textit{local sensing} processes.
+
+\begin{figure}[!htbp]
+	\begin{center}
+		\includegraphics[scale=0.85]{images/sensorccazone.pdf}
+	\end{center}
+	\caption{The Clear Channel Assessment Zone of a sensor node.}
+	\label{fig:sensor_cca}
+\end{figure}
+
+Therefore, the local sensing process gives a ``Local View'' that is limited to a disk shaped zone (Figure \ref{fig:sensor_cca}), usually denoted as the \ac{CCA} area $\mathcal{A}_{CCA}$ with radius $R_{CCA}$. Inside $\mathcal{A}_{CCA}$ \textit{deterministic detection} of \ac{WLAN} user activity is practically assumed, but the model can be extended for probabilistic sensing in the future.
+
+\begin{figure}[!htbp]
+	\begin{center}
+		\input{images/local_view}
+	\end{center}
+	\caption{The extended model for Local View.}
+	\label{fig:model_local}
+\end{figure}
+
+Consequently, we assume that each sensor estimates in \textit{own} parameters its \textit{own} local spectrum activity model (Figure \ref{fig:model_local}) resulting in an extended three-state semi-Markovian model, to account for the two different cases regarding the active state: \ac{WLAN} user being detected by the sensor or unseen (missed) activity.
+
+Assuming that \ac{WLAN} sources are statistically well-behaved, \textit{i.e.} users have the same activity pattern, the branches can be weighted based on the percentage of those active \ac{WLAN} users that lie inside or outside the $\mathcal{A}_{CCA}$ of the considered sensor, $p_{\text{CCA}}$ and $(1 - p_{CCA})$, respectively.
+
+Thus, we can derive the \textit{observable} active and idle \ac{WLAN} spectrum distributions, $f_{\tilde{A}}(t)$, $f_{\tilde{I}}(t)$ denoted as:
+\begin{subequations}
+	\begin{align}
+		f_{\tilde{A}}(t) &= f_A(t), \\
+		f_{\tilde{I}}(t) &= \mathcal{L}^{-1}\left\{f_{\tilde{I}}^*(s)\right\},
+	\end{align}
+\end{subequations}
+where $f_{\tilde{I}}^*(s)$ includes a sequence of Idle and Active outside \ac{CCA} periods, and can be expressed easily by its Laplace transform:
+\begin{equation}
+	f_{\tilde{I}}^*(s) = f_I^*(s) \cdot
+		\dfrac{
+			p_{\text{CCA}}
+		}{
+			1 - (1 - p_{\text{CCA}}) f_A^*(s) f_I^*(s)
+		}, \label{eqn:local_view}
+\end{equation}
+and $f_A^*(s) = \mathcal{L}\left\{ f_A(t) \right\}$, $f_I^*(s) = \mathcal{L}\left\{ f_I(t) \right\}$.
+
+Our goal is to estimate the parameters of the distribution of the idle periods, thus in the following Chapters \ref{sec:global} and \ref{sec:local} we show both estimators for global and local view. The global case is applicable whenever a device could see all the \ac{WLAN} activity. For the local case, instead, we focus on a non-cooperative approach, since the exchanging of information could increase the complexity or even be impractical due to the large number of sensors. Thus, the estimator relies only on the data provided by sensor's own sensing process.

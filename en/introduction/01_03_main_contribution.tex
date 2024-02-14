@@ -1,0 +1,19 @@
+\section{Thesis Contribution} \label{sec:intro_contribution}
+Our main contribution in this project is to extend the work developed in \cite{marcello}. In that project, the multi-layer traffic model presented in \cite{Campus-WLAN} is extended adding a packet level in addition with the extension of the two-state semi-Markovian model in \cite{DSA-Emp} to a 3-state semi-Markovian model for the partially-observable model for the sensor nodes.
+
+The implementation of the cognitive access scheme proposed in \cite{ioannis}, and the multi-layer traffic model extended with the packet level is developed over NS2 simulation software. In \cite{marcello} different experiments were developed to test the sensing and transmission capabilities of the \acs{WSN} nodes, the estimation process for the Active and Idle distributions using Maximum-Likelihood Estimation and the implementation of the Kolmogorov-Smirnov test as a validation test.
+
+In this project we will revise the work developed in \cite{marcello} and correct/extend it for the different situations we can face. The main objective of this project is to design a full set of experiments in which the modelling is tested over different traffic realizations using the multi-layer traffic model in order to observe in which cases our model is suitable.
+
+In addition, a Laplace Transform estimator will be implemented in order to estimate the parameters for the idle distribution in the Local View model.
+
+The different experiments will be developed using the NS2 simulation software with the NSMiracle framework and the implementations developed in \cite{marcello}. For this, different parts of the implementation developed in \cite{marcello} should be tested in order to check the correct functionality of each of them before testing the final complete model. We need to focus in some key parts that need to be tested:
+
+\begin{itemize}
+	\item Test of the mixture idle distribution proposed in \cite{DSA-Emp}.
+	\item Test the estimation process of the parameters for the mixture idle distribution.
+	\item Test the validation test chosen (Kolmogorov-Smirnov test) and choose a better one in case is needed.
+	\item Test the final revised model over different traffic realizations using the multi-layer traffic model implemented on NS.
+\end {itemize}
+
+Chapter \ref{chapter:model} will present the general model under study in this project, in addition with the Global View and Local View sensing models that will be used and their characteristics, presenting the scenario and estimation process for both models. Chapter \ref{chapter:traffic_model} presents the multi-layer traffic model that will be used to generate the real traffic scenarios for our tests. Chapter \ref{chapter:simulation} presents the main simulation characteristics, software to be used and main characteristics of the implementation developed in \cite{marcello-thesis}. The results of the different experiments developed on our model will be presented in chapters \ref{chapter:global_results} and \ref{chapter:local_results}. Finally, Chapter \ref{chapter:conclusions} summarizes the conclusions extracted from the different tests of our project.

@@ -1,0 +1,25 @@
+\begin{tikzpicture}[semithick]
+
+	% session
+	\node [session]		(S1)		at	(0,0)		{User 1};
+	\node [session]		(S2)		at	(1.5,-1.5)	{User 2};
+	\node [session]		(S3)		at	(4,-4)		{User $n$};
+	\node []		(dot)		at	(2.6,-2.8)	{...};
+
+	\path
+	 	(S1.west)	edge	[dotted]	(-2.5,-5)
+	 	(S2.west)	edge	[dotted]	(-1,-5)
+	 	(S3.west)	edge	[dotted]	(1.5,-5)
+	;
+
+	\node []		(dot2)	at	(0.7,-5)	{...};
+	\node []		()	at 	(-0.5, -5.5)	{Session Interarrivals};
+
+	\path
+		(-2.5,-5)	edge	[|<->]		(-1,-5)
+		(-1,-5)		edge	[|<-]		(dot2)
+		(dot2)		edge	[->|]		(1.51,-5)
+	;
+
+
+\end{tikzpicture}

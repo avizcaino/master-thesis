@@ -1,0 +1,365 @@
+\chapter{Global View Estimation} \label{sec:global}
+
+The model for the Global View is defined in the Chapter \ref{sec:model} and it consists in a mixture distribution \eqref{eqn:global_view} that can be easily estimated with two different steps. Specifically, we have assumed that $\alpha_{bk}$ is known, since it is given by the \ac{WLAN} system parameters (Sec. \ref{sec:model}).
+
+Then the parameters to be estimated are $(\hat{\xi},\hat{\sigma}, \hat{p})$ and in Section \ref{sec:global_pareto} we estimate before the parameters of the generalized Pareto distribution; once we have determined the values $(\hat{\xi},\hat{\sigma})$ for the heavy tail distribution, we proceed to estimate the $\hat{p}$ value for the mixture in Section \ref{sec:mixture_estim}.
+
+\section{Generalized Pareto} \label{sec:global_pareto}
+
+The support of the uniform distribution $f^{(CW)}_I(t)$ is limited to $[0,\alpha_{bk}]$, so if we discard all observations $x_i \in [0,\alpha_{bk}]$, there is only a left-truncated generalized Pareto distribution and we can estimate its parameters directly \cite{DSA-Emp}.
+
+In this way we split the search of the three parameters $(\xi, \sigma, p)$ of the \textit{global view} in two separated steps, each involves a reduced space where to search for the solution.
+
+Using an alternative parametrization with $\eta = \sigma / |\xi|$, we can rewrite the \ac{PDF} and the \ac{CDF} as \cite{gParetoEst}:
+\begin{subequations}
+	\begin{align}
+		g_{[\xi, \eta]}(t) &= gPareto_{[\xi,0,\sigma]}^{PDF}(t) =
+			\frac{1}{\xi\, \eta}\left(1 + \frac{t}{\eta} \right)^{-\frac{\left(1 + \xi \right)}{\xi}} \\
+		G_{[\xi, \eta]}(t) &= gPareto_{[\xi,0,\sigma]}^{CDF}(t) =
+			1 - \left(1 + \frac{t}{\eta}\right)^{-\frac{1}{\xi}}
+	\end{align}
+\end{subequations}
+
+Provided that we are dealing with a left-truncated set of samples, the \acf{MLE} \cite{MLE,gParetoMLE} of the parameters $(\xi, \eta)$ is given by:
+\begin{equation}
+	(\hat{\xi}, \hat{\eta}) = \operatorname*{arg\,max}_{(\xi, \eta)}
+		\prod_{i = 1}^{N} \frac{g_{[\xi, \eta]}(x_i)}{1 - G_{[\xi, \eta]}(\alpha_{bk})}
+\end{equation}
+
+It is more convenient to work with the natural logarithm of the likelihood function. We assume that we are only dealing with $\xi \in [0,0.5]$ for both practical and theoretical reasons, since for $\xi > 0.5$ the generalized Pareto distribution has infinite variance and for $\xi < 0$ the distribution has bounded support. Finally, we get:
+\begin{align}
+	\mathcal{L}(\underline{x}| \xi, \eta) &= \dfrac{1}{N} \log \left(
+    \prod_{i = 1}^{N} \frac{
+      \frac{1}{|\xi| \eta} \left(1 + \frac{x_i}{\eta} \right)^{-\frac{1 +\xi}{\xi}}
+    }{
+      \left( 1 + \frac{\alpha_{bk}}{\eta} \right)^{-\frac{1}{\xi}}
+    } \right) = \nonumber \\
+	&=
+	  - \log \left( \xi \, \eta \right)
+	  - \frac{1 + \xi}{\xi \, N} \sum_{i = 0}^{N} \log \left( 1 + \frac{x_i}{\eta} \right)
+	  + \frac{1}{\xi} \log \left( 1 + \frac{\alpha_{bk}}{\eta} \right)
+\end{align}
+
+Now the derivative of $l(\xi, \eta)$ with respect of $\xi$ is:
+\begin{equation}
+	\dfrac{\partial \, \mathcal{L}(\underline{x}| \xi, \eta)}{\partial \, \xi} =
+	  \frac{
+	    - N \log \left( 1 + \frac{\alpha_{bk}}{\eta} \right)
+	    - N \, \xi + \sum_{i = 0}^{N} \log \left( 1 + \frac{x_i}{\eta} \right)
+	  }{
+	    N \, \xi^2
+	  }
+\end{equation}
+
+Equating this derivative to zero, we get the following result, used for calculating $\xi$ directly from $\eta$:
+\begin{equation}
+	\hat{\xi} = \xi (\eta) \equiv \xi (\eta, s) =
+	  \frac{1}{N} \sum_{i = 1}^{N} \log \left( 1 + \frac{x_i}{\eta} \right)
+	  - \log \left( 1 + \frac{\alpha_{bk}}{\eta} \right)
+\end{equation}
+
+So we can reduce the search space to one dimension, getting the profile-likelihood given by:
+\begin{align}
+	\mathcal{L}_p(\underline{x}|\eta) =&
+	    - \log \left(\xi (\eta) \, \eta \right)
+	    - \frac{1 + \xi (\eta)}{\xi(\eta)}  \frac{1}{N} \sum_{i = 1}^{N} \log \left( 1 + \frac{x_i}{\eta} \right) \nonumber \\
+	    &+ \frac{1}{\xi(\eta)} \log \left( 1 + \frac{\alpha_{bk}}{\eta} \right)
+    = \nonumber \\
+		=& - \log ( \xi (\eta) \, \eta ) - \frac{1}{N} \sum_{i = 1}^{N} \log \left( 1 + \frac{x_i}{\eta} \right) - 1 \label{eq:prof_like}
+\end{align}
+
+And the solution that gives us the best estimation for $\eta$ will be:
+\begin{equation}
+	\hat{\eta} = \operatorname*{arg max}_{\eta} \mathcal{L}_p(\underline{x}|\eta),
+\end{equation}
+when we can find the maximum numerically with the Newton's Method:
+\begin{equation}
+	\hat{\eta}_{i+1} = \hat{\eta}_i - \dfrac{\mathcal{L}'_p(\underline{x}|\hat{\eta})}{\mathcal{L}''_p(\underline{x}|\hat{\eta})}
+\end{equation}
+
+The values of $(\hat{\xi}, \hat{\sigma})$ will then be
+\begin{subequations}
+	\begin{align}
+		\hat{\xi} &= \xi(\hat{\eta}) \\
+		\hat{\sigma} &= \hat{\eta} \, \hat{\xi}
+	\end{align}
+\end{subequations}
+
+The derivative of \eqref{eq:prof_like} with respect $\eta$ is:
+\begin{align}
+	\dfrac{ \partial \, \mathcal{L}_p(\underline{x}|\eta) }{ \partial \, \eta}
+	  &= - \frac{\xi'(\eta)}{\xi(\eta)} - \frac{1}{\eta} - \frac{1}{N} \sum_{i = 1}^N - \frac{x_i}{\eta^2 \left(1 + \frac{x_i}{\eta}\right)} = \nonumber \\
+		&= - \frac{\xi'(\eta)}{\xi(\eta)} - \frac{1}{N} \sum_{i = 1}^N \frac{1}{\eta + x_i}
+\end{align}
+
+Where $\xi'(\eta)$ is the derivative of $\xi(\eta)$ with respect of $\eta$, that is
+\begin{align}
+  \dfrac{ \partial \, \xi(\eta) }{ \partial \, \eta} =
+    \frac{1}{N} \sum_{i = 1}^N - \frac{x_i}{\eta^2 + \eta \, x_i} +
+    \frac{\alpha_{bk}}{\eta^2 + \eta \, \alpha_{bk}}
+\end{align}
+
+The second derivative of \eqref{eq:prof_like} with respect $\eta$ is:
+\begin{align}
+  \dfrac{ \partial^2 \, \mathcal{L}_p(\underline{x}|\eta) }{ \partial \, \eta^2} =
+    - \frac{\xi''(\eta)}{\xi(\eta)}
+    + \frac{\xi'(\eta)^2}{\xi(\eta)^2}
+    + \frac{1}{N} \sum_{i = 1}^N \frac{1}{(\eta + x_i)^2}
+\end{align}
+
+Where $\xi''(\eta)$ is the second derivative of $\xi(\eta)$ with respect of $\eta$, that is
+\begin{align}
+  \dfrac{ \partial^2 \, \xi(\eta) }{ \partial \, \eta^2} =
+    \frac{1}{N} \sum_{i = 1}^N \frac{x_i \, \left(2 \, \eta + x_i\right)}{\left(\eta^2 + \eta \, x_i\right)^2} -
+    \frac{\alpha_{bk} \, \left(2 \, \eta + \alpha_{bk}\right)}{\left(\eta^2 + \eta \, \alpha_{bk}\right)^2}
+\end{align}
+
+For faster convergence and higher accuracy, we can also approximate the starting point $\eta_0$ from the Mean value evaluation, considering that for truncated distribution:
+\begin{equation}
+	E(X) = \frac{\int_{a}^{b} x f(x) dx}{F(b) - F(a)} = \dfrac{1}{N} \sum_{i = 1}^N x_i
+\end{equation}
+ 
+In our case:
+\begin{subequations}
+\begin{align}
+	a &= \alpha_{bk} \\
+	b &= \infty \\
+	f(x) &= \frac{1}{\xi \eta} \left(1 + \frac{x}{\eta} \right)^{-\frac{1}{\xi} - 1} \\
+	F(b) &= 1 \\
+	F(a) &= 1 - \left(1 + \frac{\alpha_{bk}}{\eta} \right)^{-\frac{1}{\xi}}
+\end{align}
+\end{subequations}
+
+That gives us:
+\begin{align}
+	\dfrac{1}{N} \sum_{i = 1}^N x_i &= \dfrac{-\eta \, \xi - \alpha_{bk}}{\xi - 1} \Rightarrow \nonumber \\
+	\eta_0(\xi) &= -\dfrac{\alpha_{bk} + (\xi - 1) \dfrac{1}{N} \displaystyle\sum_{i = 1}^N x_i}{\xi} \label{eqn:glob_startp}
+\end{align}
+
+The \eqref{eqn:glob_startp} is function of $\xi$ which is bounded in $[0:0.5]$, so we can easily choose or randomize a $\xi_0$ value in this interval and use $\eta_0(\xi_0)$ as starting point.
+
+\section{Mixture Distribution} \label{sec:mixture_estim}
+
+Once we have estimated the $(\hat{\xi}, \hat{\sigma})$ parameters for the generalized Pareto distribution, the search for the value of $p$ of the mixture distribution is a task that can be accomplished in two different ways.
+
+\subsection{Maximum Likelihood Estimation} \label{sec:global_mix_mle}
+
+Recalling the equation \eqref{eqn:global_view}, then the \ac{MLE} for $p$ will be:
+\begin{align}
+	\log \mathcal{L}(\underline{x}| p ) &= \sum_{i = 1}^N \log f_I(x_i) = \nonumber \\
+		&= \sum_{i = 1}^N \log \left[ p \, f_I^{(CW)}(x_i) + (1 - p) \, f_I^{(WS)}(x_i) \right] = \nonumber \\
+		&= \sum_{i = 1}^N \log \left[
+		  \frac{p}{\alpha_{bk}} + \frac{1 - p}{\sigma} \, \left( 1 + \xi \, \frac{x_i}{\sigma} \right)^{- \frac{ 1 + \xi}{\xi}}
+		\right]
+\end{align}
+
+Using again the Newton's Method for finding the maximum point of the log-likelihood function, we get
+\begin{equation}
+    \hat{p}_{i+1} = \hat{p}_i - \dfrac{\log \mathcal{L}'(\underline{x} | p )}{\log \mathcal{L}''(\underline{x} | p )}
+\end{equation}
+
+Where the first derivative with respect of $p$ is:
+\begin{equation}
+	\frac{\partial \, \log \mathcal{L}(\underline{x} | p )}{\partial \, p} =
+	  \sum_{i=1}^N \frac{
+	    \frac{1}{\alpha_{bk}} - \frac{1}{\sigma} \, \left( 1 + \xi \, \frac{x_i}{\sigma}\right)^{-\frac{1 + \xi}{\xi}}
+	  }{
+	    \frac{p}{\alpha_{bk}} - \frac{1 - p}{\sigma} \, \left( 1 + \xi \, \frac{x_i}{\sigma}\right)^{-\frac{1 + \xi}{\xi}}
+	  } \label{eq:p_like_diff}
+\end{equation}
+
+And the second derivative with respect of $p$ is:
+\begin{equation}
+	\frac{\partial^2 \, \log \mathcal{L}(\underline{x} | p )}{\partial^2 \, p} =
+	  \sum_{i=1}^N - \frac{
+	    \left(\frac{1}{\alpha_{bk}} - \frac{1}{\sigma} \, \left( 1 + \xi \, \frac{x_i}{\sigma}\right)^{-\frac{1 + \xi}{\xi}}\right)^2
+	  }{
+	    \left(\frac{p}{\alpha_{bk}} - \frac{1 - p}{\sigma} \, \left( 1 + \xi \, \frac{x_i}{\sigma}\right)^{-\frac{1 + \xi}{\xi}}\right)^2
+	  } \label{eq:p_like_diff_2}
+\end{equation}
+
+We could start with a first approximation $\hat{p}_0$ from the samples' mean evaluation.
+\begin{align}
+  E[f_I] &= p \, E[f_I^{(CW)}] + (1 - p) \,E[f_I^{(WS)}] \nonumber \\
+	\hat{p}_0 &= \frac{E[f_I] - E[f_I^{(WS)}]}{E[f_I^{(CW)}] - E[f_I^{(WS)}]} \nonumber \\
+\end{align}
+
+Where the means, considering also the truncation of the generalized Pareto distribution, are:
+\begin{align}
+  E[f_I] &= \frac{\sum_{i = 0}^N x_i}{N} \nonumber \\
+  E[f_I^{(CS)}] &= \frac{\alpha_{bk}}{2} \nonumber \\
+  E[f_I^{(WS)}] &= \frac{\int_{0}^{\alpha_{bk}} x \, g_{[\xi, \sigma]}(x)}{G_{[\xi, \sigma]}(\alpha_{bk}) - G_{[\xi, \sigma]}(0)} \nonumber \\
+    &= \frac{
+      \left[ (x + \sigma)(1 + \xi \frac{x}{\sigma})^{- \frac{1}{\xi}} \right]_{0}^{\alpha_{bk}}
+    }{
+      1 - (1 + \xi \frac{\alpha_{bk}}{\sigma})^{- \frac{1}{\xi}}
+    }
+\end{align}
+
+
+\subsection{Moment Evaluation} \label{sec:global_mix_moment}
+
+In this case we build the estimation for $\xi$ and $\sigma$ values, and then we exploit the number of samples that have fallen in some specific ranges. Let $\hat{N}_T$ be the expected total number of samples that came from the generalized Pareto distribution:
+\begin{equation} \label{eqn:mix_n_t}
+  \hat{N}_T = N_{(\alpha_{bk}, \infty)} \, \dfrac{1}{q_{(\alpha_{bk}, \infty)}}
+\end{equation}
+
+Where $q_{(t_1, t_2)}$ is the probability to get a generalized Pareto sample in the range $\left[t_1, t_2\right]$, that is:
+\begin{equation}
+  q_{(t_1, t_2)} = G_{[\xi,0,\sigma]}(t_2) - G_{[\xi,0,\sigma]}(t_1) \label{eqn:mean_eval_prob}
+\end{equation}
+
+Now, let $\hat{N}_{(\alpha_{0}, \alpha_{bk})}$ be the expected number of generalized Pareto samples that fall in the range of $[0, \alpha_{bk}]$, when we are dealing with a mixture distribution:
+\begin{equation} \label{eqn:mix_n_alpha}
+  \hat{N}_{(\alpha_{0}, \alpha_{bk})} = \dfrac{
+     \hat{N}_T - N_{(\alpha_{bk}, \infty)}
+  }{
+    1 - q_{(\alpha_{bk}, \infty)}
+  } \, \dfrac{1}{q_{(0, \alpha_{bk})}}
+\end{equation}
+
+The value $N_{(\alpha_{bk}, \infty)}$ is the actual number of samples gathered in the interval $[\alpha_{bk}, \infty)$.
+
+So now we can estimate the $p$ value as the ratio of the difference between the actual number of samples in the range $[0, \alpha_{bk}]$ and its expected value of Generalized Pareto's, over the expected total number of Generalized Pareto samples plus the estimated number of Uniform Distribution samples, that is:
+\begin{equation}
+	\hat{p} =  \dfrac{
+		N_{(\alpha_{0}, \alpha_{bk})}  - \hat{N}_{(\alpha_{0}, \alpha_{bk})}
+	}{
+		\hat{N}_T + N_{(\alpha_{0}, \alpha_{bk})} - \hat{N}_{(\alpha_{0}, \alpha_{bk})} 
+	} \label{eqn:p_est}
+\end{equation}
+
+\newpage
+
+\section{Results} \label{sec:glob_result}
+
+We tested the mixture distribution parameters estimation by using $10\,000$ randomized 3-parameters vector $(\xi, \sigma, p)$. The parameters are generated following the rules in Table \ref{tab:glob_param} and their trends are represented in Figure \ref{fig:glob_param}.
+
+\begin{table}[!h]
+	\begin{center}
+		\begin{tabular}{ c c c c c c }
+			Parameter & Distribution & Min & Max & Mean & StdDev \\
+			\hline
+			$\xi$ & Truncated Gaussian & 0.1 & 0.4 & 0.3095 & 0.1 \\
+			$\sigma$ & Truncated Gaussian & 1e-4 & 0.1 & 0.02 & 0.2 \\
+			$p$ & Uniform & 0.1 & 1.0 & - & -
+		\end{tabular}
+		\caption{Parameters Randomization: Global View}
+		\label{tab:glob_param}
+	\end{center}
+\end{table}
+
+\begin{figure}[!htbp]
+	\begin{center}
+		\includegraphics[scale=0.85]{images/global_test_parameters.pdf}
+	\end{center}
+	\caption{Parameters Randomization: trends.}
+	\label{fig:glob_param}
+\end{figure}
+
+Then from each vector we generate samples to:
+\begin{enumerate}
+	\item Build the \ac{MLE} for $(\xi, \sigma)$ \eqref{sec:global_pareto};
+	\item \begin{enumerate}
+		\item Estimate $p$ with \ac{MLE} \eqref{sec:global_mix_mle};
+		\item Estimate $p$ through the \ac{MV} \eqref{sec:global_mix_moment}.
+	\end{enumerate}
+\end{enumerate}
+
+In Figures \ref{fig:glob_est_xi} and \ref{fig:glob_est_sigma} we can see the \ac{MPE} for $(\hat{\xi}, \hat{\sigma})$ calculated as:
+\begin{align}
+	MPE^+: \quad \quad & \dfrac{1}{N_{pos}} \sum_{i = 1}^{N_{pos}} \dfrac{a_i - f_i}{a_i} & \text{if } a_i > f_i \\
+	MPE^-: \quad \quad & \dfrac{1}{N_{neg}} \sum_{i = 1}^{N_{neg}} \dfrac{a_i - f_i}{a_i} & \text{if } a_i < f_i
+\end{align}
+where $N_{pos}$ and $N_{neg}$ are the number of over and under estimations, respectively.
+
+\begin{figure}[!htbp]
+	\centering
+	\subfloat{
+		\label{fig:glob_est_xi}
+		\includegraphics[width=0.48\textwidth]{images/global_test_xi.pdf}
+	}
+	\subfloat{
+		\label{fig:glob_est_sigma}
+		\includegraphics[width=0.48\textwidth]{images/global_test_sigma.pdf}
+	}
+	\caption{Global View: Estimation of $(\xi, \sigma)$ with \ac{MLE}.}
+	\label{fig:glob_est}
+\end{figure}
+
+We have tested the generalized Pareto parameters estimation with 4-samples sets with a size of increasing order of magnitude. We have also counted the number of \textit{Missed Estimation}, that is the times that Newton's Method with a precision of $10^{-10}$ returns always negative values for $\hat{\eta}$ after choosing 6 different starting points of $\eta_0(\xi_0)$ with $\xi_0$ uniformed distributed in $[0.05,0.55]$.
+
+\begin{figure}[!htbp]
+	\begin{center}
+		\includegraphics{images/global_startp.pdf}
+	\end{center}
+	\caption{Global View: missed estimations of $(\xi, \sigma)$ with single run or iteration on the starting point.}
+	\label{fig:glob_est_startp}
+\end{figure}
+
+The iteration through different starting points gives us a lower failure rate compared to a single run with $\xi = 0.25$ in \eqref{eqn:glob_startp} (Figure \ref{fig:glob_est_startp}). It follows that the choice of the starting point could have a role in the process, but the single-run rate for larger vector's dataset shows a constant behaviour while the iterative rate shows a decreasing trend following the vector size. That means that keep repeating a failed test with new starting points will finally discard all errors related to that bad choice, leaving only those that come from the noise contained in the samples.
+
+The high error in Figure \ref{fig:glob_est} that comes with the $(\xi, \sigma)$-estimation with 100 or 1000 samples is justified by the lack of information contained in so few samples. As a matter of fact, plotted in Figure \ref{fig:glob_est_diff} there is the difference between \acp{CDF} of:
+\begin{itemize}
+	\item Global Idle Distribution given by \eqref{eqn:global_view};
+	\item Empirical Distribution built on the samples dataset;
+	\item Estimated Global Idle Distribution.
+\end{itemize}
+
+\begin{figure}[!htbp]
+	\centering
+	\subfloat[Estimation with 100 samples]{
+		\label{fig:glob_est_diff_100}
+		\includegraphics[width=0.48\textwidth]{images/global_diff_100.pdf}
+	}
+	\subfloat[Estimation with 1000 samples]{
+		\label{fig:glob_est_diff_1000}
+		\includegraphics[width=0.48\textwidth]{images/global_diff_1000.pdf}
+	}
+	\caption{Global View: Differences between the \acp{CDF} of Real, Estimated and the samples dataset.}
+	\label{fig:glob_est_diff}
+\end{figure}
+
+As it can be seen, the curve of the dataset \ac{CDF} determines the accuracy of the estimation: the \ac{MLE} will always try to fit as best as possible to that line, so the estimation error is not caused by the estimation algorithm, but is due to the \textit{noise} in the data acquired.
+
+\begin{figure}[!htbp]
+	\begin{center}
+		\includegraphics[scale=0.9]{images/global_test_mle_p.pdf}
+	\end{center}
+	\caption{Global View: Estimation of $p$ with MLE.}
+	\label{fig:glob_est_p_mle}
+\end{figure}
+
+Now we evaluate the accuracy of $p$ parameter estimation. Figures \ref{fig:glob_est_p_mle} and \ref{fig:glob_est_p} show the \ac{MAE} since now we are dealing with already normalized values in the interval $[0,1]$. Therefore, the \ac{MAE} is:
+\begin{align}
+	MAE^+ \quad \quad & \dfrac{1}{N_{pos}} \sum_{i = 1}^{N_{pos}} a_i - f_i & \text{if } a_i > f_i \\
+	MAE^- \quad \quad & \dfrac{1}{N_{neg}} \sum_{i = 1}^{N_{neg}} a_i - f_i & \text{if } a_i < f_i
+\end{align}
+
+The results depicted in Figure \ref{fig:glob_est_p_mle} show that \ac{MLE} goes too often out of the range $[0,1]$ and, even when it converges, the error is always high, around $\pm 0.3$ of the real value.
+
+ \begin{figure}[!htbp]
+	\begin{center}
+		\includegraphics[scale=0.9]{images/global_p_mle.pdf}
+	\end{center}
+	\caption{Global View: Log-Likelihood function.}
+	\label{fig:glob_p_mle}
+\end{figure}
+
+That is because the log-likelihood function for $p$-\ac{MLE} does not have a maximum in that range but is always increasing (Figure \ref{fig:glob_p_mle}), that ensue from both generalized Pareto distribution and uniform distribution have a similar homogeneous increasing trend. Since they almost coincide, it is impossible for the estimator to tell, given the samples, the percentage $p$ of influence of the uniform distribution.
+
+\begin{figure}[!htbp]
+	\begin{center}
+		\includegraphics[scale=0.9]{images/global_test_p.pdf}
+	\end{center}
+	\caption{Global View: Estimation of $p$ with \ac{MV}.}
+	\label{fig:glob_est_p}
+\end{figure}
+
+The \ac{MV} method, instead, gives an high accuracy (Figure \ref{fig:glob_est_p}): it retrieves estimated values that differs only by $\pm 0.001$ from the actual ones, despite it relies on the previous step as the \ac{MLE} method. Hence, the errors $\Delta \xi$ and $\Delta \sigma$ are canceled when evaluating \eqref{eqn:mix_n_t} and \eqref{eqn:mix_n_alpha}.
+
+But, as we can see, the missed estimation value is always the same as for the generalized Pareto parameter's estimation because the failure of the Newton's method on $\eta$ is propagated first to $(\xi, \sigma)$ and then, without that parameters, it is impossible to estimate $p$ with \ac{MV}.
+
+Parameter estimation for the global view based on \ac{MLE} for $(\xi, \sigma)$ and \ac{MV} for $p$ gives accurate (Figures \ref{fig:glob_est} and \ref{fig:glob_est_p}) and almost failure-free (Figure \ref{fig:glob_est_startp}) results for datasets with $10\,000$ samples. Considering a \ac{WLAN} traffic with an average inactive time of $1 ms$, it is about $10 s$ of measurement process, which is acceptable.
+
+The complexity of the estimation process is bounded by the \ac{MLE} function that is $O(k\cdot n)$ which is acceptable too. The value $O(k\cdot n)$ comes from the iteration of $k$ times for the Newton's method and its point selection, and evaluating each time functions that are linear with the dataset size $n$.

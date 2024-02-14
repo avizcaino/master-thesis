@@ -1,0 +1,28 @@
+\chapter{Introduction}
+
+\ac{WSN} is an emerging technology that has a wide range of current or potential applications including environment monitoring, smart spaces, medical systems and robotic exploration \cite{WSN-app}. Such a network normally consists of a large number of distributed nodes that organize themselves into a multi-hop wireless network. Each node has one or more sensors, embedded processors and low-power radios, and is normally battery operated \cite{WSN}. Typically, these nodes coordinate to perform a common task through communication in the unlicensed \ac{ISM} band.
+
+The spectrum in this band has gradually become a scarce resource, due to the growing proliferation of wireless devices like \acp{WLAN}, \acp{WSN}, Bluetooth nodes, cordless phones and \acsp{RFID} \cite{CRAHN}.
+
+Thus, random wireless medium access or even multiple access based on carrier sense are schemata that do not guarantee anymore effective co-existence, especially when accounting for the disparity in the hardware capability between heterogeneous technologies. For example, a sensor node cannot achieve the transmission power of a laptop or an \ac{AP} and its communication could be easily disturbed since it will not be detected by those devices, leading to packet collisions.
+
+In this work we investigate solutions for energy-efficient co-existence of a \ac{WSN} with more powerful, in terms of Tx power, technologies using a sort of implicit coordination. Specifically, instead of accessing the spectrum concurrently, we propose an approach that effectively exploits the idle spectrum space in the spatial and time domains between transmissions of more powerful users, represented by 802.11-based \ac{WLAN} devices.
+
+The proposed method relies on the existence of enough space to allow sensor transmissions; indeed it has been shown in \cite{DSA-TD, DSA-Emp} that in most cases sufficient whitespace will be available; for example, considering a continuous conference call using the popular \ac{VoIP} client Skype, the channel is idle the 89 percent of the time \cite{DSA-TD}.
+
+To access the idle spectrum spaces, this access method requires from the sensors a knowledge of the wireless environment status and the adaption of the \ac{MAC} to this environment. Cognitive radio technology is the key technology that enables this \textit{dynamic} spectrum usage. The term, cognitive radio, is formally defined as follows \cite{FCCSU}:
+\begin{flushright}
+\textit{A ``Cognitive Radio'' is a radio that can change its transmitter parameters based on interaction with the environment in which it operates.}
+\end{flushright}
+
+The implied awareness can be expressed as the capability of the \ac{WSN} to predict the \ac{WLAN}'s activity and to adapt its medium access accordingly. A model of spectrum activity that allows us to define the probability distribution of the idle and active periods has been proposed in \cite{DSA-Emp}.
+
+Knowing the actual idle time distribution means that the sensors can evaluate a priori the collision probability of their packets with the \ac{WLAN} frames and consequently adapt the packet lengths and the transmission policy to decrease that probability (and, thus, the number of unsuccessful transmissions), while meeting the requirements of the applications but also extending their battery life by reducing the number of retransmissions.
+
+The knowledge comes with the cost of sensing the spectrum activity and collect enough samples to estimate accurately the parameters of the active and the idle distributions.
+
+Due to hardware limitations, the detection range of the sensors is reasonably smaller than the \ac{WLAN} area and therefore they can see only a portion of the transmissions in the \ac{WLAN} and hence its active periods. Thus, our solution for the spectrum activity modeling considers not only the universal status of the entire \ac{WLAN} area as the model described in \cite{DSA-Emp}, but also it takes into account the individual point of view of the sensors. We call that model and our extension as ``Global View'' and ``Local View'', respectively.
+
+Clearly, the \ac{WSN} nodes could gain and use the global view only if there is sensing information exchange among them. They should exchange for example active period values with timestamps to build this global activity model. On the other hand, the use of the proposed local view is the only possibility if the channel occupancy model is built without sensors cooperation.
+
+Thus, in this work we investigate the models regarding both global and local view, and we propose efficient algorithms for the estimation of their parameters. We also compare and statistically evaluate the proposed solutions.

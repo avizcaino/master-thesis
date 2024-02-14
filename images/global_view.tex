@@ -1,0 +1,12 @@
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=3cm,
+                    semithick]
+
+	% on - off
+	\node [off status]	(off) 	[label=$f_I(t)$]		{Idle};
+	\node [on status]	(on)	[right of=off,label=$f_A(t)$]	{Active};
+	\path
+		(off)	edge [bend left]	node {} 		(on)
+		(on)	edge [bend left]	node {}			(off)
+	;
+
+\end{tikzpicture}

@@ -1,0 +1,87 @@
+\begin{tikzpicture}[semithick]
+	% session
+	\node [packet,minimum width=2.5cm]		(P1)		at	(0,0)		{Pkt 1};
+	\node [minimum width=2.5cm]			(b1)		[below=of P1]		{};
+	\node [minimum width=2.5cm]			(u1)		[above=of P1]		{};
+
+	\node [packet,minimum width=3.5cm]		(P2)		[right=of P1]		{Pkt 2};
+	\node [minimum width=3.5cm]			(b2)		[below=of P2]		{};
+	\node [minimum width=3.5cm]			(u2)		[above=of P2]		{};
+
+	\node []					(Px)		[right=of P2]		{...};
+	\node []					(dots)		[above=1.46cm of Px]		{...};
+
+	\node [packet,minimum width=2cm]		(P3)		[right=of Px]		{Pkt $n$};
+	\node [minimum width=2cm]			(b3)		[below=of P3]		{};
+	\node [minimum width=2cm]			(u3)		[above=of P3]		{};
+
+
+	% sizes
+	\foreach \packet in {1,...,3}
+		\path
+			(P\packet.south west)	edge	[dotted]	(b\packet.west)
+			(P\packet.south east)	edge	[dotted]	(b\packet.east)
+			(b\packet.west)		edge	[|<->|]		(b\packet.east)
+		;
+
+	
+
+	% interarrivals
+	\path
+		(P1.north east)		edge	[dotted]	(u1.east)
+		(P2.north west)		edge	[dotted]	(u2.west)
+		(P2.north east)		edge	[dotted]	(u2.east)
+		(P3.north west)		edge	[dotted]	(u3.west)
+	
+		(u1.east)		edge	[|<->|]		(u2.west)
+		(u2.east)		edge	[|<-]		(dots)
+		(dots)			edge	[->|]		(u3.west)
+	;
+
+	\draw[decorate,decoration={brace},semithick]
+		(1.4,2.5) to node [above,midway,inner sep=0.5cm] (bracket1) {Packet Interarrivals} (8.2,2.5);
+
+	\draw[decorate,decoration={brace},semithick]
+		 (10.3,-2.5) to node [below,midway,inner sep=0.5cm] (bracket2) {Packet Sizes} (-1.2,-2.5);
+
+%	\path
+%	 	(F1.west)	edge	[dotted]	(-2.5,-5)
+%	 	(F2.west)	edge	[dotted]	(0,-5)
+%	 	(F3.west)	edge	[dotted]	(1.51,-5)
+%		(F3.east)	edge	[dotted]	(6.51,-5)
+%	;
+
+%	\node []		(lab)	at 	(-0.5, -5.5)	{Flow Interarrivals};
+%	\node []		(lab2)	at	(4,-5.5)	{Flow Sizes};	
+%	\node []		(dot)	at	(1, -5)		{...};
+%	\path
+%		(-2.5,-5)	edge	[|<->]		(0,-5)
+%		(0,-5)		edge	[|<-]		(dot)
+%		(dot)		edge	[->|]		(1.51,-5)
+%		(1.51,-5)	edge	[<->|]		(6.51,-5)
+%	;
+
+
+
+
+	\begin{pgfonlayer}{background}
+		\node [flow, fit=(P1) (P3) (bracket2) (bracket1)] {};
+	\end{pgfonlayer}
+
+	% flows
+%	\node [flow]		(F1);
+%	\node [flow]		(F2);
+%	\node [flow]		(F3);
+
+	% packets
+%	\node [packet]		(P1);
+%	\node [packet]		(P2);
+%	\node [packet]		(P3);
+%	\node [packet]		(P4);
+%	\node [packet]		(P5);
+%	\begin{pgfonlayer}{background}
+%		\node [flow];
+%	\end{pgfonlayer}
+
+\end{tikzpicture}
+

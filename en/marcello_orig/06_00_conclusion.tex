@@ -1,0 +1,15 @@
+\chapter{Conclusions} \label{sec:conclusion}
+
+In this work we addressed the ways of improving the performance of the low-power \acp{WSN}, co-existing with \textit{blind} \acp{WLAN}, exploiting the tool of spectrum activity prediction. We proposed and analyzed accurate models for \ac{WLAN} spectrum activity and we designed algorithms for estimating the model parameters.
+
+Specifically, we used the model in \cite{DSA-Emp} to define the ``Global View'' as a probability distribution of the spectrum status, since the model considers the universal spectrum activity of the \ac{WLAN} area. This model describes active periods with a uniform distribution, while idle periods are described with a mixture distribution, distinguishing short, uniformly distributed, back-off periods, and Pareto distributed inactive periods.
+
+We provided an algorithm based on \ac{MLE}/\ac{MV} for estimating the parameters of the mixture distribution from a collection of sensed values of idle/active periods, that exploits the bounds typical of the back-off times for filtering idle samples coming from the \ac{CW}. Furthermore, we extended the work in \cite{DSA-Emp} with a ``Local View'' model by including the concept of the sensing locality.
+
+Due to the limited detection range of the hardware-constrained \ac{WSN} devices, the nodes will report an idle channel status in the case of distant \ac{WLAN} transmissions. In this case, we can not provide the closed form expression for the local idle period distribution, which makes parameter estimation more challenging. Nevertheless, we developed two algorithms using first \ac{MLE}/\ac{MV} and then Neural Networks for estimating the parameters of the local view distribution seen by sensors.
+
+The design of all the algorithms in this work was driven by the objective of low complexity, to take into account the low computational resources of the sensors.
+
+We evaluated extensively the performance of the parameter estimation algorithms considering different sets of samples, synthetically generated from the distributions proposed. Since our goal was the evaluation of the estimation accuracy, the performance metrics used are the \ac{MAE} and the \ac{MPE}. The results show good parameter approximations (\ac{MAE} and specially \ac{MPE} $\pm 0.05$ with $10\,000$ samples) using \ac{MLE}/\ac{MV} for the global view case, while the same mathematical tools showed to be unsuitable for the local view case due to the high complexity or flat behavior of the maximization function.
+
+The neural network approach, instead, led to higher error for the same number of samples but still keeping the \ac{MAE} $\pm 0.05$. Although the number of samples that is needed to give good accuracy seems quite high, it is still acceptable since the sensors could collect $10\,000$ samples in a 10-seconds measurement process.

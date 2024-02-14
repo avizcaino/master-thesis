@@ -1,0 +1,347 @@
+\section{Compound MLE/MV} \label{sec:loc_analysis}
+
+Direct \acl{MLE} of the four parameters $(\hat{\xi}, \hat{\sigma}, \hat{p}, \hat{p}_{cca})$ is impractical because we do not have the closed form in the probability domain. Instead of trying to estimate all parameters at the same time, we can exploit some property that comes with a version of mean-value analysis.
+
+As a matter of fact, given the \eqref{eqn:active_distr} and \eqref{eqn:global_view} the minimum cycle length outside \ac{CCA} (Fig. \ref{fig:model_local}) is:
+\begin{equation}
+	\operatorname*{min}_t  f_A(t) > 0 + \operatorname*{min}_t f_I(t) > 0 = \alpha_{on} + \delta
+\end{equation}
+
+But we can also assume that:
+\begin{equation}
+	\alpha_{bk} < \alpha_{on},
+\end{equation}
+because we can choose an Active traffic distribution that has the minimum greater than $\alpha_{bk}$. Indeed, constant rate \acs{UDP} traffic of $512 B$ has been measured in \cite{ActiveMeasure}, resulting in length of $0.61 ms$ for data packet and $0.2 ms$ for the consecutive \ac{ACK}, that is greater than the $\alpha_{bk}$ value assumed in Sec. \ref{sec:model}.
+
+So, in the time range $[0,\alpha_{on}]$ we are sure that we are only dealing with a $f_I(t)$ \eqref{eqn:global_view} and if we filter also the samples with $t > \alpha_{bk}$, we finally get a truncated version of the $f_I^{(WS)}(t)$ \eqref{eqn:white_space}:
+\begin{equation}
+	f_I^{(WS_T)}(t) = \dfrac{
+		\dfrac{1}{\sigma} \left(1 + \xi \, \dfrac{t}{\sigma} \right)^{- \dfrac{1}{\xi} - 1}
+	}
+	{
+		1 - \left( 1 + \xi \, \dfrac{\alpha_{on}}{\sigma} \right)^{-\dfrac{1}{\xi}} -
+		1 + \left( 1 + \xi \, \dfrac{\alpha_{bk}}{\sigma} \right)^{-\dfrac{1}{\xi}}
+	}
+	\quad \quad \forall \, t \in (\alpha_{bk}, \alpha_{on}] \label{eq:trunc}
+\end{equation}
+
+We can exploit the \eqref{eq:trunc} for building an algorithm that first finds $(\hat{\xi}, \hat{\sigma})$ with samples in $(\alpha_{bk}, \alpha_{on}]$, then with samples in $[0, \alpha_{on}]$ we can find $p$ and finally with all the samples we can find $p_{\text{CCA}}$:
+
+\begin{enumerate}
+	\item Gather enough Idle/Active samples;
+	\item Estimate $f_{\tilde{A}}$ for retrieving $\alpha_{on}$ and $\beta$;
+	\item Get $(\hat{\xi}, \hat{\sigma})$ with \ac{MLE} on interval samples $(\alpha_{bk}, \alpha_{on}]$;
+	\item Evaluate $\hat{p}$ in the interval sample $[0,\alpha_{bk}]$ with \ac{MV};
+	\item Using $(\hat{\xi}, \hat{\sigma}, \hat{p})$, calculate $p_{\text{CCA}}$ with \ac{MV} estimation.
+\end{enumerate}
+
+\subsection{Active Distribution} \label{sec:active_distr}
+
+Since we are assuming that the $f_A(t)$ \eqref{eqn:active_distr} is a Uniform Distribution in the range $[\alpha_{on}, \beta]$ (Chapter \ref{sec:model}), let us have a vector of samples $\underline{x} = (x_{(1)}, x_{(2)}, ..., x_{(N)})$, such that
+\begin{equation}
+	x_{(1)} \le x_{(2)} \le ... \le x_{(N)}.
+\end{equation}
+
+From \eqref{eqn:active_distr} we have:
+\begin{alignat}{2}
+	\alpha_{on} &\le x_{(1)} &\quad \quad \beta &\ge x_{(n)}
+\end{alignat}
+
+So the likelihood function will be
+\begin{equation}
+	\mathcal{L}(\underline{x}|\alpha_{on},\beta) = \prod_{i=1}^N f_A(x_i | \alpha_{on}, \beta) = (\beta - \alpha_{on})^{-N} \label{eq:f_a_uni_like}
+\end{equation}
+
+\begin{subequations}
+But we also have:
+\begin{align}
+	\mathcal{L}(\underline{x}|\alpha_{on},\beta) = 0 &\quad \quad \forall \; \alpha_{on} > x_{(1)} \\
+	\mathcal{L}(\underline{x}|\alpha_{on},\beta) = 0 &\quad \quad \forall \; \beta < x_{(N)}
+\end{align} \label{eq:f_a_uni_like_rem}
+\end{subequations}
+
+Putting together \eqref{eq:f_a_uni_like} and \eqref{eq:f_a_uni_like_rem}, we get:
+\begin{equation}
+	\mathcal{L}(\underline{x}|\alpha_{on},\beta) =
+	\begin{cases}
+		(\beta - \alpha_{on})^{-N} &\quad \quad \alpha_{on} \le x_{(1)} \text{ and } \beta \ge x_{(N)} \\
+		0 & \quad \quad \text{otherwise}
+	\end{cases}
+\end{equation}
+
+The log-likelihood function will be:
+\begin{equation}
+	\log \mathcal{L}(\underline{x}|\alpha_{on},\beta) = \log \left( (\beta - \alpha_{on})^{-N} \right) = - N \, \log (\beta - \alpha_{on}) \label{eq:f_a_uni_loglike}
+\end{equation}
+
+And the partial derivative of \eqref{eq:f_a_uni_loglike} with respect $\alpha_{on}$ yields
+\begin{equation}
+	\frac{\partial \log \mathcal{L}(\underline{x}|\alpha_{on},\beta)}{\partial \alpha_{on}} = \frac{N}{\beta - \alpha_{on}} > 0 \label{eq:f_a_uni_dev_loglike}
+\end{equation}
+
+So for $\alpha_{on} \le x_{(1)}$ and $\beta \ge x_{(N)}$ the function $ \log \mathcal{L}(\underline{x}|\alpha_{on},\beta) $ is a strictly increasing function in the variable $\alpha_{on}$. Hence, from \eqref{eq:f_a_uni_loglike} and \eqref{eq:f_a_uni_dev_loglike} follows that the maximum likelihood estimator for $\alpha_{on}$ is given by
+\begin{equation}
+	\hat{\alpha}_{on} = x_{(1)} \label{eqn:alpha_on}
+\end{equation}
+
+Taking instead the partial derivative \eqref{eq:f_a_uni_loglike} with respect $\beta$ gives
+\begin{equation}
+	\frac{\partial \log \mathcal{L}(\underline{x}|\alpha_{on},\beta)}{\partial \beta} = - \frac{N}{\beta - \alpha_{on}} < 0 \label{eq:f_a_uni_devb_loglike}
+\end{equation}
+
+And we can conclude that for $\alpha_{on} \le x_{(1)}$ and $\beta \ge x_{(N)}$ the log-likelihood function is a strictly decreasing function in the variable $\beta$. Hence, from \eqref{eq:f_a_uni_loglike} and \eqref{eq:f_a_uni_devb_loglike} it follows that the \ac{MLE} for $\beta$ is given by
+\begin{equation}
+	\hat{\beta} = x_{(N)}
+\end{equation}
+
+The value of $\alpha_{on}$ is the left boundary of the distribution just estimated according to \eqref{eqn:alpha_on}.
+
+\subsection{Generalized Pareto Parameters} \label{sec:loc_pareto}
+
+The maximum likelihood estimator for the truncated generalized Pareto distribution $f_I^{(WS_T)}(t)$ in the interval $(\alpha_{bk}, \alpha_{on}]$ will be:
+\begin{equation}
+	(\hat{\xi}, \hat{\sigma}) =
+	  \operatorname*{arg max}_{\xi, \sigma} \prod_{i = 1}^N \frac{
+	    g_{[\xi, \sigma]}(x_i)
+	  }{
+	    G_{[\xi, \sigma]}(\alpha_{on}) - G_{[\xi, \sigma]}(\alpha_{bk})
+	  }
+\end{equation}
+
+And the full log-likelihood function will be:
+\begin{align} \label{eqn:loc_loglike}
+	\mathcal{L}(\underline{x}|\xi,\sigma) &=
+	  \frac{1}{N} \, \log \prod_{i = 1}^N \frac{
+	    \frac{1}{\sigma} \, \left(1 + \xi \, \frac{x_i}{\sigma} \right)^{-\frac{1}{\xi} - 1}
+	  }{
+		1 - \left( 1 + \xi \, \frac{\alpha_{on}}{\sigma} \right)^{-\frac{1}{\xi}} -
+		1 + \left( 1 + \xi \, \frac{\alpha_{bk}}{\sigma} \right)^{-\frac{1}{\xi}}
+	  } = \nonumber \\
+  	&= - \log \left[
+	  \left( 1 + \xi \, \frac{\alpha_{bk}}{\sigma} \right)^{-\frac{1}{\xi}} -
+	  \left( 1 + \xi \, \frac{\alpha_{on}}{\sigma} \right)^{-\frac{1}{\xi}}
+	\right]	\\ \nonumber
+	&- \log \sigma - \frac{1 + \xi}{\xi \, N}  \sum_{i=1}^N \log \left(1 + \xi \, \frac{x_i}{\sigma} \right)
+\end{align}
+
+Now we can solve numerically the non linear system:
+\begin{equation}
+  \begin{cases}
+    \dfrac{ \partial \, \mathcal{L}(\underline{x}|\xi,\sigma) } { \partial \, \xi } &= 0 \\
+    \dfrac{ \partial \, \mathcal{L}(\underline{x}|\xi,\sigma) } { \partial \, \sigma } &= 0
+  \end{cases}
+\end{equation}
+
+That is
+\begin{equation}
+	\begin{cases}
+- \displaystyle\sum_{k \in \{on, bk\}} \frac{
+	\left(1 + \xi \, \frac{\alpha_k}{\sigma}\right)^{-\frac{1}{\xi}}
+}{
+	\left(1 + \xi \, \frac{\alpha_{bk}}{\sigma}\right)^{-\frac{1}{\xi}} -
+	\left(1 + \xi \, \frac{\alpha_{on}}{\sigma}\right)^{-\frac{1}{\xi}}
+}
+\left( \frac{
+	\log \left(1 + \xi \frac{\alpha_k}{\sigma}\right)}{\xi^2} -
+	\frac{\alpha_k}{\xi \, \sigma \, \left(1 + \xi \frac{\alpha_k}{\sigma}\right)
+}\right) \\
+	\quad \quad \quad \quad - \dfrac{1}{\xi \, N}\left(
+		\displaystyle\sum_{i=1}^N \log \left(1 + \xi \frac{x_i}{\sigma}\right) +
+		\left(1 +\xi\right) \displaystyle\sum_{i=1}^N\frac{x_i}{\sigma \left(1 + \xi \frac{x_i}{\sigma}\right)}
+	\right) \\
+	\quad \quad \quad \quad + \dfrac{1 + \xi}{\xi \, N} \displaystyle\sum_{i=1}^N \log \left(1 + \xi \frac{x_i}{\sigma}\right) = 0 \\
+\\
+- \dfrac{
+	\dfrac{
+		\left(1 + \xi \frac{\alpha_{bk}}{\sigma}\right)^{-\frac{1}{\xi}} \alpha_{bk}
+	}{
+		\sigma^2 \left(1 + \xi \frac{\alpha_{bk}}{\sigma}\right)
+	}
+	- \dfrac{
+		\left(1 + \xi \frac{\alpha_{on}}{\sigma}\right)^{-\frac{1}{\xi}} \alpha_{on}
+	}{
+		\sigma^2 \left(1 + \xi \frac{\alpha_{on}}{\sigma} \right)
+	}
+}{
+	\left(1 + \xi \frac{\alpha_{bk}}{\sigma}\right)^{-\frac{1}{\xi}} -
+	\left(1 + \xi \frac{\alpha_{on}}{\sigma}\right)^{-\frac{1}{\xi}}
+}
+- \dfrac{1}{\sigma}
++ \dfrac{1 + \xi}{\xi \, N} \displaystyle\sum_{i = 1}^N \frac{\xi \, x_i}{\sigma^2 \left(1 + \xi \frac{x_i}{\sigma}\right)}
+= 0 \\
+	\end{cases}
+\end{equation}
+
+And apply the Second Partial Derivative test, checking if the determinant of
+\begin{equation}
+	M(\xi,\sigma) =
+	\begin{vmatrix}
+		\dfrac{ \partial^2 \, \mathcal{L}(\underline{x}|\xi,\sigma) } { \partial \, \xi^2 } &
+		\dfrac{ \partial^2 \, \mathcal{L}(\underline{x}|\xi,\sigma) } { \partial \, \xi \, \partial \, \sigma }\\
+		\dfrac{ \partial^2 \, \mathcal{L}(\underline{x}|\xi,\sigma) } { \partial \, \sigma \, \partial \, \xi } &
+		\dfrac{ \partial^2 \, \mathcal{L}(\underline{x}|\xi,\sigma) } { \partial \, \sigma^2}
+	\end{vmatrix}
+\end{equation}
+is positive while $\frac{ \partial^2 \, \mathcal{L}(\underline{x}|\xi,\sigma) } { \partial \, \xi^2 } < 0$.
+
+The Newton's Method for non linear equation is:
+\begin{equation}
+	\vec x_{k+1} = \vec x_k - J^{-1}_k \cdot \vec f(\vec x_k),
+\end{equation}
+where $J$ is the Jacobian matrix. Instead of using the computational-expensive inversion of the Jacobian matrix, we can write the correction step $\vec s_k$ as:
+\begin{align}
+	\vec x_{k+1} &= \vec x_k + \vec s_k \\
+	J_k \cdot \vec s_k &= - \vec f(\vec x_k)
+\end{align}
+
+The first step of the method is to evaluate $\vec f(\vec x_k)$, that in our case is:
+\begin{equation}
+\vec{\partial \mathcal{L}}(\underline{x}|\xi_k, \sigma_k) = 
+	\left(
+		\begin{array}{c}
+		\dfrac{ \partial \, \mathcal{L}(\underline{x}|\xi_k, \sigma_k) } { \partial \, \xi } \\
+		\dfrac{ \partial \, \mathcal{L}(\underline{x}|\xi_k, \sigma_k) } { \partial \, \sigma } \\
+		\end{array}
+	\right)
+\end{equation}
+
+The second step is to evaluate the Jacobian matrix
+\begin{equation}
+J(\underline{x}|\xi_k, \sigma_k) = 
+	\left(
+		\begin{array}{cc}
+		\dfrac{ \partial^2 \, \mathcal{L}(\underline{x}|\xi_k, \sigma_k) } { \partial^2 \, \xi } &
+			\dfrac{ \partial^2 \, \mathcal{L}(\underline{x}|\xi_k, \sigma_k) } { \partial \, \xi \, \partial \, \sigma} \\
+		\dfrac{ \partial^2 \, \mathcal{L}(\underline{x}|\xi_k, \sigma_k) } { \partial \, \xi \, \partial \, \sigma } &
+			\dfrac{ \partial^2 \, \mathcal{L}(\underline{x}|\xi_k, \sigma_k) } { \partial^2 \, \sigma } \\
+		\end{array}
+	\right)
+\end{equation}
+
+Finally we can solve the system:
+\begin{equation}
+	J(\underline{x}|\xi_k, \sigma_k) \cdot \Delta (\xi_k, \sigma_k) = - \vec{\partial \mathcal{L}}(\underline{x}|\xi_k, \sigma_k)
+\end{equation}
+
+That is:
+\begin{equation}
+	\left(
+		\begin{array}{cc}
+		L_{\xi \xi} & L_{\xi \sigma}\\
+		L_{\sigma \xi} & L_{\sigma \sigma}\\
+		\end{array}
+	\right)
+	\cdot
+	\left(
+		\begin{array}{c}
+		\Delta \xi \\
+		\Delta \sigma \\
+		\end{array}
+	\right)
+	= -
+	\left(
+		\begin{array}{c}
+		L_{\xi} \\
+		L_{\sigma} \\
+		\end{array}
+	\right)
+\end{equation}
+
+Or:
+\begin{equation}
+	\begin{cases}
+		L_{\xi \xi} \, \Delta \xi + L_{\xi \sigma} \, \Delta \sigma + L_{\xi} = 0 \\
+		L_{\sigma \xi} \, \Delta \xi + L_{\sigma \sigma} \, \Delta \sigma + L_{\sigma} = 0
+	\end{cases} \label{eq:newton_corr}
+\end{equation}
+
+Solving \eqref{eq:newton_corr} for $\Delta \xi$ and $\Delta \sigma$, we get
+\begin{equation}
+	\begin{cases}
+		\Delta \xi &= - \dfrac{L_{\xi \sigma} \, \Delta \sigma - L_{\xi}}{L_{\xi \xi}}  \\
+		\Delta \sigma &= \dfrac{\frac{L_{\xi}}{L_{\xi \xi}} - L_{\sigma}}{L_{\sigma \sigma} - \frac{L^2_{\sigma \xi}}{L_{\xi \xi}}}
+	\end{cases}
+\end{equation}
+
+And finally:
+\begin{align}
+	\xi_{k+1} &= \xi_k + \Delta \xi \\
+	\sigma_{k+1} &= \sigma_k + \Delta \sigma
+\end{align}
+
+We can stop the process if both $\Delta \xi < \epsilon$ and $\Delta \sigma < \epsilon$.
+
+\subsection{Mixture Distribution}
+
+For the estimation of $p$ we can exploit the same considerations as those explained in Sec. \ref{sec:mixture_estim}. Because of the weak results on Maximum Likelihood Estimation of $p$ for the global view (Sec. \ref{sec:glob_result}), we choose not to use this method but to apply only the Moment Method.
+
+Recalling equation \eqref{eq:trunc}, we have \textit{pure} samples from the generalized Pareto distribution only in the interval $[\alpha_{bk}, \alpha_{on}]$. Thus, the equations \eqref{eqn:mix_n_t} and \eqref{eqn:mix_n_alpha} need to be changed accordingly.
+
+So, in \eqref{eqn:mix_n_t} instead of evaluating the expected total number $N_T$ of samples that came from the Pareto in the whole interval $[\alpha_{on}, \infty)$, it will be:
+\begin{equation} 
+  \hat{N}_T = N_{(\alpha_{bk}, \alpha_{on})} \, \dfrac{1}{q_{(\alpha_{bk}, \alpha_{on})}},
+\end{equation}
+where $q_{(t_1, t_2)}$ is defined in \eqref{eqn:mean_eval_prob}, that is:
+\begin{equation}
+	q_{(t_1, t_2)} = G_{[\xi,0,\sigma]}(t_2) - G_{[\xi,0,\sigma]}(t_1)
+\end{equation}
+
+And for \eqref{eqn:mix_n_alpha}, the expected number $\hat{N}_{(\alpha_{0}, \alpha_{bk})}$ of generalized Pareto samples that falls in the range of $[0, \alpha_{bk}]$ will be:
+\begin{equation}
+  \hat{N}_{(\alpha_{0}, \alpha_{bk})} = \dfrac{
+     \hat{N}_T - N_{(\alpha_{bk}, \alpha_{on})}
+  }{
+    1 - q_{(\alpha_{bk}, \alpha_{on})}
+  } \, \dfrac{1}{q_{(0, \alpha_{bk})}}
+\end{equation}
+
+The $p$ estimation follows the same equation in \ref{eqn:p_est} and once again it is:
+\begin{equation}
+	\hat{p} =  \dfrac{
+		N_{(\alpha_{0}, \alpha_{bk})}  - \hat{N}_{(0, \alpha_{bk})}
+	}{
+		\hat{N}_T + N_{(0, \alpha_{bk})} - \hat{N}_{(0, \alpha_{bk})} 
+	}
+\end{equation}
+
+\subsection{Percentage of Observable Load}
+
+Since the closed form for the complete idle \ac{PDF} can be expressed only in the Laplace domain and the \ac{MLE} works in the Probability domain, we should use numerical approximation of the inverse transformation formula on each step. Thus, the complexity of the computation becomes unaffordable for the hardware-constrained devices. So we apply only the less accurate moment evaluation method.
+
+The Expected Value of the complete (local) idle spectrum period is:
+\begin{align}
+	E[f_{\tilde{I}}]
+		&= \sum_{k=0}^\infty \left(
+			E[f_I] + k \, E[f_I + f_A]
+		\right) \, (1 - p_{\text{CCA}})^k \, p_{CCA} = \nonumber \\
+		&= E[f_I] + E[f_I + f_A] \, \frac{1 - p_{\text{CCA}}}{p_{CCA}}
+\end{align}
+
+Thus, the $p_{\text{CCA}}$ will be:
+\begin{align}
+	\hat{p}_{CCA} &= \frac{E[f_I + f_A]}{E[f_{\tilde{I}}] - E[f_I] + E[f_I + f_A]} \nonumber \\
+		&= \frac{E[f_I] + E[f_A]}{E[f_{\tilde{I}}] + E[f_A]} \label{eqn:local_pcca_ev}
+\end{align}
+
+Where the sample mean, pareto mean and active mean are respectively:
+\begin{subequations}
+	\begin{align}
+		E[f_{\tilde{I}}] &= \frac{1}{N} \, \sum_{i = 1}^N x_i \\
+		E[f_I] &= \frac{p \, \alpha_{bk}}{2} + \frac{(1 - p) \, \sigma}{1 - \xi} \\
+		E[f_A] &= \frac{\alpha_{on} + \beta}{2}
+	\end{align}
+	\label{eqn:local_pcca_ev_sub}
+\end{subequations}
+
+Putting together \eqref{eqn:local_pcca_ev} and \eqref{eqn:local_pcca_ev_sub}, we finally get:
+\begin{equation}
+	\hat{p}_{CCA} =
+		\dfrac{
+			\dfrac{p \, \alpha_{bk}}{2} +
+			\dfrac{(1 - p) \, \sigma}{1 - \xi} +
+			\dfrac{\alpha_{on} + \beta}{2}
+		}{
+			\dfrac{1}{N} \, \displaystyle\sum_{i = 1}^N x_i +
+			\dfrac{\alpha_{on} + \beta}{2}
+		}
+\end{equation}

@@ -1,0 +1,33 @@
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=2.5cm,
+                    semithick]
+\tikzset{
+  every node/.style={scale=0.9}
+}
+	% on - off
+	\node [on status]	(data)	[label=above:$f_A(t)$]				{Data};
+	\node [on status] 	(sifs)	[right of=data]					{SIFS};
+	\node [on status]	(ack)	[right of=sifs] 				{ACK};
+	\node [off status]	(cw)	[below of=sifs,label=below:$f_I^{(CW)}(t)$]	{CW};
+	\node [off status]	(free) 	[below of=cw,label=below:$f_I^{(WS)}(t)$]	{WS};
+	\path
+		(data)	edge [bend left]	node {1} 				(sifs)
+		(sifs)	edge [bend left]	node {1} 				(ack)
+		(ack)	edge [bend left]	node [very near end] {p}		(cw)
+		(ack)	edge [bend left]	node [very near end] {1 - p}		(free)
+		(cw)	edge [bend left]	node {1} 				(data)
+		(free)	edge [bend left]	node {1} 				(data)
+	;
+	
+    \begin{pgfonlayer}{background}
+        \node 	[on background,
+                    fit=(data) (sifs) (ack),
+                    pin=-25:Active
+                ] {};
+
+        \node 	[off background,
+                    fit=(cw) (free),
+                    pin=-45:Idle
+			  	] {};
+    \end{pgfonlayer}
+
+\end{tikzpicture}

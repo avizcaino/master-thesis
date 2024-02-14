@@ -1,0 +1,45 @@
+\documentclass{article}
+
+\usepackage[latin1]{inputenc}
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows}
+\begin{document}
+\pagestyle{empty}
+
+\begin{tikzpicture}
+
+% Define block styles
+\tikzstyle{stack} = [diamond, draw, fill=blue!20, 
+    text width=4.5em, text badly centered, node distance=3cm, inner sep=0pt]
+\tikzstyle{block} = [rectangle, draw, fill=blue!20, 
+    text width=5em, text centered, rounded corners, minimum height=4em]
+\tikzstyle{line} = [draw, -latex']
+\tikzstyle{cloud} = [draw, ellipse,fill=red!20, node distance=3cm,
+    minimum height=2em]
+
+	\node []		(ANCHOR)	at (0,0)		{};
+
+	\node [stack]		(WL1)		[left=1cm of ANCHOR]	{1. Phy/WirelessPhy/PowerAware};
+	\node [stack]		(WL2)		[above of=WL1]		{2. Mac/802\_11/Multirate};
+	\node [stack]		(WL3)		[above of=WL2]		{3. Module/Ip/Interface};
+	\node [stack]		(WL4)		[above of=WL3]		{4. Module/Ip/Routing};
+	\node [stack]		(WL5)		[above of=WL4]		{5. Module/Port/Map};
+	\node [stack]		(WL6)		[above of=WL5]		{6. Session};
+	\node []		(WL)		[above of=WL6]		{WLAN};
+	\node []		(WL0)		[below=1cm of WL1]	{};
+
+	\node [stack]		(WS1)		[right=1cm of ANCHOR]	{1. Phy/WirelessPhy/PowerAware};
+	\node [stack]		(WS2)		[above of=WS1]		{2. Module/PhySensor};
+	\node [stack]		(WS3)		[above of=WS2]		{3. Model/*View};
+	\node []		(WS)		[above of=WS3]		{WSN};
+	\node []		(WS0)		[below=1cm of WS1]	{};
+
+	\path		(WL1)		edge		(WL0)
+			(WS1)		edge		(WS0)
+	;
+
+	\node [channel]		(CHA)		[below=1cm of ANCHOR]	{0. Module/DumbWirelessCh};
+
+
+\end{tikzpicture}
+\end{document}

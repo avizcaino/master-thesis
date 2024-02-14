@@ -1,0 +1,386 @@
+% $ biblatex auxiliary file $
+% $ biblatex version 1.7 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated as
+% required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+\entry{ks_discrete}{article}{}
+  \name{author}{2}{}{%
+    {{}%
+     {Arnold}{A.}%
+     {Taylor~B.}{T.~B.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Emerson}{E.}%
+     {John~W.}{J.~W.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{ATBEJW1}
+  \strng{fullhash}{ATBEJW1}
+  \field{sortinit}{A}
+  \field{title}{Nonparametric Goodness-of-Fit tests for Discrete Null
+  Distributions}
+  \field{journaltitle}{The R Journal}
+  \field{year}{2011}
+\endentry
+
+\entry{GSL}{book}{}
+  \name{author}{7}{}{%
+    {{}%
+     {Galassi}{G.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Davies}{D.}%
+     {J.}{J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Theiler}{T.}%
+     {J.}{J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Gough}{G.}%
+     {B.}{B.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Jungman}{J.}%
+     {G.}{G.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Booth}{B.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Rossi}{R.}%
+     {F.}{F.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Network Theory Ltd.}%
+  }
+  \keyw{numerical\_recipes}
+  \strng{namehash}{GM+1}
+  \strng{fullhash}{GMDJTJGBJGBMRF1}
+  \field{sortinit}{G}
+  \field{edition}{3rd}
+  \field{howpublished}{Paperback}
+  \field{isbn}{0954612078, 9780954612078}
+  \field{title}{{Gnu Scientific Library: Reference Manual}}
+  \verb{url}
+  \verb http://www.gnu.org/software/gsl/
+  \endverb
+  \field{year}{2009}
+\endentry
+
+\entry{ActiveMeasure}{inproceedings}{}
+  \name{author}{2}{}{%
+    {{}%
+     {Geirhofer}{G.}%
+     {S.}{S.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Tong}{T.}%
+     {L.}{L.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{GSTL1}
+  \strng{fullhash}{GSTL1}
+  \field{sortinit}{G}
+  \field{booktitle}{Proceedings of the IEEE Conference on Military
+  Communications}
+  \verb{doi}
+  \verb 10.1109/MILCOM.2006.302405
+  \endverb
+  \field{pages}{1\bibrangedash 7}
+  \field{series}{MILCOM 2006}
+  \field{title}{A measurement-based model for dynamic spectrum access}
+  \list{location}{1}{%
+    {Washington, DC, USA}%
+  }
+  \field{month}{10}
+  \field{year}{2006}
+\endentry
+
+\entry{DSA-Emp}{inproceedings}{}
+  \name{author}{3}{}{%
+    {{}%
+     {Geirhofer}{G.}%
+     {S.}{S.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Tong}{T.}%
+     {L.}{L.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Sadler}{S.}%
+     {B.~M.}{B.~M.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {ACM}%
+  }
+  \keyw{WLAN modeling, coexistence, dynamic spectrum access}
+  \strng{namehash}{GSTLSBM1}
+  \strng{fullhash}{GSTLSBM1}
+  \field{sortinit}{G}
+  \field{booktitle}{Proceedings of the first international workshop on
+  Technology and policy for accessing spectrum}
+  \verb{doi}
+  \verb http://doi.acm.org/10.1145/1234388.1234402
+  \endverb
+  \field{isbn}{1-59593-510-X}
+  \field{series}{TAPAS '06}
+  \field{title}{Dynamic spectrum access in {WLAN} channels: empirical model and
+  its stochastic analysis}
+  \verb{url}
+  \verb http://doi.acm.org/10.1145/1234388.1234402
+  \endverb
+  \list{location}{1}{%
+    {Boston, Massachusetts}%
+  }
+  \field{year}{2006}
+  \warn{\item Can't use 'location' + 'address'}
+\endentry
+
+\entry{CMA-Exp}{article}{}
+  \name{author}{3}{}{%
+    {{}%
+     {Geirhofer}{G.}%
+     {S.}{S.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Tong}{T.}%
+     {L.}{L.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Sadler}{S.}%
+     {B.M.}{B.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{Markov decision process;cognitive medium access;cognitive
+  radio;continuous-time Markov chain model;interference constraint;linear
+  programming;multiple parallel WLAN channels;Markov processes;access
+  protocols;cognitive radio;continuous time systems;linear
+  programming;radiofrequency interference;wireless LAN;wireless channels;}
+  \strng{namehash}{GSTLSB1}
+  \strng{fullhash}{GSTLSB1}
+  \field{sortinit}{G}
+  \verb{doi}
+  \verb 10.1109/JSAC.2008.080109
+  \endverb
+  \field{issn}{0733-8716}
+  \field{number}{1}
+  \field{pages}{95\bibrangedash 105}
+  \field{title}{Cognitive Medium Access: Constraining Interference Based on
+  Experimental Models}
+  \field{volume}{26}
+  \field{journaltitle}{IEEE Journal on Selected Areas in Communications}
+  \field{month}{01}
+  \field{year}{2008}
+\endentry
+
+\entry{ioannis_laplace}{inproceedings}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Glaropoulos}{G.}%
+     {I.}{I.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{GI1}
+  \strng{fullhash}{GI1}
+  \field{sortinit}{G}
+  \field{title}{Parameter Estimation of Partially Observed {WLAN} Spectrum
+  Activity via Discrete Stochastic Optimization}
+  \list{location}{1}{%
+    {Stockholm, Sweden}%
+  }
+  \field{month}{10}
+  \field{year}{2011}
+\endentry
+
+\entry{ioannis}{inproceedings}{}
+  \name{author}{4}{}{%
+    {{}%
+     {Glaropoulos}{G.}%
+     {I.}{I.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Fodor}{F.}%
+     {V.}{V.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Pescosolido}{P.}%
+     {L.}{L.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Petrioli}{P.}%
+     {C.}{C.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{GIFVPLPC1}
+  \strng{fullhash}{GIFVPLPC1}
+  \field{sortinit}{G}
+  \field{booktitle}{Proceedings of 6th International Conference on Cognitive
+  Radio Oriented Wireless Networks and Communications}
+  \field{series}{CrownCom 2011}
+  \field{title}{Cognitive {WSN} Transmission Control for Energy Efficiency
+  under {WLAN} Coexistence}
+  \list{location}{1}{%
+    {Osaka, Japan}%
+  }
+  \field{month}{06}
+  \field{year}{2011}
+\endentry
+
+\entry{Campus-WLAN}{inproceedings}{}
+  \name{author}{4}{}{%
+    {{}%
+     {Hern\'{a}ndez-Campos}{H.-C.}%
+     {F.}{F.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Karaliopoulos}{K.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Papadopouli}{P.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Shen}{S.}%
+     {H.}{H.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {ACM}%
+  }
+  \strng{namehash}{HCFKMPMSH1}
+  \strng{fullhash}{HCFKMPMSH1}
+  \field{sortinit}{H}
+  \field{booktitle}{Proceedings of the 2nd annual international workshop on
+  Wireless internet}
+  \verb{doi}
+  \verb http://doi.acm.org/10.1145/1234161.1234162
+  \endverb
+  \field{isbn}{1-59593-510-X}
+  \field{series}{WICON '06}
+  \field{title}{Spatio-temporal modeling of traffic workload in a campus WLAN}
+  \verb{url}
+  \verb http://doi.acm.org/10.1145/1234161.1234162
+  \endverb
+  \list{location}{1}{%
+    {Boston, Massachusetts}%
+  }
+  \field{year}{2006}
+  \warn{\item Can't use 'location' + 'address'}
+\endentry
+
+\entry{marcello-thesis}{inproceedings}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Lagana}{L.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{LM1}
+  \strng{fullhash}{LM1}
+  \field{sortinit}{L}
+  \field{title}{Cognitive {WSN} Access Based on Local {WLAN} Traffic
+  Estimation}
+  \list{location}{1}{%
+    {Stockholm, Sweden}%
+  }
+  \field{year}{2011}
+\endentry
+
+\entry{marcello}{inproceedings}{}
+  \name{author}{4}{}{%
+    {{}%
+     {Lagana}{L.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Glaropoulos}{G.}%
+     {I.}{I.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Fodor}{F.}%
+     {V.}{V.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Petrioli}{P.}%
+     {C.}{C.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{LMGIFVPC1}
+  \strng{fullhash}{LMGIFVPC1}
+  \field{sortinit}{L}
+  \field{booktitle}{Proceedings {IEEE} Wireless Communications and Networking
+  Conference}
+  \field{note}{Accepted}
+  \field{title}{Modeling and Estimation of Partially Observed {WLAN} Activity
+  for Cognitive {WSN}s}
+  \field{month}{04}
+  \field{year}{2012}
+\endentry
+
+\entry{NSMiracle}{manual}{}
+  \list{organization}{1}{%
+    {Dipartimento di Ingegneria dell'Informazione - Università degli Studi di
+  Padova}%
+  }
+  \field{sortinit}{N}
+  \field{title}{NS-Miracle: Multi-InteRfAce Cross-Layer Extension library for
+  the Network Simulator}
+  \verb{url}
+  \verb http://telecom.dei.unipd.it/pages/read/58/
+  \endverb
+\endentry
+
+\lossort
+\endlossort
+
+\endinput

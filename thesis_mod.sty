@@ -1,0 +1,439 @@
+% thesis package
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{thesis}[2011/14/08 Thesis package]
+
+\RequirePackage{fixltx2e}		% fix some latex stuff
+
+\RequirePackage{kvoptions}
+
+\SetupKeyvalOptions {
+	family=Thesis,
+	prefix=Thesis@
+}
+
+\DeclareStringOption[Author]{author}
+\DeclareStringOption[Title]{title}
+\DeclareStringOption[Subtitle]{subtitle}
+\DeclareStringOption[Degree]{degree}
+\DeclareStringOption[University]{university}
+\DeclareStringOption[Faculty]{faculty}
+\DeclareStringOption[Department]{department}
+\DeclareStringOption[Course]{course}
+\DeclareStringOption[Chair]{chair}
+\DeclareStringOption[Professor 1]{proffirst}
+\DeclareStringOption[Professor 1 Location]{proffirstloc}
+\DeclareStringOption[Professor 2]{profsecond}
+\DeclareStringOption[Professor 2 Location]{profsecondloc}
+\DeclareStringOption[Location]{location}
+\DeclareStringOption[Academic Year]{year}
+\DeclareStringOption[Date]{date}
+\DeclareStringOption[0,0,0]{colorbase}
+\DeclareStringOption[0.1,0.1,0.1]{colordark}
+\DeclareStringOption[0.5,0.5,0.5]{colorlight}
+\DeclareStringOption[english]{language}
+\DeclareStringOption{bibpath}
+\DeclareStringOption{xmppath}
+
+\ProcessKeyvalOptions*
+
+\author{\Thesis@author}
+\title{\Thesis@title\ \Thesis@subtitle}
+%\subtitle{\Thesis@subtitle}
+\date{\Thesis@date}
+
+\RequirePackage{ifthen}
+
+\RequirePackage[\Thesis@language]{babel}		% setup language
+%\selectlanguage{\Thesis@language}
+%\PackageWarningNoLine{\@currname}{Language: \Thesis@language}
+
+	\raggedbottom 
+\RequirePackage[strict]{changepage}			% easily change the margins of pages
+\RequirePackage{mparhack}
+\RequirePackage{multicol}
+\RequirePackage{xspace}					% to get the spacing after macros right
+\RequirePackage{geometry}				% for easy management of document margins and the document page size
+\RequirePackage{relsize}				% scale font
+\RequirePackage[table]{xcolor}				% use colors
+	\xdefinecolor{colorbase}{rgb}{\Thesis@colorbase}
+	\xdefinecolor{colorlight}{rgb}{\Thesis@colorlight}
+	\xdefinecolor{colordark}{rgb}{\Thesis@colordark}
+	\xdefinecolor{colorgrey}{rgb}{0.35,0.35,0.35}
+	\xdefinecolor{colorgrey2}{rgb}{0.45,0.45,0.45}
+	\xdefinecolor{lightgray}{rgb}{0.95,0.95,0.95}
+
+\RequirePackage{fancyhdr}				% fancy headers
+\RequirePackage{fancyvrb}				% fancy verbatim
+	\pagestyle{fancy}
+\let\origdoublepage\cleardoublepage
+\newcommand{\clearemptydoublepage}{			% avoid empty page with header
+	\clearpage
+	{\pagestyle{empty}\origdoublepage}
+}
+\let\cleardoublepage\clearemptydoublepage
+% 	\cleardoublepage{				% avoid empty page with header
+% 		\clearpage
+% 		\if@twoside
+% 			\ifodd\c@page
+% 			\else
+% 				\hbox{}
+% 				\vspace*{\fill}
+% 				\thispagestyle{empty}
+% 				\newpage
+% 				\if@twocolumn
+% 					\hbox{}
+% 				\fi
+% 			\fi
+% 		\fi
+% 	}
+%   	
+\RequirePackage{titlesec}
+\RequirePackage{tocloft}
+\RequirePackage{abstract}
+
+\RequirePackage[
+	perpage,
+	marginal,
+	bottom
+	]{footmisc}					% footnote helpers
+	\interfootnotelinepenalty=10000
+\RequirePackage[footnotesize,bf]{caption}		% customization of appearance and placement of captions
+\RequirePackage{verbatim}				% verbatim package (for inserting code)
+\RequirePackage{enumitem}
+	\setlist{font=}
+		
+\RequirePackage{listings}				% insert programming code within the document
+	\lstset{
+		commentstyle=\color{gray},
+		fancyvrb=true,
+	}
+
+\RequirePackage{textcomp}				% some text symbols
+\RequirePackage{textcase}
+\RequirePackage[
+	expansion=true,
+	protrusion=true
+	]{microtype}					% microtypographic features
+%	\microtypesetup{expansion=false}
+
+\RequirePackage{array}					% handle tables
+\RequirePackage{tabularx}				% extended tables
+\RequirePackage{longtable}				% another table helper
+\RequirePackage{multirow}				% multirows for a table
+\RequirePackage{float}					% float figures
+\RequirePackage{graphicx}				% to manage external pictures
+\RequirePackage{subfig}					% sub figures support
+\RequirePackage{pgf}					% image builder
+\RequirePackage{tikz}					% trick for image builder
+
+\RequirePackage{amsmath}				% advanced math extensions
+\RequirePackage{amsfonts}				% advanced math extensions - fonts
+\RequirePackage{amsthm}					% advanced math extensions - theorem
+\RequirePackage{amssymb}				% advanced math extensions - symbols
+\RequirePackage{latexsym}				% other mathematical symbols
+\RequirePackage{mathrsfs}				% other mathematical symbols
+
+\RequirePackage[
+		euler-digits,
+%		euler-hat-accent,
+		OT1
+	]{eulervm}					% euler fonts for math
+	\renewcommand{\rmdefault}{pplx}
+	\linespread{1.05}				% Palatino needs more leading
+
+\ifx\Thesis@xmppath\@empty\else
+	\RequirePackage{xmpincl}			% license metadata - http://creativecommons.org/license
+		\includexmp{\Thesis@xmppath}		% path for metadata
+		\RequirePackage{ccicons}		% creative commons symbol
+\fi
+
+\ifx\Thesis@bibpath\@empty\else
+	\RequirePackage[
+		maxnames=4,
+		style=numeric-comp,
+%		style=numeric,
+		hyperref,
+		backref
+		]{biblatex}				% bibliography
+	\bibliography{\Thesis@bibpath}  
+	\RequirePackage[babel]{csquotes}		% quotation helper
+\fi
+
+\RequirePackage{makeidx}				% word index
+\RequirePackage[
+	printonlyused,
+	smaller,
+	withpage
+	]{acronym}					% manage acronyms with \acro{〈acronym〉}[〈short name〉]{〈full name〉}
+	% \acroextra inside description will not used \ac{...} for cite (first time full)
+	% \acf for forcing the printing \acs for the short name
+	\renewcommand{\bflabel}[1]{#1\hfill}		% fix the list of acronyms
+
+	% fix for hyphenation and acronym
+% 	\renewcommand*\AC@get[3]{
+% 	    \ifx#1\relax
+% 	       \PackageWarning{acronym}{Acronym `#3' is not defined}
+% 	       \textbf{#3!}
+% 	    \else
+% 	       \expandafter#2#1
+% 	    \fi}
+
+\RequirePackage{ifpdf}					% setup pdf
+\RequirePackage[
+	hyperfootnotes,
+	pdfpagelabels,
+	colorlinks,
+%	bookmarks=false,
+%	pdftex
+	]{hyperref}					% cross linking in the pdf
+
+	\ifpdf
+	\pdfcompresslevel=9
+	\pdfadjustspacing=1 
+	\pdfinfo {
+		/Author (\Thesis@author)
+		/Title (\Thesis@degree)
+		/Subject (\Thesis@title \Thesis@subtitle)
+	%	/Keywords (cognitive radio network)
+	%	/CreationDate (D:20110202101620)
+	}
+	\fi
+
+	\hypersetup{	
+	    bookmarks=true,		% show bookmarks bar?
+	    unicode=true,		% non-Latin characters in Acrobat’s bookmarks
+	    pdftoolbar=true,		% show Acrobat’s toolbar?
+	    pdfmenubar=true,		% show Acrobat’s menu?
+	    pdffitwindow=false,		% window fit to page when opened
+	    pdfstartview={FitH},	% fits the width of the page to the window
+	    pdftitle={\Thesis@degree},	% title
+	    pdfauthor={\Thesis@author},	% author
+	    pdfsubject={\Thesis@title~\Thesis@subtitle},   % subject of the document
+%	    pdfcreator={Creator},	% creator of the document
+%	    pdfproducer={Producer},	% producer of the document
+%	    pdfkeywords={keyword1} {key2} {key3}, % list of keywords
+	    pdfnewwindow=true,		% links in new window
+	    colorlinks=true,		% false: boxed links; true: colored links
+	    linkcolor=colorbase,	% color of internal links
+	    citecolor=colorbase,	% color of links to bibliography
+	    filecolor=colorbase,	% color of file links
+	    urlcolor=colorbase		% color of external links
+	}
+
+% \RequirePackage{siunitx} -> not using configured fonts
+
+% -----------------------
+% page customizations
+% -----------------------
+%\addtolength{\textheight}{1in}
+\setlength{\textheight}{640pt}
+\renewcommand{\sfdefault}{iwona}
+
+\newfont{\chapterNumber}{cmb10 scaled 5000}		%número capítol gros
+\newfont{\sectionNumber}{cmb10}					%número de secció
+
+\DeclareRobustCommand{\spacedallcaps}[1]{\textls[160]{\MakeTextUppercase{#1}}}
+\DeclareRobustCommand{\spacedlowsmallcaps}[1]{\textls[80]{\scshape\MakeTextLowercase{#1}}}
+
+% add a chapter without numbering
+\newcommand{\chapternotoc}[1]{
+	\chapter*{#1}
+	\addcontentsline{toc}{chapter}{#1}
+	\markboth
+		{\normalfont\spacedlowsmallcaps{#1}}
+		{\normalfont\spacedlowsmallcaps{#1}}
+}
+
+\ifx\Thesis@bibpath\@empty\else
+	\defbibheading{bibliography}{				% bibliography style
+		\chapternotoc{\bibname}
+	}
+\fi
+
+% -------------------
+%  fancy editing
+% -------------------
+
+\fancyhf{}
+\renewcommand{\headrulewidth}{0.0pt}			% remove the line of the header
+
+% fancy charapter and section headings
+\renewcommand{\chaptermark}[1]{
+	\markboth
+		{\normalfont\spacedlowsmallcaps{#1} \textsc{\MakeTextLowercase{\thechapter}}}
+		{\normalfont\textsc{\MakeTextLowercase{\thechapter}} \spacedlowsmallcaps{#1}}
+}
+\renewcommand{\sectionmark}[1]{
+	\markboth
+		{\normalfont\spacedlowsmallcaps{#1} \textsc{\MakeTextLowercase{\thesection}}}
+		{\normalfont\textsc{\MakeTextLowercase{\thesection}} \spacedlowsmallcaps{#1}}
+}
+
+\fancypagestyle{begin}{
+	\fancyhf{}								% clear all header and footer fields
+	\fancyfoot[C]{\small\thepage}	% except the center
+	\renewcommand{\headrulewidth}{0pt}
+	\renewcommand{\footrulewidth}{0pt}
+}
+
+% fancy header on head, with colored chapt name and line, black page number
+\if@twoside
+	\fancyhead[LE]{\mbox{										%header left
+		\llap{\small\thepage\kern1em\vline}						%number of the page
+		\hspace{0em}\leftmark\hfil								%text of the header
+	}}
+	\fancyhead[RO]{\mbox{										%header right
+		\hfil{\rightmark\hspace{0em}}							%text of the header
+		\rlap{\vline\kern1em\small\thepage}						%number of the page
+	}}
+
+	% redefine plain for chapter pages
+	\fancypagestyle{plain}{
+		\fancyhead[LE]{\mbox{									%header for first page of chapter left
+			\llap{\small\thepage\kern1em}						%number of the page
+		}}
+		\fancyhead[RO]{\mbox{									%header for first page of chapter right
+			\rlap{\kern1em\small\thepage}						%number of the page
+		}}
+	}
+\else
+	\fancyhead[R]{\mbox{
+		\hfil{\color{colordark}\rightmark\hspace{0.5em}}
+		\rlap{\small{\color{colorlight}\vline}\kern1em\small\thepage}
+	}}
+
+	% redefine plain for chapter pages
+	\fancypagestyle{plain}{
+		\fancyhead[R]{\mbox{
+			\rlap{\kern1em\small\thepage}
+		}}
+	}
+\fi
+
+% -----------------------
+% table of contents
+% -----------------------
+\tocloftpagestyle{begin}
+\renewcommand{\cfttoctitlefont}{\normalfont\Large\bfseries}
+\renewcommand{\cftaftertoctitle}{
+	\pdfbookmark[0]{Table of Contents}{Table of Contents}
+}
+%\renewcommand{\cftbeforetoctitleskip}{10pt}
+\renewcommand{\cftaftertoctitleskip}{10pt}
+
+\renewcommand{\cftpartpagefont}{\bfseries\large}
+%\renewcommand{\cftpartpresnum}{\rmfamily}
+%\renewcommand{\cftpartaftersnum}{}
+\renewcommand{\cftchappagefont}{\bfseries}
+%\renewcommand{\cftchappresnum}{\sectionNumber}
+\renewcommand{\cftsecpagefont}{\bfseries}
+%\renewcommand{\cftsecpresnum}{\sectionNumber}
+\renewcommand{\cftsubsecpagefont}{\bfseries}
+%\renewcommand{\cftsubsecpresnum}{\sectionNumber}
+\renewcommand{\cftsubsubsecpagefont}{\bfseries}
+%\renewcommand{\cftsubsubsecpresnum}{\sectionNumber}
+
+
+% Use of selected font for the titles of sectioning units (chapters, sections, sub-
+% sections, sub-subsections, paragraphs, subparagraphs) and for the la-
+% bels of description lists.
+
+% parts
+\titleformat{\part}[display]
+{
+	\normalfont\centering\large
+}{
+	\thispagestyle{empty}\partname~\thepart
+}{
+	1em
+}{
+	%\sffamily 
+	\huge %\color{colordark}
+	\spacedallcaps
+}
+
+% chapter
+\titleformat{\chapter}[block]
+{
+	\normalfont\Large\bfseries %\sffamily
+}
+{
+	{\chapterNumber\thechapter\hspace{10pt}\vline}			%number of the chapter (big)
+}{
+	10pt
+}{
+	\spacedallcaps
+}
+
+% section
+\titleformat{\section}
+{
+	\normalfont\Large\bfseries
+}{
+	\sectionNumber											%number of the section (big)
+	\textsc{{\thesection}}
+	\hspace{10pt}\vline
+}{
+	1em
+}{
+	%\spacedlowsmallcaps
+}
+
+% subsections
+\titleformat{\subsection}
+{
+	\normalfont %\sffamily
+}{
+	\sectionNumber											%number of the section (big)
+	\textsc{\MakeTextLowercase{\thesubsection}}
+	\hspace{10pt}\vline
+}{
+	1em
+}{
+	\normalsize
+}
+
+% subsubsections
+\titleformat{\subsubsection}
+{
+	\normalfont %\sffamily
+	\itshape
+}{
+	\sectionNumber											%number of the section (big)
+	\textsc{\MakeTextLowercase{\thesubsubsection}}
+	\hspace{10pt}\vline
+}{
+	1em
+}{
+	\normalsize\itshape
+}
+
+% paragraphs
+\titleformat{\paragraph}[runin]
+{
+	\normalfont\normalsize %\sffamily
+}{
+	\sectionNumber											%number of the section (big)
+	\text{\MakeTextLowercase{\theparagraph}}
+	\hspace{10pt}\vline
+}{
+	0pt
+}{
+	\spacedlowsmallcaps
+}
+
+\renewcommand{\descriptionlabel}[1]{
+	\hspace*{\labelsep}\bfseries\spacedlowsmallcaps{#1}
+}
+
+\titlespacing*{\chapter}{0pt}{1\baselineskip}{2\baselineskip}
+\titlespacing*{\section}{0pt}{2\baselineskip}{.8\baselineskip}[\marginparsep]
+\titlespacing*{\subsection}{0pt}{1.5\baselineskip}{.8\baselineskip}[\marginparsep]
+\titlespacing*{\paragraph}{0pt}{1\baselineskip}{1\baselineskip}
+
+% itemize, bullet with light color
+\renewcommand\labelitemi{$\bullet$}
+
+% caption
+\captionsetup{format=hang,font=small,labelfont={sf,bf}}
+\captionsetup[table]{skip=\medskipamount}

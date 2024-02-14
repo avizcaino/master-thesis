@@ -1,0 +1,34 @@
+\section{Scenario} \label{sec:scenario}
+
+The considered networking scenario consists of a single \ac{WLAN} access point area with a \ac{WSN} deployed inside (Figure \ref{fig:scenario}) \cite{Scenario}.
+The \ac{WLAN} operates in that area of coverage with a radius of 100-150 meters, while communicating in the ISM band according to the 802.11 \acs{IEEE} standard with a transmission power in the order of 15-20 dBm. On the other hand, the transmission power of the \ac{WSN} nodes, that operates within a band inside the \ac{WLAN} channel, is assumed to be around two orders of magnitude lower than that of the coexisting \ac{WLAN}.
+
+Due to this power difference, we also assume that the \ac{WLAN} devices are unaware (\textit{blind}) of the \ac{WSN} communication \cite{ZigBee}, since their carrier sense fail to detect low-power \ac{WSN} transmission and consequently they do not defer from accessing the medium. The opposite does not hold and it is possible to assume that the \ac{WLAN} communication is not affected by the \ac{WSN} operation in the \ac{ISM} band.
+
+The number and the locations of the \ac{WLAN} terminals are unknown, independently and identically distributed inside the \ac{AP} coverage area, while the sensor locations are also uniformly distributed but with \ac{WSN} topology \textit{known} to all nodes.
+
+\begin{figure}[!htbp]
+	\begin{center}
+		\includegraphics[scale=0.85]{images/networkingscenario.pdf}
+	\end{center}
+	\caption{The considered networking scenario.}
+	\label{fig:scenario}
+\end{figure}
+
+\ac{WSN} nodes operate in ad-hoc manner and under a \textit{light load regime}. This leads to the assumption of a negligible channel contention among them. Since they are energy constrained, we need to minimize the energy consumption for operation, limiting their awake time. Thus, their \ac{MAC} is based on asynchronous duty-cycled schemes \cite{X-MAC}, enhanced by cognitive functionality, such as \ac{WLAN} traffic sensing and prediction, as well as next-hop \& frame length optimization \cite{Scenario}.
+
+The duty cycle approach drastically reduces the energy consumption, since the nodes periodically alternate between the awake and longer sleep states. Then we could intervene on their communication to cut more power consumption, decreasing the number of unsuccessful transmissions and, hence, the consequent retransmissions. Thus, the frame transmission time (frame size) and the neighbor destination are optimized accordingly with the collision probability model that has been proposed in \cite{Scenario}, which is built on the \ac{WLAN} idle period distribution.
+
+\begin{figure}[!htbp]
+	\begin{center}
+		\input{images/cognitive_cycle}
+	\end{center}
+	\caption{The proposed cognitive cycle.}
+	\label{fig:cogn_cycle}
+\end{figure}
+
+To derive the \ac{WLAN} traffic model, the \ac{WSN} duty cycles are interleaved in a Cognitive Cycle (Figure \ref{fig:cogn_cycle}) with a measurement period. During each measurement period the sensors perform continuous sensing of the channel, and collect statistics of the idle times wich are then used to estimate the idle time distribution. Once the \ac{WLAN} activity has been statistically modeled, the sensors could use this information in their communication afterwards.
+
+Although the accuracy increases with the number of samples, the measurement process should not be long because it consumes energy and forbids the data communication.
+
+The sensors need to repeat the measure process to follow the changes of the \ac{WLAN} traffic pattern on a larger time-scale. This issue will be addressed in future work.

@@ -1,0 +1,199 @@
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\defcounter {refsection}{0}\relax 
+\select@language {english}
+\defcounter {refsection}{0}\relax 
+\addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Networking Scenario\relax }}{2}{figure.caption.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {1.2}{\ignorespaces Multi-layer traffic model \cite {Campus-WLAN}\relax }}{3}{figure.caption.4}
+\defcounter {refsection}{0}\relax 
+\addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {2.1}{\ignorespaces WLAN channel model with all the states \cite {DSA-Emp}\relax }}{9}{figure.caption.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Semi-markovian model\relax }}{9}{figure.caption.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Global View model scenario [Example]\relax }}{11}{figure.caption.7}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Local View model scenario and sensing model\relax }}{13}{figure.caption.8}
+\defcounter {refsection}{0}\relax 
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Local View model scenario (example)}}}{13}{subfigure.4.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Real and binary sensing models}}}{13}{subfigure.4.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Semi-markovian model \cite {marcello}\relax }}{13}{figure.caption.9}
+\defcounter {refsection}{0}\relax 
+\addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Multi-layer WLAN traffic model\relax }}{17}{figure.caption.11}
+\defcounter {refsection}{0}\relax 
+\addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Protocol stacks for \acs {WLAN} and \acs {WSN} \cite {marcello-thesis}\relax }}{24}{figure.caption.14}
+\defcounter {refsection}{0}\relax 
+\addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Example of a single user realization with uniform placement\relax }}{31}{figure.caption.17}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Example of an Idle distribution using exponential interarrival time and constant packet size\relax }}{31}{figure.caption.19}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Example of different Idle periods distribution for different distributions for the packet sizes. The active distribution do not affect the Idle function behavior.\relax }}{32}{figure.caption.21}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Examples of different Idle functions for different Idle distributions\relax }}{33}{figure.caption.22}
+\defcounter {refsection}{0}\relax 
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Different mean values for the same packet inter-arrival distribution affect the Idle distribution.}}}{33}{subfigure.4.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Different packet inter-arrival distributions with same mean do not affect the final Idle periods distribution.}}}{33}{subfigure.4.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.5}{\ignorespaces CDF of the p-value for different packet inter-arrival distributions (Uniform Packet Size - mean: 386 bytes)\relax }}{35}{figure.caption.26}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Perfect fitting of the \acs {CDF} of the experimental and empirical functions for very low p-value.\relax }}{35}{figure.caption.27}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.7}{\ignorespaces P-value failure rate in the \acs {K-S} test using different number of samples. Exponential packet interarrival with mean 100 ms\relax }}{36}{figure.caption.29}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Session number experiment - User realizations\relax }}{37}{figure.caption.31}
+\defcounter {refsection}{0}\relax 
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {3 sessions}}}{37}{subfigure.8.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {9 sessions}}}{37}{subfigure.8.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {18 sessions}}}{37}{subfigure.8.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.9}{\ignorespaces Idle distributions for different number of sessions\relax }}{38}{figure.caption.32}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.10}{\ignorespaces CDF of the loads for each one of the five experiments\relax }}{39}{figure.caption.35}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.11}{\ignorespaces CDF of P-value and D-value from the KS test for each experiment\relax }}{40}{figure.caption.37}
+\defcounter {refsection}{0}\relax 
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {P-value}}}{40}{subfigure.11.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {D-value}}}{40}{subfigure.11.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.12}{\ignorespaces Number of tests per load region (aggregate from all the experiments)\relax }}{41}{figure.caption.38}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.13}{\ignorespaces Mean P-value for the different load regions\relax }}{41}{figure.caption.39}
+\defcounter {refsection}{0}\relax 
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {5 experiments}}}{41}{subfigure.13.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Aggregate}}}{41}{subfigure.13.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.14}{\ignorespaces Mean D-value for the different load regions\relax }}{42}{figure.caption.40}
+\defcounter {refsection}{0}\relax 
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {5 experiments}}}{42}{subfigure.14.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Aggregate}}}{42}{subfigure.14.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.15}{\ignorespaces Autocorrelation function of the different sources of DATA packets for different number of sessions with similar load. The correlation between samples is reduced for higher number of sources.\relax }}{43}{figure.caption.42}
+\defcounter {refsection}{0}\relax 
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{43}{subfigure.15.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{43}{subfigure.15.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{43}{subfigure.15.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.16}{\ignorespaces Autocorrelation function for 10 sessions for different load cases\relax }}{44}{figure.caption.44}
+\defcounter {refsection}{0}\relax 
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {14.2581249 \%}}}{44}{subfigure.16.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {21.474477 \%}}}{44}{subfigure.16.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {37.280606 \%}}}{44}{subfigure.16.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {49.485722 \%}}}{44}{subfigure.16.4}
+\defcounter {refsection}{0}\relax 
+\addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.1}{\ignorespaces User realizations for the Local View autocorrelation experiments (examples)\relax }}{47}{figure.caption.45}
+\defcounter {refsection}{0}\relax 
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {8 sessions}}}{47}{subfigure.1.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {15 sessions}}}{47}{subfigure.1.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Autocorrelation of the IN/OUT sequences for 8 sessions.\relax }}{48}{figure.caption.46}
+\defcounter {refsection}{0}\relax 
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Sensor 0 - Obs: 2 sessions}}}{48}{subfigure.2.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Sensor 1 - Obs: 4 sessions}}}{48}{subfigure.2.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Sensor 2 - Obs: 2 sessions}}}{48}{subfigure.2.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.3}{\ignorespaces Autocorrelation of the IN/OUT sequences for 15 sessions.\relax }}{48}{figure.caption.47}
+\defcounter {refsection}{0}\relax 
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Sensor 0 - Obs: 5 sessions}}}{48}{subfigure.3.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Sensor 1 - Obs: 7 sessions}}}{48}{subfigure.3.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Sensor 2 - Obs: 3 sessions}}}{48}{subfigure.3.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {Sensor 3 - Obs: 8 sessions}}}{48}{subfigure.3.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {Sensor 4 - Obs: 8 sessions}}}{48}{subfigure.3.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.4}{\ignorespaces 8 sessions - Example of fitting of the geometric distribution and autocorrelation of the IN/OUT sequence + consecutive skipped active periods\relax }}{49}{figure.caption.48}
+\defcounter {refsection}{0}\relax 
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Sensor 0: Observes 2 users}}}{49}{subfigure.4.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.5}{\ignorespaces 15 sessions - Example of fitting of the geometric distribution and autocorrelation of the IN/OUT sequence + consecutive skipped active periods\relax }}{50}{figure.caption.49}
+\defcounter {refsection}{0}\relax 
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Sensor 4: Observes 8 users}}}{50}{subfigure.5.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.6}{\ignorespaces CDF of the MSE for different sensors\relax }}{51}{figure.caption.51}
+\defcounter {refsection}{0}\relax 
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {8 sessions}}}{51}{subfigure.6.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {15 sessions}}}{51}{subfigure.6.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.7}{\ignorespaces CDF of the p-value using the Chi-square Goodness-of-fit test\relax }}{51}{figure.caption.52}
+\defcounter {refsection}{0}\relax 
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{51}{subfigure.7.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{51}{subfigure.7.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.8}{\ignorespaces Fitting of the empirical and geometric distributions for different p-values\relax }}{52}{figure.caption.53}
+\defcounter {refsection}{0}\relax 
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{52}{subfigure.8.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{52}{subfigure.8.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.9}{\ignorespaces User realization for the Local View session experiment\relax }}{52}{figure.caption.54}
+\defcounter {refsection}{0}\relax 
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {5 sessions - 3 sensors}}}{52}{subfigure.9.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {10 sessions - 3 sensors}}}{52}{subfigure.9.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {15 sessions - 5 sensors}}}{52}{subfigure.9.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {20 sessions - 5 sensors}}}{52}{subfigure.9.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.10}{\ignorespaces Session experiment for the Local View model (I). Different session cases using the same traffic configuration for flow number and flow inter-arrivals.\relax }}{54}{figure.caption.57}
+\defcounter {refsection}{0}\relax 
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {5 sessions (Load range: 8-10\%)}}}{54}{subfigure.10.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {10 sessions (Load range: 12-15\%)}}}{54}{subfigure.10.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.11}{\ignorespaces Session experiment for the Local View model (II). Different session cases using the same traffic configuration for flow number and flow inter-arrivals.\relax }}{55}{figure.caption.58}
+\defcounter {refsection}{0}\relax 
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {15 sessions (Load range: 20-25\%)}}}{55}{subfigure.11.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {20 sessions (Load range: 30-35\%)}}}{55}{subfigure.11.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.12}{\ignorespaces User realization for the Local View load experiment\relax }}{56}{figure.caption.59}
+\defcounter {refsection}{0}\relax 
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {8 sessions}}}{56}{subfigure.12.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {15 sessions}}}{56}{subfigure.12.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.13}{\ignorespaces Load experiment for the Local View model (I). Different number of sessions with similar load.\relax }}{57}{figure.caption.60}
+\defcounter {refsection}{0}\relax 
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {8 sessions - $\approx $ 25 \% load}}}{57}{subfigure.13.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {15 sessions - $\approx $ 25 \% load}}}{57}{subfigure.13.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.14}{\ignorespaces Load experiment for the Local View model (II). Different number of sessions with similar load.\relax }}{58}{figure.caption.61}
+\defcounter {refsection}{0}\relax 
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {8 sessions - $\approx $ 35 \% load}}}{58}{subfigure.14.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {15 sessions - $\approx $ 35 \% load}}}{58}{subfigure.14.2}
+\defcounter {refsection}{0}\relax 
+\addvspace {10\p@ }

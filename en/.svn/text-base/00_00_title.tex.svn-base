@@ -1,0 +1,121 @@
+\makeatletter
+
+\thispagestyle{empty}
+
+\changepage{
+	5in	% 〈text height〉
+}{
+	62pt	% 〈text width〉
+}{
+	-20pt	% 〈even-side margin〉
+}{
+	-20pt	% 〈odd-side margin〉
+}{
+		% 〈column sep.〉
+}{
+		% 〈topmargin〉
+}{
+	-12pt	% 〈headheight〉
+}{
+	-25pt	% 〈headsep〉
+}{
+	-30pt	% 〈footskip〉
+}
+
+\begin{titlepage}
+
+	\pdfbookmark[1]{Frontespizio}{Frontespizio}
+	
+	\vbox{
+	
+		\begin{adjustwidth}{0cm}{-0.5cm}
+			\includegraphics[scale=0.1]{images/logo_kth.pdf} \hspace{0.2cm} \Large \sffamily \bfseries \textsc{\Thesis@university}
+		\end{adjustwidth}
+
+	\hbox{
+	
+		\mbox{\hspace{1.42cm}}		% space
+				
+		\vbox{
+			\begin{flushleft}
+		        \normalsize \textcolor{colorbase}{\textbf{\Thesis@faculty}} \\
+        		\normalsize \textcolor{colorbase}{\textbf{\Thesis@department}} \\
+%        		\normalsize \Thesis@chair
+			\end{flushleft}
+
+			%titolo
+			\vspace{3.5cm}
+			\begin{flushleft}
+				\Large \sffamily \bfseries \textcolor{colorbase}{\textsc{\Thesis@title}} \\
+				\Large \sffamily \bfseries \textcolor{colorbase}{\textsc{\Thesis@subtitle}}
+			\end{flushleft}
+			
+			% facoltà
+%			\vspace{4.2cm}
+
+			
+			% me
+			\vspace{8.5cm}
+			\begin{flushleft}
+%				\normalsize \textbf{Candidato} \\
+				\large \textbf{\Thesis@author} \\
+%				\normalsize \textbf{1046581}
+			\end{flushleft}
+
+% 			\vspace{1.4cm}
+
+%			\begin{flushleft}
+%				\normalsize Advisor \\
+%				\normalsize \text{\Thesis@proffirst} \\
+%				\normalsize \text{\Thesis@proffirstloc}
+%			\end{flushleft}
+
+%			\vbox{
+%				\begin{multicols}{2} 					
+%	 				\begin{flushleft}
+%						\normalsize Relatore \\
+%						\normalsize \text{\Thesis@proffirst} \\
+%						\normalsize \text{\Thesis@proffirstloc}
+%					\end{flushleft}
+%					\begin{flushleft}
+%						\normalsize Correlatore \\
+%						\normalsize \text{\Thesis@profsecond} \\
+%						\normalsize \text{\Thesis@profsecondloc}
+%					\end{flushleft}
+%				\end{multicols}
+%			}
+			
+
+%			\vspace{0.8cm}
+%			\begin{flushleft}
+%				\normalsize \text{\Thesis@year}
+%			\end{flushleft}
+		}
+	}
+}
+		
+\end{titlepage}
+
+\changepage{
+	-5in	% 〈text height〉
+}{
+	-62pt	% 〈text width〉
+}{
+	20pt	% 〈even-side margin〉
+}{
+	20pt	% 〈odd-side margin〉
+}{
+		% 〈column sep.〉
+}{
+		% 〈topmargin〉
+}{
+	12pt	% 〈headheight〉
+}{
+	25pt	% 〈headsep〉
+}{
+	30pt	% 〈footskip〉
+}
+
+\makeatother
+
+\newpage

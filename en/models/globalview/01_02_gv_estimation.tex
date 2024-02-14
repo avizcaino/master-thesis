@@ -1,0 +1,12 @@
+\subsection{Estimation} \label{sec:globalview_estimation}
+As it has been presented at the beginning of this chapter, the \acs{WLAN} traffic can be modeled with a semi-Markovian model of two states: active and idle.
+
+The active distribution is composed by two parameters: $\alpha_{on}$ and $\beta$. Each one of these parameters can be estimated by the shortest and largest active periods in the network.
+
+On the other hand, the idle distribution presents a more elaborate definition. The distribution is composed by a mixture model which is defined by two distributions: uniform and generalized pareto, defined for ${[0, \alpha_{bk}]}$ and $[t > \alpha_{bk}]$ respectively. The generalized pareto is defined by ($\xi$ and $\sigma$) parameters, while the uniform distribution will be used to determine the third parameter $p$ for the mixture idle distribution. For the estimation of the generalized pareto parameters, the short samples will be filtered and only the larger ones ($t < \alpha_{bk}$) will be used in the estimation process.
+
+The estimation of the $\xi$ and $\sigma$ parameters for the generalized pareto distribution will be performed using Maximum Likelihood Estimation (\acs{MLE}). The \acs{MLE} estimator has been implemented previously in the framework presented in \cite{marcello-thesis} and is a method for estimating the parameters of a statistical model. The method selects values of the model parameters that produce a distribution that gives the greatest probability to the observed data.
+
+Once the estimation of the ($\xi$ and $\sigma$) parameters is completed, it is necessary to estimate the $p$ for the mixture distribution in order to delimit the uniform and generalized pareto distributions. This parameter can be obtained in two different ways: \acs{MLE} or Moment Evaluation (\acs{ME}). The results presented in \cite{marcello-thesis} show that the \acs{MLE} is a suitable estimation process for the idle distribution parameters in the Global View model.
+
+A more extensive study of the estimation process for the Global View model has been presented in \cite{marcello}, in which the \acs{MLE} is presented in detail. In this project we will study deeply the efficiency of the estimation of the Global View parameters in a wider case study of model compliant cases and do the necessary modifications to overcome the possible problems.

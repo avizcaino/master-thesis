@@ -1,0 +1,66 @@
+\chapter{Spectrum Occupancy Model} \label{chapter:model}
+As it has been presented in Section \ref{sec:intro_scenario}, the model under study consists of a heterogeneous network composed by \acs{WLAN} nodes and Wireless Sensor Nodes (\acs{WSN}). Different issues are present in this type of scenario but the most significant one is the interference problem. Since the transmit power of the \acs{WSN} is much lower than the transmit power used by the \acs{WLAN} nodes, the \acs{WSN} nodes are highly affected by the interference from the \acs{WLAN} transmissions. For this, it is necessary to find the proper solution for this problem. For that, previous work proposed a Cognitive Layer in the \acs{WSN} in order to give them the capability to sense the channel and predict when the network will be idle of transmissions. This prediction process will give the sensor the capability to model the network's spectrum occupancy behaviour and be able to transmit minimizing the present interference. In order to proceed with the prediction process, it is necessary to model the \acs{WLAN} spectrum activity.
+
+The \acs{WLAN} spectrum activity is composed by different states that can be modelled. For this, a continuous time modelling it is necessary since \acs{WLAN} does not have a slot structure. The model includes the transition between the channel's states and the duration of the time in each of the states \cite{marcello-thesis}. This basic model is represented in Figure \ref{fig:WLAN_model}.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.5]{images/model/model}
+	\caption{WLAN channel model with all the states \cite{DSA-Emp}}
+	\label{fig:WLAN_model}
+\end{figure}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.5]{images/model/semi-markov_gv}
+	\caption{Semi-markovian model}
+	\label{fig:semi-markov}
+\end{figure}
+
+The \acs{WLAN} spectrum activity can be differentiated in two main states \cite{DSA-Emp}. As it is shown in \cite{ActiveMeasure}, the Data packet, Short Interframe Space (\acs{SIFS}) and Acknowledge packet (\acs{ACK}) states are deterministic since the transition probabilities are very close to one and can be merged into a single ACTIVE state. The short duration of the \acs{SIFS} make this idle period impossible to be used for transmissions. This is why this idle period is merged into the active state. On the other hand, the Contention Window (\acs{CW}) and the White Space (\acs{WS}) can be merged into an IDLE state. The different models presented in \cite{DSA-Emp}, \cite{ioannis}, \cite{marcello} results in a more simpler model that is represented in Figure \ref{fig:semi-markov}. Since the holding times in each one of both states are not exponential, the continuous Markovian chain properties do not hold. For this, it is necessary to model the holding times in the active and idle states. These holding times can be approximated by two distributions ${f_A(t)}$ and ${f_I(t)}$ for the holding times in Active and Idle states respectively. As it is proposed in \cite{DSA-Emp}, the active state can be modeled by a Uniform Distribution in the range of ${\alpha_{on}, \beta}$ as it is presented in (\ref{eq:Active}). 
+
+\begin{equation}
+	\label{eq:Active}
+	f_A(t) \triangleq
+	\begin{cases}
+		0 & t < \alpha_{on}, \\
+		\frac{1}{\beta - \alpha_{on}} & \alpha_{bk} \leq  t \leq  \beta. \\
+		0 & t > \beta
+	\end{cases}
+\end{equation}
+
+On the other hand, the idle state is more complex. In \cite{ActiveMeasure} the idle state is modeled using only the \acs{WS} state. For this, since the \acs{WS} follows a long-tail behavior, a Generalized Pareto Distribution is proposed to model this state. In \cite{DSA-Emp} the model is extended and the idle state is modeled with both \acs{CW} and \acs{WS} states, using an Uniform Distribution to model the \acs{CW} state. The change between states is done with probability ${p}$. The final mixture distribution used to model the idle state is expresed in (\ref{eq:Idle}):
+
+\begin{equation}
+	\label{eq:Idle}
+	f_I(t) \triangleq
+	\begin{cases}
+		p \, f^{(CW)}_I(t) + (1 - p) \, f^{(WS)}_I & t \le \alpha_{bk} \\
+		p \, f^{(WS)}_I(t) & t > \alpha_{bk}
+	\end{cases}
+\end{equation}
+
+where the ${f^{(CW)}_I(t)}$ is an Uniform Distribution in the range of ${[0, \alpha_{bk}]}$ and ${f^{(WS)}_I(t)}$ is a Generalized Pareto Distribution to model the \acs{WS} in $[t > \alpha_{bk}]$. The Probability Density Function (\acs{PDF}) and Cumulative Density Function (\acs{CDF}) can be expresed as:
+
+\begin{subequations}
+\begin{align}
+	g_{[\xi, \sigma]}(t) &= \frac{1}{\sigma} \, \left(1 + \xi \, \frac{t}{\sigma} \right)^{( -\frac{1}{\xi} - 1)} \label{eq:pareto_pdf} \\
+	G_{[\xi, \sigma]}(t) &= 1 - \left(1 + \xi \, \frac{t}{\sigma} \right)^{-\frac{1}{\xi}} \label{eq:pareto_cdf}
+\end{align}
+\end{subequations}
+
+With a location parameter of ${\mu = 0}$ \cite{marcello}, the final mixture distribution is expressed as:
+
+\begin{equation}
+	\label{eqn:global_view}
+	f_I(t) \triangleq
+	\begin{cases}
+		p \, \dfrac{1}{\alpha_{bk}} +
+		(1 - p) \cdot \dfrac{1}{\sigma}\left(1 + \xi \dfrac{t}{\sigma} \right)^{\left(-\frac{1}{\xi} - 1\right)}
+		  & t \le \alpha_{bk} \\
+		p \, \dfrac{1}{\sigma}\left(1 + \xi \dfrac{t}{\sigma} \right)^{\left(-\frac{1}{\xi} - 1\right)}
+		  & t > \alpha_{bk}
+	\end{cases}
+\end{equation}
+
+Once we have presented the model for the \acs{WLAN} spectrum activity is necessary to model the observable load of the sensors. An ideal model where the \acs{WSN} nodes can observe the whole newtork (Global View \cite{marcello}) and therefore, all the \acs{WLAN} spectrum activity will be studied. In addition, we also will take into account the sensing limitation, in which the sensors, due to hardware limitations, just can observe a part of the network and, therefore, just part of the traffic (Local View \cite{marcello}). It is necessary to differentiate between the model for the spectrum activity, which is represented in Figure \ref{fig:semi-markov} and these two proposed models (Global View and Local View) which will model the \textit{observable load} of the \acs{WSN} sensors. These two 'models' will be presented more extensively in the following sections.

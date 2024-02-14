@@ -1,0 +1,101 @@
+\subsection{Laplace Estimator} \label{sec:laplace_estimator}
+Since the limited sensing capability of the sensors does not allow to apply the idle distribution presented for the Global View model, different solutions have been presented and extensively studied in \cite{marcello} and \cite{marcello-thesis} for the estimation of the local view idle distribution parameters. Among all of these solutions, the Laplace-based estimation presented a better accuracy in the estimation but with a higher complexity.
+
+Since the Neural Network estimation model has already been implemented and deeply studied in \cite{marcello-thesis}, and the Laplace estimator gave a better accuracy in the estimation process, we will focus our study on this second estimator. We will implement the Laplace estimator as an additional tool in the framework implemented in \cite{marcello-thesis}.
+
+The Laplace estimator is based in the minimization of the Mean Square Error between both analytic and empirical idle distributions. In this section, we will present briefly the concept and mathematical definitions for the distributions. A detailed presentation of the mathematical basis of the Laplace estimation process is presented in \cite{ioannis_laplace}.
+
+\subsubsection{Algorithm for the Laplace estimator} \label{sec:algorithm_laplace}
+First of all, we define a discrete state space $\textbf{K} = {K_1, ..., K_K}$ where $K_n$ will be a combination of the three parameters that determine the idle distribution: $K_n = (\xi_n, \sigma_n, p_n)$. We want to find the state (combination of parameters) that minimizes the \acs{MSE} between the analytically determined Laplace Transform and the empirically derived Laplace Transform of the collected samples:
+
+\begin{equation}
+(\xi^{*}, \sigma^{*}, p^{*}) = arg min \sum_{S}^{k=0}(f_{Ie}^{*}(s;N)-f_I^{*}(s;K_n))^2
+\label{eq:min_MSE}
+\end{equation}
+
+Both analytic and empirical \acs{LT} are defined for a finite subset of the Laplace domain "S". In our case, a subset of 1000 "s" samples logarithmically distributed in the range [1,10000]. A higher number of samples implies a better accuracy in the estimation process. 
+
+The empirical \acs{LT} of the observed idle distribution is determined by:
+
+\begin{equation}
+f_{Ie}^{*}(s;N)=\frac{1}{N}\sum_{N}^{i=1}e^{-st_i}
+\label{eq:emp_LT}
+\end{equation}
+
+where, $t_i$ is the idle sample and N is the total number of idle samples gathered for the estimation.
+
+On the other hand, the analytic idle distribution \acs{LT} is determined by the combination of active and idle distributions and the $P_{cca}$ parameter. The local active distribution follows the same distribution as in the Global View model. On the other hand, the local idle distribution cannot be defined equally because of the skipped activity due to the limited sensing capability of the sensors. The local idle distribution is defined as:
+
+\begin{equation}
+f_{\bar{I}}^{*}=f_I^{*}(s)\frac{P_{cca}}{1-(1-P_{cca})f_I^{*}f_A^{*}}
+\label{eq:analytic_LT}
+\end{equation}
+
+where $f_A^{*} = f_A$ is the local active distribution, $f_I^{*} \neq f_I$ is the local idle distribution and $P_{cca}$ determines the percentage of \acs{WLAN} activity observed as it has been presented before in Section \ref{sec:lv_scenario}.
+
+The $P_{cca}$ parameter is defined as:
+
+\begin{equation}
+P_{cca} = \frac{\frac{p\alpha_{bk}}{2}+\frac{(1-p)\sigma}{1-\xi}+\frac{\alpha_{on}+\beta}{2}}{\frac{1}{N}\sum_{N}^{i=1}x_i+\frac{\alpha_{on}+\beta}{2}}
+\label{eq:pcca}
+\end{equation}
+
+The estimation process is defined in an algorithm already presented in \cite{marcello} and \cite{ioannis_laplace}. The algorithm is presented bellow. In this algorithm, $m \geq 0$ denotes the iteration step and $Q_m(K_n)$ denotes the popularity of the state $K_n$, i.e. the number of times that the algorithm has visited the state until iteration $m$. $K^{*}$ denotes the most popular state.
+
+\begin{algorithm} [H]  						                 			% enter the algorithm environment
+\caption{Laplace Estimator Algorithm \cite{ioannis_laplace}}          	% give the algorithm a caption
+\label{alg:laplace}                         						  	% and a label for \ref{} commands later in the document
+\begin{algorithmic}                    									% enter the algorithmic environment
+    \item [\textbf{Step 0:}] \\
+    		Choose randomly a starting state $K_0 \epsilon \textbf{K}$.
+    		\hspace{1.5em} \State $Q_0(K_0) \gets 1 $ and $Q_0(K_n) \gets 0 $, $\forall K_n  \epsilon K$, $K_n \neq K_0$.
+    		\hspace{1.5em} \State $m \gets 0$ and \State $K^{*}_m \gets K_0$.\\
+    		Go to Step 1.
+    \item[\textbf{Step 1:}] \\
+    		Generate a uniform random variable $J_m$ such that for all $K_n \epsilon K$, $K_n \neq K_0$, $J_m \gets K_n$ with probability $\frac{1}{K-1}$. \\
+    		Go to Step 2.
+    \item[\textbf{Step 2:}] \\
+    		Generate an observation $R_m$ of $Z_{lm}^{K_m \gets J_m}$.
+    	\If	{$R_m > 0$} \\
+    		\hspace{1.5em} $K_{m+1} \gets J_m$.
+    	\Else \\
+    		\hspace{1.5em} $K_{m+1} \gets K_m$.
+    	\EndIf \hspace{1.5em} Go to Step 3.
+    \item[\textbf{Step 3:}] \\
+    		$m \gets m + 1, Q_m(K_m) \gets Q_{m-1}(K_m) + 1$ and $Q_m(K_n) \gets Q_{m-1}(K_m)$ for all $K_n \neq K_m$.
+    		\If {$Q_m(K_m) > Q_m(K_{m-1}^{*})$}
+	    		\hspace{1.5em} $K_m^{*} \gets K_m$.
+    		\Else \\
+    			\hspace{1.5em} $K_m^{*} \gets K_{m-1}^{*}$
+    		\EndIf \hspace{1.5em}\\
+    		Go to Step 1.
+\end{algorithmic}
+\end{algorithm}
+
+%\subsubsection{Implementation of the Laplace estimation algorithm} \label{sec:laplace_implementation}
+%Algorithm \ref{alg:laplace} has been implemented in the NS framework as an extension of the work developed in \cite{marcello-thesis}. A first implementation of the algorithm has been developed using the exhaustive search method to find the set of parameters $K^{*}$ that minimizes the \acs{MSE}. The pseudo-code of the implementation is as follows:
+
+%\begin{algorithm}
+%\label{code:laplace}
+%\begin{algorithmic}
+%	\item[1] Create $\xi, \sigma, p$ and $s$ spaces, with granularity $g$
+%	\item[2] Add idle samples
+%		\hspace{1.5em} \For {$s$ in {$s_{min}$ .. $s_{max}$}} \\
+%			\hspace{1.5em} Update empirical idle distribution $f_{eI}(s; sample)$.
+%		\EndFor
+%		\hspace{1.5em} Repeat until all the samples are added.
+%	\item[3] Choose randomly a value of each one of the $\xi, \sigma$ and $p$ spaces to create state $K_n$.
+%	\item[4] Obtain $P_{cca}(\xi, \sigma, p)$
+%	\item[5] Update analytic idle distribution
+%			\hspace{1.5em} \For {$s$ in {$s_{min}$ .. $s_{max}$}} \\
+%				\hspace{1.5em} $f_I(s; \xi, \sigma, p, P_{cca})$.
+%			\EndFor 
+%	\item[6] Obtain MSE($\xi, \sigma, p, P_{cca}$) with (\ref{eq:min_MSE}).
+%			\If {$MSE_{new} < MSE_{old}$} \\
+%				\hspace{1.5em} $K^{*} = (\xi_n, \sigma_n, p_n)$
+%			\EndIf
+%	\item[7] Go to 3. Repeat until all the states have been visited.				
+%\end{algorithmic}
+%\end{algorithm}
+
+%Here, we used the exhaustive search method. This method visits all the possible states to find the $K^{*}$ that minimizes the \acs{MSE}. The larger is the size of the discrete spaces for each one of the parameters, the higher will be the number of possible states and, consequently, larger the execution time of the algorithm.

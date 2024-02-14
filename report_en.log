@@ -1,0 +1,2746 @@
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.4.30)  5 JUL 2012 14:17
+entering extended mode
+ %&-line parsing enabled.
+**report_en.tex
+(./report_en.tex
+LaTeX2e <2009/09/24>
+Babel <v3.8l> and hyphenation patterns for english, usenglishmax, dumylang, noh
+yphenation, loaded.
+(/usr/share/texmf-texlive/tex/latex/base/report.cls
+Document Class: report 2007/10/19 v1.4h Standard LaTeX document class
+(/usr/share/texmf-texlive/tex/latex/base/size10.clo
+File: size10.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@chapter=\count80
+\c@section=\count81
+\c@subsection=\count82
+\c@subsubsection=\count83
+\c@paragraph=\count84
+\c@subparagraph=\count85
+\c@figure=\count86
+\c@table=\count87
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/usr/share/texmf-texlive/tex/latex/base/fontenc.sty
+Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
+
+(/usr/share/texmf-texlive/tex/latex/base/t1enc.def
+File: t1enc.def 2005/09/27 v1.99g Standard LaTeX file
+LaTeX Font Info:    Redeclaring font encoding T1 on input line 43.
+))
+(/usr/share/texmf-texlive/tex/latex/base/inputenc.sty
+Package: inputenc 2008/03/30 v1.1d Input encoding file
+\inpenc@prehook=\toks14
+\inpenc@posthook=\toks15
+
+(/usr/share/texmf-texlive/tex/latex/base/utf8.def
+File: utf8.def 2008/04/05 v1.1m UTF-8 support for inputenc
+Now handling font encoding OML ...
+... no UTF-8 mapping file for font encoding OML
+Now handling font encoding T1 ...
+... processing UTF-8 mapping file for font encoding T1
+
+(/usr/share/texmf-texlive/tex/latex/base/t1enc.dfu
+File: t1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
+   defining Unicode char U+00A1 (decimal 161)
+   defining Unicode char U+00A3 (decimal 163)
+   defining Unicode char U+00AB (decimal 171)
+   defining Unicode char U+00BB (decimal 187)
+   defining Unicode char U+00BF (decimal 191)
+   defining Unicode char U+00C0 (decimal 192)
+   defining Unicode char U+00C1 (decimal 193)
+   defining Unicode char U+00C2 (decimal 194)
+   defining Unicode char U+00C3 (decimal 195)
+   defining Unicode char U+00C4 (decimal 196)
+   defining Unicode char U+00C5 (decimal 197)
+   defining Unicode char U+00C6 (decimal 198)
+   defining Unicode char U+00C7 (decimal 199)
+   defining Unicode char U+00C8 (decimal 200)
+   defining Unicode char U+00C9 (decimal 201)
+   defining Unicode char U+00CA (decimal 202)
+   defining Unicode char U+00CB (decimal 203)
+   defining Unicode char U+00CC (decimal 204)
+   defining Unicode char U+00CD (decimal 205)
+   defining Unicode char U+00CE (decimal 206)
+   defining Unicode char U+00CF (decimal 207)
+   defining Unicode char U+00D0 (decimal 208)
+   defining Unicode char U+00D1 (decimal 209)
+   defining Unicode char U+00D2 (decimal 210)
+   defining Unicode char U+00D3 (decimal 211)
+   defining Unicode char U+00D4 (decimal 212)
+   defining Unicode char U+00D5 (decimal 213)
+   defining Unicode char U+00D6 (decimal 214)
+   defining Unicode char U+00D8 (decimal 216)
+   defining Unicode char U+00D9 (decimal 217)
+   defining Unicode char U+00DA (decimal 218)
+   defining Unicode char U+00DB (decimal 219)
+   defining Unicode char U+00DC (decimal 220)
+   defining Unicode char U+00DD (decimal 221)
+   defining Unicode char U+00DE (decimal 222)
+   defining Unicode char U+00DF (decimal 223)
+   defining Unicode char U+00E0 (decimal 224)
+   defining Unicode char U+00E1 (decimal 225)
+   defining Unicode char U+00E2 (decimal 226)
+   defining Unicode char U+00E3 (decimal 227)
+   defining Unicode char U+00E4 (decimal 228)
+   defining Unicode char U+00E5 (decimal 229)
+   defining Unicode char U+00E6 (decimal 230)
+   defining Unicode char U+00E7 (decimal 231)
+   defining Unicode char U+00E8 (decimal 232)
+   defining Unicode char U+00E9 (decimal 233)
+   defining Unicode char U+00EA (decimal 234)
+   defining Unicode char U+00EB (decimal 235)
+   defining Unicode char U+00EC (decimal 236)
+   defining Unicode char U+00ED (decimal 237)
+   defining Unicode char U+00EE (decimal 238)
+   defining Unicode char U+00EF (decimal 239)
+   defining Unicode char U+00F0 (decimal 240)
+   defining Unicode char U+00F1 (decimal 241)
+   defining Unicode char U+00F2 (decimal 242)
+   defining Unicode char U+00F3 (decimal 243)
+   defining Unicode char U+00F4 (decimal 244)
+   defining Unicode char U+00F5 (decimal 245)
+   defining Unicode char U+00F6 (decimal 246)
+   defining Unicode char U+00F8 (decimal 248)
+   defining Unicode char U+00F9 (decimal 249)
+   defining Unicode char U+00FA (decimal 250)
+   defining Unicode char U+00FB (decimal 251)
+   defining Unicode char U+00FC (decimal 252)
+   defining Unicode char U+00FD (decimal 253)
+   defining Unicode char U+00FE (decimal 254)
+   defining Unicode char U+00FF (decimal 255)
+   defining Unicode char U+0102 (decimal 258)
+   defining Unicode char U+0103 (decimal 259)
+   defining Unicode char U+0104 (decimal 260)
+   defining Unicode char U+0105 (decimal 261)
+   defining Unicode char U+0106 (decimal 262)
+   defining Unicode char U+0107 (decimal 263)
+   defining Unicode char U+010C (decimal 268)
+   defining Unicode char U+010D (decimal 269)
+   defining Unicode char U+010E (decimal 270)
+   defining Unicode char U+010F (decimal 271)
+   defining Unicode char U+0110 (decimal 272)
+   defining Unicode char U+0111 (decimal 273)
+   defining Unicode char U+0118 (decimal 280)
+   defining Unicode char U+0119 (decimal 281)
+   defining Unicode char U+011A (decimal 282)
+   defining Unicode char U+011B (decimal 283)
+   defining Unicode char U+011E (decimal 286)
+   defining Unicode char U+011F (decimal 287)
+   defining Unicode char U+0130 (decimal 304)
+   defining Unicode char U+0131 (decimal 305)
+   defining Unicode char U+0132 (decimal 306)
+   defining Unicode char U+0133 (decimal 307)
+   defining Unicode char U+0139 (decimal 313)
+   defining Unicode char U+013A (decimal 314)
+   defining Unicode char U+013D (decimal 317)
+   defining Unicode char U+013E (decimal 318)
+   defining Unicode char U+0141 (decimal 321)
+   defining Unicode char U+0142 (decimal 322)
+   defining Unicode char U+0143 (decimal 323)
+   defining Unicode char U+0144 (decimal 324)
+   defining Unicode char U+0147 (decimal 327)
+   defining Unicode char U+0148 (decimal 328)
+   defining Unicode char U+014A (decimal 330)
+   defining Unicode char U+014B (decimal 331)
+   defining Unicode char U+0150 (decimal 336)
+   defining Unicode char U+0151 (decimal 337)
+   defining Unicode char U+0152 (decimal 338)
+   defining Unicode char U+0153 (decimal 339)
+   defining Unicode char U+0154 (decimal 340)
+   defining Unicode char U+0155 (decimal 341)
+   defining Unicode char U+0158 (decimal 344)
+   defining Unicode char U+0159 (decimal 345)
+   defining Unicode char U+015A (decimal 346)
+   defining Unicode char U+015B (decimal 347)
+   defining Unicode char U+015E (decimal 350)
+   defining Unicode char U+015F (decimal 351)
+   defining Unicode char U+0160 (decimal 352)
+   defining Unicode char U+0161 (decimal 353)
+   defining Unicode char U+0162 (decimal 354)
+   defining Unicode char U+0163 (decimal 355)
+   defining Unicode char U+0164 (decimal 356)
+   defining Unicode char U+0165 (decimal 357)
+   defining Unicode char U+016E (decimal 366)
+   defining Unicode char U+016F (decimal 367)
+   defining Unicode char U+0170 (decimal 368)
+   defining Unicode char U+0171 (decimal 369)
+   defining Unicode char U+0178 (decimal 376)
+   defining Unicode char U+0179 (decimal 377)
+   defining Unicode char U+017A (decimal 378)
+   defining Unicode char U+017B (decimal 379)
+   defining Unicode char U+017C (decimal 380)
+   defining Unicode char U+017D (decimal 381)
+   defining Unicode char U+017E (decimal 382)
+   defining Unicode char U+200C (decimal 8204)
+   defining Unicode char U+2013 (decimal 8211)
+   defining Unicode char U+2014 (decimal 8212)
+   defining Unicode char U+2018 (decimal 8216)
+   defining Unicode char U+2019 (decimal 8217)
+   defining Unicode char U+201A (decimal 8218)
+   defining Unicode char U+201C (decimal 8220)
+   defining Unicode char U+201D (decimal 8221)
+   defining Unicode char U+201E (decimal 8222)
+   defining Unicode char U+2030 (decimal 8240)
+   defining Unicode char U+2031 (decimal 8241)
+   defining Unicode char U+2039 (decimal 8249)
+   defining Unicode char U+203A (decimal 8250)
+   defining Unicode char U+2423 (decimal 9251)
+)
+Now handling font encoding OT1 ...
+... processing UTF-8 mapping file for font encoding OT1
+
+(/usr/share/texmf-texlive/tex/latex/base/ot1enc.dfu
+File: ot1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
+   defining Unicode char U+00A1 (decimal 161)
+   defining Unicode char U+00A3 (decimal 163)
+   defining Unicode char U+00B8 (decimal 184)
+   defining Unicode char U+00BF (decimal 191)
+   defining Unicode char U+00C5 (decimal 197)
+   defining Unicode char U+00C6 (decimal 198)
+   defining Unicode char U+00D8 (decimal 216)
+   defining Unicode char U+00DF (decimal 223)
+   defining Unicode char U+00E6 (decimal 230)
+   defining Unicode char U+00EC (decimal 236)
+   defining Unicode char U+00ED (decimal 237)
+   defining Unicode char U+00EE (decimal 238)
+   defining Unicode char U+00EF (decimal 239)
+   defining Unicode char U+00F8 (decimal 248)
+   defining Unicode char U+0131 (decimal 305)
+   defining Unicode char U+0141 (decimal 321)
+   defining Unicode char U+0142 (decimal 322)
+   defining Unicode char U+0152 (decimal 338)
+   defining Unicode char U+0153 (decimal 339)
+   defining Unicode char U+2013 (decimal 8211)
+   defining Unicode char U+2014 (decimal 8212)
+   defining Unicode char U+2018 (decimal 8216)
+   defining Unicode char U+2019 (decimal 8217)
+   defining Unicode char U+201C (decimal 8220)
+   defining Unicode char U+201D (decimal 8221)
+)
+Now handling font encoding OMS ...
+... processing UTF-8 mapping file for font encoding OMS
+
+(/usr/share/texmf-texlive/tex/latex/base/omsenc.dfu
+File: omsenc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
+   defining Unicode char U+00A7 (decimal 167)
+   defining Unicode char U+00B6 (decimal 182)
+   defining Unicode char U+00B7 (decimal 183)
+   defining Unicode char U+2020 (decimal 8224)
+   defining Unicode char U+2021 (decimal 8225)
+   defining Unicode char U+2022 (decimal 8226)
+)
+Now handling font encoding OMX ...
+... no UTF-8 mapping file for font encoding OMX
+Now handling font encoding U ...
+... no UTF-8 mapping file for font encoding U
+   defining Unicode char U+00A9 (decimal 169)
+   defining Unicode char U+00AA (decimal 170)
+   defining Unicode char U+00AE (decimal 174)
+   defining Unicode char U+00BA (decimal 186)
+   defining Unicode char U+02C6 (decimal 710)
+   defining Unicode char U+02DC (decimal 732)
+   defining Unicode char U+200C (decimal 8204)
+   defining Unicode char U+2026 (decimal 8230)
+   defining Unicode char U+2122 (decimal 8482)
+   defining Unicode char U+2423 (decimal 9251)
+)) (./thesis.sty
+Package: thesis 2011/14/08 Thesis package
+
+(/usr/share/texmf-texlive/tex/latex/base/fixltx2e.sty
+Package: fixltx2e 2006/09/13 v1.1m fixes to LaTeX
+LaTeX Info: Redefining \em on input line 420.
+)
+(/usr/share/texmf-texlive/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2009/08/13 v3.4 Keyval support for LaTeX options (HO)
+
+(/usr/share/texmf-texlive/tex/latex/graphics/keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks16
+)
+(/usr/share/texmf-texlive/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2009/07/30 v1.5 Key value parser with default handler suppor
+t (HO)
+
+(/usr/share/texmf-texlive/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2007/09/09 v1.2 Providing info/warning/message (HO)
+)
+(/usr/share/texmf-texlive/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2007/12/12 v1.2 Prefix for e-TeX command names (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
+(/usr/share/texmf-texlive/tex/latex/base/ifthen.sty
+Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
+)
+(/usr/share/texmf-texlive/tex/generic/babel/babel.sty
+Package: babel 2008/07/06 v3.8l The Babel package
+
+(/usr/share/texmf-texlive/tex/generic/babel/english.ldf
+Language: english 2005/03/30 v3.3o English support from the babel system
+
+(/usr/share/texmf-texlive/tex/generic/babel/babel.def
+File: babel.def 2008/07/06 v3.8l Babel common definitions
+\babel@savecnt=\count88
+\U@D=\dimen103
+)
+\l@british = a dialect from \language\l@english 
+\l@UKenglish = a dialect from \language\l@english 
+\l@canadian = a dialect from \language\l@american 
+\l@australian = a dialect from \language\l@british 
+\l@newzealand = a dialect from \language\l@british 
+))
+(/usr/share/texmf-texlive/tex/latex/changepage/changepage.sty
+Package: changepage 2009/10/20 v1.0c check page and change page layout
+\c@cp@cntr=\count89
+\cp@tempcnt=\count90
+)
+(/usr/share/texmf-texlive/tex/latex/mparhack/mparhack.sty
+Package: mparhack 2005/04/17 v1.4 (T. Sgouros and S. Ulrich)
+)
+(/usr/share/texmf-texlive/tex/latex/tools/multicol.sty
+Package: multicol 2008/12/05 v1.6h multicolumn formatting (FMi)
+\c@tracingmulticols=\count91
+\mult@box=\box26
+\multicol@leftmargin=\dimen104
+\c@unbalance=\count92
+\c@collectmore=\count93
+\doublecol@number=\count94
+\multicoltolerance=\count95
+\multicolpretolerance=\count96
+\full@width=\dimen105
+\page@free=\dimen106
+\premulticols=\dimen107
+\postmulticols=\dimen108
+\multicolsep=\skip43
+\multicolbaselineskip=\skip44
+\partial@page=\box27
+\last@line=\box28
+\mult@rightbox=\box29
+\mult@grightbox=\box30
+\mult@gfirstbox=\box31
+\mult@firstbox=\box32
+\@tempa=\box33
+\@tempa=\box34
+\@tempa=\box35
+\@tempa=\box36
+\@tempa=\box37
+\@tempa=\box38
+\@tempa=\box39
+\@tempa=\box40
+\@tempa=\box41
+\@tempa=\box42
+\@tempa=\box43
+\@tempa=\box44
+\@tempa=\box45
+\@tempa=\box46
+\@tempa=\box47
+\@tempa=\box48
+\@tempa=\box49
+\c@columnbadness=\count97
+\c@finalcolumnbadness=\count98
+\last@try=\dimen109
+\multicolovershoot=\dimen110
+\multicolundershoot=\dimen111
+\mult@nat@firstbox=\box50
+\colbreak@box=\box51
+)
+(/usr/share/texmf-texlive/tex/latex/tools/xspace.sty
+Package: xspace 2006/05/08 v1.12 Space after command names (DPC,MH)
+)
+(/usr/share/texmf-texlive/tex/latex/geometry/geometry.sty
+Package: geometry 2008/12/21 v4.2 Page Geometry
+
+(/usr/share/texmf-texlive/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2009/04/10 v2.0 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in pdf mode detected.
+)
+(/usr/share/texmf-texlive/tex/generic/oberdiek/ifvtex.sty
+Package: ifvtex 2008/11/04 v1.4 Switches for detecting VTeX and its modes (HO)
+Package ifvtex Info: VTeX not detected.
+)
+\Gm@cnth=\count99
+\Gm@cntv=\count100
+\c@Gm@tempcnt=\count101
+\Gm@bindingoffset=\dimen112
+\Gm@wd@mp=\dimen113
+\Gm@odd@mp=\dimen114
+\Gm@even@mp=\dimen115
+\Gm@dimlist=\toks17
+
+(/usr/share/texmf-texlive/tex/xelatex/xetexconfig/geometry.cfg))
+(/usr/share/texmf-texlive/tex/latex/ltxmisc/relsize.sty
+Package: relsize 2003/07/04 ver 3.1
+)
+(/usr/share/texmf/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2007/01/21 v2.11 LaTeX color extensions (UK)
+
+(/etc/texmf/tex/latex/config/color.cfg
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package xcolor Info: Driver file: pdftex.def on input line 225.
+
+(/usr/share/texmf-texlive/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2010/03/12 v0.04p Graphics/color for pdfTeX
+\Gread@gobject=\count102
+)
+(/usr/share/texmf-texlive/tex/latex/colortbl/colortbl.sty
+Package: colortbl 2001/02/13 v0.1j Color table columns (DPC)
+
+(/usr/share/texmf-texlive/tex/latex/tools/array.sty
+Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
+\col@sep=\dimen116
+\extrarowheight=\dimen117
+\NC@list=\toks18
+\extratabsurround=\skip45
+\backup@length=\skip46
+)
+\everycr=\toks19
+\minrowclearance=\skip47
+)
+\rownum=\count103
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1337.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1341.
+Package xcolor Info: Model `RGB' extended on input line 1353.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1355.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1356.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1357.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1358.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1359.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
+)
+(/usr/share/texmf-texlive/tex/latex/fancyhdr/fancyhdr.sty
+\fancy@headwidth=\skip48
+\f@ncyO@elh=\skip49
+\f@ncyO@erh=\skip50
+\f@ncyO@olh=\skip51
+\f@ncyO@orh=\skip52
+\f@ncyO@elf=\skip53
+\f@ncyO@erf=\skip54
+\f@ncyO@olf=\skip55
+\f@ncyO@orf=\skip56
+)
+(/usr/share/texmf-texlive/tex/latex/fancyvrb/fancyvrb.sty
+Package: fancyvrb 2008/02/07
+
+Style option: `fancyvrb' v2.7a, with DG/SPQR fixes, and firstline=lastline fix 
+<2008/02/07> (tvz)
+\FV@CodeLineNo=\count104
+\FV@InFile=\read1
+\FV@TabBox=\box52
+\c@FancyVerbLine=\count105
+\FV@StepNumber=\count106
+\FV@OutFile=\write3
+) (/usr/share/texmf-texlive/tex/latex/titlesec/titlesec.sty
+Package: titlesec 2007/08/12 v2.8 Sectioning titles
+\ttl@box=\box53
+\beforetitleunit=\skip57
+\aftertitleunit=\skip58
+\ttl@plus=\dimen118
+\ttl@minus=\dimen119
+\ttl@toksa=\toks20
+\titlewidth=\dimen120
+\titlewidthlast=\dimen121
+\titlewidthfirst=\dimen122
+)
+(/usr/share/texmf-texlive/tex/latex/tocloft/tocloft.sty
+Package: tocloft 2009/09/04 v2.3d parameterised ToC, etc., typesetting
+
+
+Package tocloft Note: The document has chapter divisions.
+
+\cftparskip=\skip59
+\cftbeforetoctitleskip=\skip60
+\cftaftertoctitleskip=\skip61
+\cftbeforepartskip=\skip62
+\cftpartnumwidth=\skip63
+\cftpartindent=\skip64
+\cftbeforechapskip=\skip65
+\cftchapindent=\skip66
+\cftchapnumwidth=\skip67
+\cftbeforesecskip=\skip68
+\cftsecindent=\skip69
+\cftsecnumwidth=\skip70
+\cftbeforesubsecskip=\skip71
+\cftsubsecindent=\skip72
+\cftsubsecnumwidth=\skip73
+\cftbeforesubsubsecskip=\skip74
+\cftsubsubsecindent=\skip75
+\cftsubsubsecnumwidth=\skip76
+\cftbeforeparaskip=\skip77
+\cftparaindent=\skip78
+\cftparanumwidth=\skip79
+\cftbeforesubparaskip=\skip80
+\cftsubparaindent=\skip81
+\cftsubparanumwidth=\skip82
+\cftbeforeloftitleskip=\skip83
+\cftafterloftitleskip=\skip84
+\cftbeforefigskip=\skip85
+\cftfigindent=\skip86
+\cftfignumwidth=\skip87
+\c@lofdepth=\count107
+\c@lotdepth=\count108
+\cftbeforelottitleskip=\skip88
+\cftafterlottitleskip=\skip89
+\cftbeforetabskip=\skip90
+\cfttabindent=\skip91
+\cfttabnumwidth=\skip92
+) (/usr/share/texmf-texlive/tex/latex/abstract/abstract.sty
+Package: abstract 2009/06/08 v1.2a configurable abstracts
+\abstitleskip=\skip93
+\absleftindent=\skip94
+\absrightindent=\skip95
+\absparindent=\skip96
+\absparsep=\skip97
+)
+(/usr/share/texmf-texlive/tex/latex/footmisc/footmisc.sty
+Package: footmisc 2009/09/15 v5.5a a miscellany of footnote facilities
+\FN@temptoken=\toks21
+\footnotemargin=\dimen123
+
+
+LaTeX Warning: Command \@makecol  has changed.
+               Check if current package is valid.
+
+\c@pp@next@reset=\count109
+\c@@fnserial=\count110
+Package footmisc Info: Declaring symbol style bringhurst on input line 855.
+Package footmisc Info: Declaring symbol style chicago on input line 863.
+Package footmisc Info: Declaring symbol style wiley on input line 872.
+Package footmisc Info: Declaring symbol style lamport-robust on input line 883.
+
+Package footmisc Info: Declaring symbol style lamport* on input line 903.
+Package footmisc Info: Declaring symbol style lamport*-robust on input line 924
+.
+) (/usr/share/texmf-texlive/tex/latex/caption/caption.sty
+Package: caption 2009/10/09 v3.1k Customizing captions (AR)
+
+(/usr/share/texmf-texlive/tex/latex/caption/caption3.sty
+Package: caption3 2009/10/09 v3.1k caption3 kernel (AR)
+\captionmargin=\dimen124
+\captionmargin@=\dimen125
+\captionwidth=\dimen126
+\caption@indent=\dimen127
+\caption@parindent=\dimen128
+\caption@hangindent=\dimen129
+)
+\c@ContinuedFloat=\count111
+)
+(/usr/share/texmf-texlive/tex/latex/tools/verbatim.sty
+Package: verbatim 2003/08/22 v1.5q LaTeX2e package for verbatim enhancements
+\every@verbatim=\toks22
+\verbatim@line=\toks23
+\verbatim@in@stream=\read2
+)
+(/usr/share/texmf-texlive/tex/latex/enumitem/enumitem.sty
+Package: enumitem 2009/05/18 v2.2 Customized lists
+\enit@toks=\toks24
+\labelindent=\skip98
+\enit@outerparindent=\dimen130
+\enitdp@desc=\count112
+)
+(/usr/share/texmf-texlive/tex/latex/listings/listings.sty
+\lst@mode=\count113
+\lst@gtempboxa=\box54
+\lst@token=\toks25
+\lst@length=\count114
+\lst@currlwidth=\dimen131
+\lst@column=\count115
+\lst@pos=\count116
+\lst@lostspace=\dimen132
+\lst@width=\dimen133
+\lst@newlines=\count117
+\lst@lineno=\count118
+\lst@maxwidth=\dimen134
+
+(/usr/share/texmf-texlive/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2007/02/22 1.4 (Carsten Heinz)
+\c@lstnumber=\count119
+\lst@skipnumbers=\count120
+\lst@framebox=\box55
+)
+(/usr/share/texmf-texlive/tex/latex/listings/listings.cfg
+File: listings.cfg 2007/02/22 1.4 listings configuration
+))
+Package: listings 2007/02/22 1.4 (Carsten Heinz)
+
+(/usr/share/texmf-texlive/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2007/02/22 1.4 (Carsten Heinz)
+\lstFV@gtempboxa=\box56
+)
+(/usr/share/texmf-texlive/tex/latex/base/textcomp.sty
+Package: textcomp 2005/09/27 v1.99g Standard LaTeX package
+Package textcomp Info: Sub-encoding information:
+(textcomp)               5 = only ISO-Adobe without \textcurrency
+(textcomp)               4 = 5 + \texteuro
+(textcomp)               3 = 4 + \textohm
+(textcomp)               2 = 3 + \textestimated + \textcurrency
+(textcomp)               1 = TS1 - \textcircled - \t
+(textcomp)               0 = TS1 (full)
+(textcomp)             Font families with sub-encoding setting implement
+(textcomp)             only a restricted character set as indicated.
+(textcomp)             Family '?' is the default used for unknown fonts.
+(textcomp)             See the documentation for details.
+Package textcomp Info: Setting ? sub-encoding to TS1/1 on input line 71.
+
+(/usr/share/texmf-texlive/tex/latex/base/ts1enc.def
+File: ts1enc.def 2001/06/05 v3.0e (jk/car/fm) Standard LaTeX file
+Now handling font encoding TS1 ...
+... processing UTF-8 mapping file for font encoding TS1
+
+(/usr/share/texmf-texlive/tex/latex/base/ts1enc.dfu
+File: ts1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
+   defining Unicode char U+00A2 (decimal 162)
+   defining Unicode char U+00A3 (decimal 163)
+   defining Unicode char U+00A4 (decimal 164)
+   defining Unicode char U+00A5 (decimal 165)
+   defining Unicode char U+00A6 (decimal 166)
+   defining Unicode char U+00A7 (decimal 167)
+   defining Unicode char U+00A8 (decimal 168)
+   defining Unicode char U+00A9 (decimal 169)
+   defining Unicode char U+00AA (decimal 170)
+   defining Unicode char U+00AC (decimal 172)
+   defining Unicode char U+00AE (decimal 174)
+   defining Unicode char U+00AF (decimal 175)
+   defining Unicode char U+00B0 (decimal 176)
+   defining Unicode char U+00B1 (decimal 177)
+   defining Unicode char U+00B2 (decimal 178)
+   defining Unicode char U+00B3 (decimal 179)
+   defining Unicode char U+00B4 (decimal 180)
+   defining Unicode char U+00B5 (decimal 181)
+   defining Unicode char U+00B6 (decimal 182)
+   defining Unicode char U+00B7 (decimal 183)
+   defining Unicode char U+00B9 (decimal 185)
+   defining Unicode char U+00BA (decimal 186)
+   defining Unicode char U+00BC (decimal 188)
+   defining Unicode char U+00BD (decimal 189)
+   defining Unicode char U+00BE (decimal 190)
+   defining Unicode char U+00D7 (decimal 215)
+   defining Unicode char U+00F7 (decimal 247)
+   defining Unicode char U+0192 (decimal 402)
+   defining Unicode char U+02C7 (decimal 711)
+   defining Unicode char U+02D8 (decimal 728)
+   defining Unicode char U+02DD (decimal 733)
+   defining Unicode char U+0E3F (decimal 3647)
+   defining Unicode char U+2016 (decimal 8214)
+   defining Unicode char U+2020 (decimal 8224)
+   defining Unicode char U+2021 (decimal 8225)
+   defining Unicode char U+2022 (decimal 8226)
+   defining Unicode char U+2030 (decimal 8240)
+   defining Unicode char U+2031 (decimal 8241)
+   defining Unicode char U+203B (decimal 8251)
+   defining Unicode char U+203D (decimal 8253)
+   defining Unicode char U+2044 (decimal 8260)
+   defining Unicode char U+204E (decimal 8270)
+   defining Unicode char U+2052 (decimal 8274)
+   defining Unicode char U+20A1 (decimal 8353)
+   defining Unicode char U+20A4 (decimal 8356)
+   defining Unicode char U+20A6 (decimal 8358)
+   defining Unicode char U+20A9 (decimal 8361)
+   defining Unicode char U+20AB (decimal 8363)
+   defining Unicode char U+20AC (decimal 8364)
+   defining Unicode char U+20B1 (decimal 8369)
+   defining Unicode char U+2103 (decimal 8451)
+   defining Unicode char U+2116 (decimal 8470)
+   defining Unicode char U+2117 (decimal 8471)
+   defining Unicode char U+211E (decimal 8478)
+   defining Unicode char U+2120 (decimal 8480)
+   defining Unicode char U+2122 (decimal 8482)
+   defining Unicode char U+2126 (decimal 8486)
+   defining Unicode char U+2127 (decimal 8487)
+   defining Unicode char U+212E (decimal 8494)
+   defining Unicode char U+2190 (decimal 8592)
+   defining Unicode char U+2191 (decimal 8593)
+   defining Unicode char U+2192 (decimal 8594)
+   defining Unicode char U+2193 (decimal 8595)
+   defining Unicode char U+2329 (decimal 9001)
+   defining Unicode char U+232A (decimal 9002)
+   defining Unicode char U+2422 (decimal 9250)
+   defining Unicode char U+25E6 (decimal 9702)
+   defining Unicode char U+25EF (decimal 9711)
+   defining Unicode char U+266A (decimal 9834)
+))
+LaTeX Info: Redefining \oldstylenums on input line 266.
+Package textcomp Info: Setting cmr sub-encoding to TS1/0 on input line 281.
+Package textcomp Info: Setting cmss sub-encoding to TS1/0 on input line 282.
+Package textcomp Info: Setting cmtt sub-encoding to TS1/0 on input line 283.
+Package textcomp Info: Setting cmvtt sub-encoding to TS1/0 on input line 284.
+Package textcomp Info: Setting cmbr sub-encoding to TS1/0 on input line 285.
+Package textcomp Info: Setting cmtl sub-encoding to TS1/0 on input line 286.
+Package textcomp Info: Setting ccr sub-encoding to TS1/0 on input line 287.
+Package textcomp Info: Setting ptm sub-encoding to TS1/4 on input line 288.
+Package textcomp Info: Setting pcr sub-encoding to TS1/4 on input line 289.
+Package textcomp Info: Setting phv sub-encoding to TS1/4 on input line 290.
+Package textcomp Info: Setting ppl sub-encoding to TS1/3 on input line 291.
+Package textcomp Info: Setting pag sub-encoding to TS1/4 on input line 292.
+Package textcomp Info: Setting pbk sub-encoding to TS1/4 on input line 293.
+Package textcomp Info: Setting pnc sub-encoding to TS1/4 on input line 294.
+Package textcomp Info: Setting pzc sub-encoding to TS1/4 on input line 295.
+Package textcomp Info: Setting bch sub-encoding to TS1/4 on input line 296.
+Package textcomp Info: Setting put sub-encoding to TS1/5 on input line 297.
+Package textcomp Info: Setting uag sub-encoding to TS1/5 on input line 298.
+Package textcomp Info: Setting ugq sub-encoding to TS1/5 on input line 299.
+Package textcomp Info: Setting ul8 sub-encoding to TS1/4 on input line 300.
+Package textcomp Info: Setting ul9 sub-encoding to TS1/4 on input line 301.
+Package textcomp Info: Setting augie sub-encoding to TS1/5 on input line 302.
+Package textcomp Info: Setting dayrom sub-encoding to TS1/3 on input line 303.
+Package textcomp Info: Setting dayroms sub-encoding to TS1/3 on input line 304.
+
+Package textcomp Info: Setting pxr sub-encoding to TS1/0 on input line 305.
+Package textcomp Info: Setting pxss sub-encoding to TS1/0 on input line 306.
+Package textcomp Info: Setting pxtt sub-encoding to TS1/0 on input line 307.
+Package textcomp Info: Setting txr sub-encoding to TS1/0 on input line 308.
+Package textcomp Info: Setting txss sub-encoding to TS1/0 on input line 309.
+Package textcomp Info: Setting txtt sub-encoding to TS1/0 on input line 310.
+Package textcomp Info: Setting futs sub-encoding to TS1/4 on input line 311.
+Package textcomp Info: Setting futx sub-encoding to TS1/4 on input line 312.
+Package textcomp Info: Setting futj sub-encoding to TS1/4 on input line 313.
+Package textcomp Info: Setting hlh sub-encoding to TS1/3 on input line 314.
+Package textcomp Info: Setting hls sub-encoding to TS1/3 on input line 315.
+Package textcomp Info: Setting hlst sub-encoding to TS1/3 on input line 316.
+Package textcomp Info: Setting hlct sub-encoding to TS1/5 on input line 317.
+Package textcomp Info: Setting hlx sub-encoding to TS1/5 on input line 318.
+Package textcomp Info: Setting hlce sub-encoding to TS1/5 on input line 319.
+Package textcomp Info: Setting hlcn sub-encoding to TS1/5 on input line 320.
+Package textcomp Info: Setting hlcw sub-encoding to TS1/5 on input line 321.
+Package textcomp Info: Setting hlcf sub-encoding to TS1/5 on input line 322.
+Package textcomp Info: Setting pplx sub-encoding to TS1/3 on input line 323.
+Package textcomp Info: Setting pplj sub-encoding to TS1/3 on input line 324.
+Package textcomp Info: Setting ptmx sub-encoding to TS1/4 on input line 325.
+Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 326.
+)
+(/usr/share/texmf-texlive/tex/latex/textcase/textcase.sty
+Package: textcase 2004/10/07 v0.07 Text only upper/lower case changing (DPC)
+)
+(/usr/share/texmf-texlive/tex/latex/microtype/microtype.sty
+Package: microtype 2009/03/27 v2.3d Micro-typography with pdfTeX (RS)
+\MT@toks=\toks26
+\MT@count=\count121
+LaTeX Info: Redefining \lsstyle on input line 1608.
+LaTeX Info: Redefining \lslig on input line 1608.
+\MT@outer@space=\skip99
+LaTeX Info: Redefining \textls on input line 1616.
+\MT@outer@kern=\dimen135
+LaTeX Info: Redefining \textmicrotypecontext on input line 2167.
+Package microtype Info: Loading configuration file microtype.cfg.
+
+(/usr/share/texmf-texlive/tex/latex/microtype/microtype.cfg
+File: microtype.cfg 2009/03/27 v2.3d microtype main configuration file (RS)
+))
+(/usr/share/texmf-texlive/tex/latex/tools/tabularx.sty
+Package: tabularx 1999/01/07 v2.07 `tabularx' package (DPC)
+\TX@col@width=\dimen136
+\TX@old@table=\dimen137
+\TX@old@col=\dimen138
+\TX@target=\dimen139
+\TX@delta=\dimen140
+\TX@cols=\count122
+\TX@ftn=\toks27
+)
+(/usr/share/texmf-texlive/tex/latex/tools/longtable.sty
+Package: longtable 2004/02/01 v4.11 Multi-page Table package (DPC)
+\LTleft=\skip100
+\LTright=\skip101
+\LTpre=\skip102
+\LTpost=\skip103
+\LTchunksize=\count123
+\LTcapwidth=\dimen141
+\LT@head=\box57
+\LT@firsthead=\box58
+\LT@foot=\box59
+\LT@lastfoot=\box60
+\LT@cols=\count124
+\LT@rows=\count125
+\c@LT@tables=\count126
+\c@LT@chunks=\count127
+\LT@p@ftn=\toks28
+)
+(/usr/share/texmf-texlive/tex/latex/multirow/multirow.sty
+\bigstrutjot=\dimen142
+)
+(/usr/share/texmf-texlive/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count128
+\float@exts=\toks29
+\float@box=\box61
+\@float@everytoks=\toks30
+\@floatcapt=\box62
+)
+(/usr/share/texmf-texlive/tex/latex/graphics/graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf-texlive/tex/latex/graphics/graphics.sty
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf-texlive/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/etc/texmf/tex/latex/config/graphics.cfg
+File: graphics.cfg 2009/08/28 v1.8 graphics configuration of TeX Live
+)
+Package graphics Info: Driver file: pdftex.def on input line 91.
+)
+\Gin@req@height=\dimen143
+\Gin@req@width=\dimen144
+)
+(/usr/share/texmf-texlive/tex/latex/subfig/subfig.sty
+Package: subfig 2005/06/28 ver: 1.3 subfig package
+\c@KVtest=\count129
+\sf@farskip=\skip104
+\sf@captopadj=\dimen145
+\sf@capskip=\skip105
+\sf@nearskip=\skip106
+\c@subfigure=\count130
+\c@subfigure@save=\count131
+\c@subtable=\count132
+\c@subtable@save=\count133
+\sf@top=\skip107
+\sf@bottom=\skip108
+)
+(/usr/share/texmf/tex/latex/pgf/basiclayer/pgf.sty
+(/usr/share/texmf/tex/latex/pgf/utilities/pgfrcs.sty
+(/usr/share/texmf/tex/generic/pgf/utilities/pgfutil-common.tex
+\pgfutil@everybye=\toks31
+)
+(/usr/share/texmf/tex/generic/pgf/utilities/pgfutil-latex.def
+\pgfutil@abb=\box63
+
+(/usr/share/texmf-texlive/tex/latex/ms/everyshi.sty
+Package: everyshi 2001/05/15 v3.00 EveryShipout Package (MS)
+))
+(/usr/share/texmf/tex/generic/pgf/utilities/pgfrcs.code.tex
+Package: pgfrcs 2010/10/25 v2.10 (rcs-revision 1.24)
+))
+Package: pgf 2008/01/15 v2.10 (rcs-revision 1.12)
+
+(/usr/share/texmf/tex/latex/pgf/basiclayer/pgfcore.sty
+(/usr/share/texmf/tex/latex/pgf/systemlayer/pgfsys.sty
+(/usr/share/texmf/tex/generic/pgf/systemlayer/pgfsys.code.tex
+Package: pgfsys 2010/06/30 v2.10 (rcs-revision 1.37)
+
+(/usr/share/texmf/tex/generic/pgf/utilities/pgfkeys.code.tex
+\pgfkeys@pathtoks=\toks32
+\pgfkeys@temptoks=\toks33
+
+(/usr/share/texmf/tex/generic/pgf/utilities/pgfkeysfiltered.code.tex
+\pgfkeys@tmptoks=\toks34
+))
+\pgf@x=\dimen146
+\pgf@y=\dimen147
+\pgf@xa=\dimen148
+\pgf@ya=\dimen149
+\pgf@xb=\dimen150
+\pgf@yb=\dimen151
+\pgf@xc=\dimen152
+\pgf@yc=\dimen153
+\w@pgf@writea=\write4
+\r@pgf@reada=\read3
+\c@pgf@counta=\count134
+\c@pgf@countb=\count135
+\c@pgf@countc=\count136
+\c@pgf@countd=\count137
+
+(/usr/share/texmf/tex/generic/pgf/systemlayer/pgf.cfg
+File: pgf.cfg 2008/05/14  (rcs-revision 1.7)
+)
+Package pgfsys Info: Driver file for pgf: pgfsys-pdftex.def on input line 900.
+
+(/usr/share/texmf/tex/generic/pgf/systemlayer/pgfsys-pdftex.def
+File: pgfsys-pdftex.def 2009/05/22  (rcs-revision 1.26)
+
+(/usr/share/texmf/tex/generic/pgf/systemlayer/pgfsys-common-pdf.def
+File: pgfsys-common-pdf.def 2008/05/19  (rcs-revision 1.10)
+)))
+(/usr/share/texmf/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.tex
+File: pgfsyssoftpath.code.tex 2008/07/18  (rcs-revision 1.7)
+\pgfsyssoftpath@smallbuffer@items=\count138
+\pgfsyssoftpath@bigbuffer@items=\count139
+)
+(/usr/share/texmf/tex/generic/pgf/systemlayer/pgfsysprotocol.code.tex
+File: pgfsysprotocol.code.tex 2006/10/16  (rcs-revision 1.4)
+))
+(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcore.code.tex
+Package: pgfcore 2010/04/11 v2.10 (rcs-revision 1.7)
+
+(/usr/share/texmf/tex/generic/pgf/math/pgfmath.code.tex
+(/usr/share/texmf/tex/generic/pgf/math/pgfmathcalc.code.tex
+(/usr/share/texmf/tex/generic/pgf/math/pgfmathutil.code.tex)
+(/usr/share/texmf/tex/generic/pgf/math/pgfmathparser.code.tex
+\pgfmath@dimen=\dimen154
+\pgfmath@count=\count140
+\pgfmath@box=\box64
+\pgfmath@toks=\toks35
+\pgfmath@stack@operand=\toks36
+\pgfmath@stack@operation=\toks37
+)
+(/usr/share/texmf/tex/generic/pgf/math/pgfmathfunctions.code.tex
+(/usr/share/texmf/tex/generic/pgf/math/pgfmathfunctions.basic.code.tex)
+(/usr/share/texmf/tex/generic/pgf/math/pgfmathfunctions.trigonometric.code.tex)
+(/usr/share/texmf/tex/generic/pgf/math/pgfmathfunctions.random.code.tex)
+(/usr/share/texmf/tex/generic/pgf/math/pgfmathfunctions.comparison.code.tex)
+(/usr/share/texmf/tex/generic/pgf/math/pgfmathfunctions.base.code.tex)
+(/usr/share/texmf/tex/generic/pgf/math/pgfmathfunctions.round.code.tex)
+(/usr/share/texmf/tex/generic/pgf/math/pgfmathfunctions.misc.code.tex)))
+(/usr/share/texmf/tex/generic/pgf/math/pgfmathfloat.code.tex
+\c@pgfmathroundto@lastzeros=\count141
+))
+(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcorepoints.code.tex
+File: pgfcorepoints.code.tex 2010/04/09  (rcs-revision 1.20)
+\pgf@picminx=\dimen155
+\pgf@picmaxx=\dimen156
+\pgf@picminy=\dimen157
+\pgf@picmaxy=\dimen158
+\pgf@pathminx=\dimen159
+\pgf@pathmaxx=\dimen160
+\pgf@pathminy=\dimen161
+\pgf@pathmaxy=\dimen162
+\pgf@xx=\dimen163
+\pgf@xy=\dimen164
+\pgf@yx=\dimen165
+\pgf@yy=\dimen166
+\pgf@zx=\dimen167
+\pgf@zy=\dimen168
+)
+(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcorepathconstruct.code.tex
+File: pgfcorepathconstruct.code.tex 2010/08/03  (rcs-revision 1.24)
+\pgf@path@lastx=\dimen169
+\pgf@path@lasty=\dimen170
+)
+(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcorepathusage.code.tex
+File: pgfcorepathusage.code.tex 2008/04/22  (rcs-revision 1.12)
+\pgf@shorten@end@additional=\dimen171
+\pgf@shorten@start@additional=\dimen172
+)
+(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcorescopes.code.tex
+File: pgfcorescopes.code.tex 2010/09/08  (rcs-revision 1.34)
+\pgfpic=\box65
+\pgf@hbox=\box66
+\pgf@layerbox@main=\box67
+\pgf@picture@serial@count=\count142
+)
+(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcoregraphicstate.code.tex
+File: pgfcoregraphicstate.code.tex 2008/04/22  (rcs-revision 1.9)
+\pgflinewidth=\dimen173
+)
+(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcoretransformations.code.tex
+File: pgfcoretransformations.code.tex 2009/06/10  (rcs-revision 1.11)
+\pgf@pt@x=\dimen174
+\pgf@pt@y=\dimen175
+\pgf@pt@temp=\dimen176
+)
+(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcorequick.code.tex
+File: pgfcorequick.code.tex 2008/10/09  (rcs-revision 1.3)
+)
+(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcoreobjects.code.tex
+File: pgfcoreobjects.code.tex 2006/10/11  (rcs-revision 1.2)
+)
+(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcorepathprocessing.code.tex
+File: pgfcorepathprocessing.code.tex 2008/10/09  (rcs-revision 1.8)
+)
+(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcorearrows.code.tex
+File: pgfcorearrows.code.tex 2008/04/23  (rcs-revision 1.11)
+)
+(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
+File: pgfcoreshade.code.tex 2008/11/23  (rcs-revision 1.13)
+\pgf@max=\dimen177
+\pgf@sys@shading@range@num=\count143
+)
+(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
+File: pgfcoreimage.code.tex 2010/03/25  (rcs-revision 1.16)
+
+(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcoreexternal.code.tex
+File: pgfcoreexternal.code.tex 2010/09/01  (rcs-revision 1.17)
+\pgfexternal@startupbox=\box68
+))
+(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcorelayers.code.tex
+File: pgfcorelayers.code.tex 2010/08/27  (rcs-revision 1.2)
+)
+(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcoretransparency.code.tex
+File: pgfcoretransparency.code.tex 2008/01/17  (rcs-revision 1.2)
+)
+(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcorepatterns.code.tex
+File: pgfcorepatterns.code.tex 2009/07/02  (rcs-revision 1.3)
+)))
+(/usr/share/texmf/tex/generic/pgf/modules/pgfmoduleshapes.code.tex
+File: pgfmoduleshapes.code.tex 2010/09/09  (rcs-revision 1.13)
+\pgfnodeparttextbox=\box69
+)
+(/usr/share/texmf/tex/generic/pgf/modules/pgfmoduleplot.code.tex
+File: pgfmoduleplot.code.tex 2010/10/22  (rcs-revision 1.8)
+)
+(/usr/share/texmf/tex/latex/pgf/compatibility/pgfcomp-version-0-65.sty
+Package: pgfcomp-version-0-65 2007/07/03 v2.10 (rcs-revision 1.7)
+\pgf@nodesepstart=\dimen178
+\pgf@nodesepend=\dimen179
+)
+(/usr/share/texmf/tex/latex/pgf/compatibility/pgfcomp-version-1-18.sty
+Package: pgfcomp-version-1-18 2007/07/23 v2.10 (rcs-revision 1.1)
+))
+(/usr/share/texmf/tex/latex/pgf/frontendlayer/tikz.sty
+(/usr/share/texmf/tex/latex/pgf/utilities/pgffor.sty
+(/usr/share/texmf/tex/latex/pgf/utilities/pgfkeys.sty
+(/usr/share/texmf/tex/generic/pgf/utilities/pgfkeys.code.tex))
+(/usr/share/texmf/tex/generic/pgf/utilities/pgffor.code.tex
+Package: pgffor 2010/03/23 v2.10 (rcs-revision 1.18)
+\pgffor@iter=\dimen180
+\pgffor@skip=\dimen181
+\pgffor@stack=\toks38
+\pgffor@toks=\toks39
+))
+(/usr/share/texmf/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
+Package: tikz 2010/10/13 v2.10 (rcs-revision 1.76)
+
+(/usr/share/texmf/tex/generic/pgf/libraries/pgflibraryplothandlers.code.tex
+File: pgflibraryplothandlers.code.tex 2010/05/31 v2.10 (rcs-revision 1.15)
+\pgf@plot@mark@count=\count144
+\pgfplotmarksize=\dimen182
+)
+\tikz@lastx=\dimen183
+\tikz@lasty=\dimen184
+\tikz@lastxsaved=\dimen185
+\tikz@lastysaved=\dimen186
+\tikzleveldistance=\dimen187
+\tikzsiblingdistance=\dimen188
+\tikz@figbox=\box70
+\tikz@tempbox=\box71
+\tikztreelevel=\count145
+\tikznumberofchildren=\count146
+\tikznumberofcurrentchild=\count147
+\tikz@fig@count=\count148
+
+(/usr/share/texmf/tex/generic/pgf/modules/pgfmodulematrix.code.tex
+File: pgfmodulematrix.code.tex 2010/08/24  (rcs-revision 1.4)
+\pgfmatrixcurrentrow=\count149
+\pgfmatrixcurrentcolumn=\count150
+\pgf@matrix@numberofcolumns=\count151
+)
+\tikz@expandcount=\count152
+
+(/usr/share/texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytopat
+hs.code.tex
+File: tikzlibrarytopaths.code.tex 2008/06/17 v2.10 (rcs-revision 1.2)
+))) (/usr/share/texmf-texlive/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2000/07/18 v2.13 AMS math features
+\@mathmargin=\skip109
+
+For additional information on amsmath, use the `?' option.
+(/usr/share/texmf-texlive/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01
+
+(/usr/share/texmf-texlive/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0
+\@emptytoks=\toks40
+\ex@=\dimen189
+))
+(/usr/share/texmf-texlive/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d
+\pmbraise@=\dimen190
+)
+(/usr/share/texmf-texlive/tex/latex/amsmath/amsopn.sty
+Package: amsopn 1999/12/14 v2.01 operator names
+)
+\inf@bad=\count153
+LaTeX Info: Redefining \frac on input line 211.
+\uproot@=\count154
+\leftroot@=\count155
+LaTeX Info: Redefining \overline on input line 307.
+\classnum@=\count156
+\DOTSCASE@=\count157
+LaTeX Info: Redefining \ldots on input line 379.
+LaTeX Info: Redefining \dots on input line 382.
+LaTeX Info: Redefining \cdots on input line 467.
+\Mathstrutbox@=\box72
+\strutbox@=\box73
+\big@size=\dimen191
+LaTeX Font Info:    Redeclaring font encoding OML on input line 567.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
+\macc@depth=\count158
+\c@MaxMatrixCols=\count159
+\dotsspace@=\muskip10
+\c@parentequation=\count160
+\dspbrk@lvl=\count161
+\tag@help=\toks41
+\row@=\count162
+\column@=\count163
+\maxfields@=\count164
+\andhelp@=\toks42
+\eqnshift@=\dimen192
+\alignsep@=\dimen193
+\tagshift@=\dimen194
+\tagwidth@=\dimen195
+\totwidth@=\dimen196
+\lineht@=\dimen197
+\@envbody=\toks43
+\multlinegap=\skip110
+\multlinetaggap=\skip111
+\mathdisplay@stack=\toks44
+LaTeX Info: Redefining \[ on input line 2666.
+LaTeX Info: Redefining \] on input line 2667.
+)
+(/usr/share/texmf-texlive/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2009/06/22 v3.00 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 96.
+)
+(/usr/share/texmf-texlive/tex/latex/amscls/amsthm.sty
+Package: amsthm 2004/08/06 v2.20
+\thm@style=\toks45
+\thm@bodyfont=\toks46
+\thm@headfont=\toks47
+\thm@notefont=\toks48
+\thm@headpunct=\toks49
+\thm@preskip=\skip112
+\thm@postskip=\skip113
+\thm@headsep=\skip114
+\dth@everypar=\toks50
+)
+(/usr/share/texmf-texlive/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2009/06/22 v3.00
+)
+(/usr/share/texmf-texlive/tex/latex/base/latexsym.sty
+Package: latexsym 1998/08/17 v2.2e Standard LaTeX package (lasy symbols)
+\symlasy=\mathgroup6
+LaTeX Font Info:    Overwriting symbol font `lasy' in version `bold'
+(Font)                  U/lasy/m/n --> U/lasy/b/n on input line 47.
+)
+(/usr/share/texmf-texlive/tex/latex/jknapltx/mathrsfs.sty
+Package: mathrsfs 1996/01/01 Math RSFS package v1.0 (jk)
+\symrsfs=\mathgroup7
+)
+(/usr/share/texmf-texlive/tex/latex/eulervm/eulervm.sty
+Package: eulervm 2005/01/11 v4.0 (WaS)
+)
+(/usr/share/texmf/tex/latex/biblatex/biblatex.sty
+Package: biblatex 2011/11/13 v1.7 programmable bibliographies
+
+(/usr/share/texmf/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2011/01/03 v2.1 e-TeX tools for LaTeX
+
+(/usr/share/texmf-texlive/tex/latex/etex-pkg/etex.sty
+Package: etex 1998/03/26 v2.0 eTeX basic definition package (PEB)
+\et@xins=\count165
+)
+\etb@tempcnta=\count166
+)
+(/usr/share/texmf/tex/latex/logreq/logreq.sty
+Package: logreq 2010/08/04 v1.0 xml request logger
+\lrq@indent=\count167
+
+(/usr/share/texmf/tex/latex/logreq/logreq.def
+File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
+))
+(/usr/share/texmf-texlive/tex/latex/ltxmisc/url.sty
+\Urlmuskip=\muskip11
+Package: url 2006/04/12  ver 3.3  Verb mode for urls, etc.
+)
+\c@listtotal=\count168
+\c@listcount=\count169
+\c@liststart=\count170
+\c@liststop=\count171
+\c@citecount=\count172
+\c@citetotal=\count173
+\c@multicitecount=\count174
+\c@multicitetotal=\count175
+\c@instcount=\count176
+\c@maxnames=\count177
+\c@minnames=\count178
+\c@maxitems=\count179
+\c@minitems=\count180
+\c@citecounter=\count181
+\c@savedcitecounter=\count182
+\c@uniquelist=\count183
+\c@uniquename=\count184
+\c@refsection=\count185
+\c@refsegment=\count186
+\c@maxextrayear=\count187
+\c@maxextraalpha=\count188
+\c@abbrvpenalty=\count189
+\c@highnamepenalty=\count190
+\c@lownamepenalty=\count191
+\c@maxparens=\count192
+\c@parenlevel=\count193
+\blx@tempcnta=\count194
+\blx@tempcntb=\count195
+\blx@tempcntc=\count196
+\blx@maxsection=\count197
+\blx@maxsegment=\count198
+\blx@notetype=\count199
+\blx@parenlevel@text=\count200
+\blx@parenlevel@foot=\count201
+\labelnumberwidth=\skip115
+\labelalphawidth=\skip116
+\shorthandwidth=\skip117
+\biblabelsep=\skip118
+\bibitemsep=\skip119
+\bibnamesep=\skip120
+\bibinitsep=\skip121
+\bibparsep=\skip122
+\bibhang=\skip123
+\blx@auxin=\read4
+\blx@auxout=\write5
+\c@mincomprange=\count202
+\c@maxcomprange=\count203
+\c@mincompwidth=\count204
+\c@labelname=\count205
+\c@savedlabelname=\count206
+\c@author=\count207
+\c@savedauthor=\count208
+\c@shortauthor=\count209
+\c@savedshortauthor=\count210
+\c@editor=\count211
+\c@savededitor=\count212
+\c@editora=\count213
+\c@savededitora=\count214
+\c@editorb=\count215
+\c@savededitorb=\count216
+\c@editorc=\count217
+\c@savededitorc=\count218
+\c@shorteditor=\count219
+\c@savedshorteditor=\count220
+\c@bookauthor=\count221
+\c@savedbookauthor=\count222
+\c@translator=\count223
+\c@savedtranslator=\count224
+\c@annotator=\count225
+\c@savedannotator=\count226
+\c@commentator=\count227
+\c@savedcommentator=\count228
+\c@introduction=\count229
+\c@savedintroduction=\count230
+\c@foreword=\count231
+\c@savedforeword=\count232
+\c@afterword=\count233
+Normal \count register pool exhausted, switching to extended pool.
+\c@savedafterword=\count277
+\c@holder=\count278
+\c@savedholder=\count279
+\c@namea=\count280
+\c@savednamea=\count281
+\c@nameb=\count282
+\c@savednameb=\count283
+\c@namec=\count284
+\c@savednamec=\count285
+\c@institution=\count286
+\c@savedinstitution=\count287
+\c@language=\count288
+\c@savedlanguage=\count289
+\c@location=\count290
+\c@savedlocation=\count291
+\c@organization=\count292
+\c@savedorganization=\count293
+\c@origlocation=\count294
+\c@savedoriglocation=\count295
+\c@origpublisher=\count296
+\c@savedorigpublisher=\count297
+\c@pageref=\count298
+\c@savedpageref=\count299
+\c@publisher=\count300
+\c@savedpublisher=\count301
+\c@lista=\count302
+\c@savedlista=\count303
+\c@listb=\count304
+\c@savedlistb=\count305
+\c@listc=\count306
+\c@savedlistc=\count307
+\c@listd=\count308
+\c@savedlistd=\count309
+\c@liste=\count310
+\c@savedliste=\count311
+\c@listf=\count312
+\c@savedlistf=\count313
+Package biblatex Info: Trying to load compatibility code...
+Package biblatex Info: ... file 'blx-compat.def' found.
+
+(/usr/share/texmf/tex/latex/biblatex/blx-compat.def
+File: blx-compat.def 2011/11/13 v1.7 biblatex generic compatibility
+)
+Package biblatex Info: Trying to load generic definitions...
+Package biblatex Info: ... file 'biblatex.def' found.
+
+(/usr/share/texmf/tex/latex/biblatex/biblatex.def
+File: biblatex.def 2011/11/13 v1.7 biblatex generic definitions
+\c@biburlnumpenalty=\count314
+\c@biburlucpenalty=\count315
+\c@biburllcpenalty=\count316
+\c@smartand=\count317
+)
+Package biblatex Info: Trying to load bibliography style 'numeric-comp'...
+Package biblatex Info: ... file 'numeric-comp.bbx' found.
+
+(/usr/share/texmf/tex/latex/biblatex/bbx/numeric-comp.bbx
+File: numeric-comp.bbx 2011/11/13 v1.7 biblatex bibliography style
+Package biblatex Info: Trying to load bibliography style 'numeric'...
+Package biblatex Info: ... file 'numeric.bbx' found.
+
+(/usr/share/texmf/tex/latex/biblatex/bbx/numeric.bbx
+File: numeric.bbx 2011/11/13 v1.7 biblatex bibliography style
+Package biblatex Info: Trying to load bibliography style 'standard'...
+Package biblatex Info: ... file 'standard.bbx' found.
+
+(/usr/share/texmf/tex/latex/biblatex/bbx/standard.bbx
+File: standard.bbx 2011/11/13 v1.7 biblatex bibliography style
+)))
+Package biblatex Info: Trying to load citation style 'numeric-comp'...
+Package biblatex Info: ... file 'numeric-comp.cbx' found.
+
+(/usr/share/texmf/tex/latex/biblatex/cbx/numeric-comp.cbx
+File: numeric-comp.cbx 2011/11/13 v1.7 biblatex citation style
+\c@cbx@tempcnta=\count318
+\c@cbx@tempcntb=\count319
+Package biblatex Info: Redefining '\cite'.
+Package biblatex Info: Redefining '\parencite'.
+Package biblatex Info: Redefining '\footcite'.
+Package biblatex Info: Redefining '\footcitetext'.
+Package biblatex Info: Redefining '\smartcite'.
+Package biblatex Info: Redefining '\textcite'.
+Package biblatex Info: Redefining '\supercite'.
+Package biblatex Info: Redefining '\cites'.
+Package biblatex Info: Redefining '\parencites'.
+Package biblatex Info: Redefining '\smartcites'.
+)
+Package biblatex Info: Trying to load configuration file...
+Package biblatex Info: ... file 'biblatex.cfg' found.
+
+(/usr/share/texmf/tex/latex/biblatex/biblatex.cfg
+File: biblatex.cfg 
+))
+(/usr/share/texmf-texlive/tex/latex/csquotes/csquotes.sty
+Package: csquotes 2009/09/23 v4.4c context-sensitive quotations
+\csq@reset=\count320
+\csq@gtype=\count321
+\csq@glevel=\count322
+\csq@qlevel=\count323
+\csq@maxlvl=\count324
+\csq@tshold=\count325
+\csq@ltx@everypar=\toks51
+
+(/usr/share/texmf-texlive/tex/latex/csquotes/csquotes.def
+File: csquotes.def 2009/09/23 v4.4c csquotes generic definitions
+)
+Package csquotes Info: Trying to load configuration file 'csquotes.cfg'...
+Package csquotes Info: ... configuration file loaded successfully.
+
+(/usr/share/texmf-texlive/tex/latex/csquotes/csquotes.cfg
+File: csquotes.cfg 2009/05/30 v4.4 csquotes configuration
+)
+Package csquotes Info: Enabling multilingual support.
+)
+(/usr/share/texmf-texlive/tex/latex/base/makeidx.sty
+Package: makeidx 2000/03/29 v1.0m Standard LaTeX package
+)
+(/usr/share/texmf-texlive/tex/latex/acronym/acronym.sty
+Package: acronym 2009/01/25 v1.34 Support for acronyms (Tobias Oetiker)
+
+(/usr/share/texmf-texlive/tex/latex/bigfoot/suffix.sty
+Package: suffix 2006/07/15 1.5 Variant command support
+)
+\AC@clearlist=\toks52
+)
+(/usr/share/texmf-texlive/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2009/10/09 v6.79a Hypertext links for LaTeX
+
+(/usr/share/texmf-texlive/tex/generic/ifxetex/ifxetex.sty
+Package: ifxetex 2009/01/23 v0.5 Provides ifxetex conditional
+)
+(/usr/share/texmf-texlive/tex/latex/oberdiek/hycolor.sty
+Package: hycolor 2009/10/02 v1.5 Code for color options of hyperref/bookmark (H
+O)
+
+(/usr/share/texmf-texlive/tex/latex/oberdiek/xcolor-patch.sty
+Package: xcolor-patch 2009/10/02 xcolor patch
+))
+\@linkdim=\dimen198
+\Hy@linkcounter=\count326
+\Hy@pagecounter=\count327
+
+(/usr/share/texmf-texlive/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2009/10/09 v6.79a Hyperref: PDFDocEncoding definition (HO)
+Now handling font encoding PD1 ...
+... no UTF-8 mapping file for font encoding PD1
+)
+(/usr/share/texmf-texlive/tex/latex/latexconfig/hyperref.cfg
+File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
+)
+Package hyperref Info: Option `hyperfootnotes' set `true' on input line 2864.
+Package hyperref Info: Option `pdfpagelabels' set `true' on input line 2864.
+Package hyperref Info: Option `colorlinks' set `true' on input line 2864.
+Package hyperref Info: Hyper figures OFF on input line 2975.
+Package hyperref Info: Link nesting OFF on input line 2980.
+Package hyperref Info: Hyper index ON on input line 2983.
+Package hyperref Info: Plain pages OFF on input line 2990.
+Package hyperref Info: Backreferencing OFF on input line 2995.
+
+Implicit mode ON; LaTeX internals redefined
+Package hyperref Info: Bookmarks ON on input line 3191.
+LaTeX Info: Redefining \url on input line 3428.
+(/usr/share/texmf-texlive/tex/generic/oberdiek/bitset.sty
+Package: bitset 2007/09/28 v1.0 Data type bit set (HO)
+
+(/usr/share/texmf-texlive/tex/generic/oberdiek/intcalc.sty
+Package: intcalc 2007/09/27 v1.1 Expandable integer calculations (HO)
+)
+(/usr/share/texmf-texlive/tex/generic/oberdiek/bigintcalc.sty
+Package: bigintcalc 2007/11/11 v1.1 Expandable big integer calculations (HO)
+
+(/usr/share/texmf-texlive/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2009/09/23 v0.6 LuaTeX support for pdfTeX utility functions
+ (HO)
+
+(/usr/share/texmf-texlive/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2009/04/17 v1.2 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+(/usr/share/texmf-texlive/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2009/08/05 v1.0 Some LaTeX kernel commands for general use (HO
+)
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+)))
+\Fld@menulength=\count328
+\Field@Width=\dimen199
+\Fld@charsize=\dimen200
+\Field@toks=\toks53
+Package hyperref Info: Hyper figures OFF on input line 4377.
+Package hyperref Info: Link nesting OFF on input line 4382.
+Package hyperref Info: Hyper index ON on input line 4385.
+Package hyperref Info: backreferencing OFF on input line 4392.
+Package hyperref Info: Link coloring ON on input line 4395.
+Package hyperref Info: Link coloring with OCG OFF on input line 4402.
+Package hyperref Info: PDF/A mode OFF on input line 4407.
+
+(/usr/share/texmf-texlive/tex/generic/oberdiek/atbegshi.sty
+Package: atbegshi 2008/07/31 v1.9 At begin shipout hook (HO)
+)
+\Hy@abspage=\count329
+\c@Item=\count330
+)
+*hyperref using default driver hpdftex*
+(/usr/share/texmf-texlive/tex/latex/hyperref/hpdftex.def
+File: hpdftex.def 2009/10/09 v6.79a Hyperref driver for pdfTeX
+\Fld@listcount=\count331
+)
+
+Package hyperref Warning: Option `bookmarks' has already been used,
+(hyperref)                setting the option has no effect on input line 220.
+
+Package hyperref Info: Option `unicode' set `true' on input line 220.
+(/usr/share/texmf-texlive/tex/latex/hyperref/puenc.def
+File: puenc.def 2009/10/09 v6.79a Hyperref: PDF Unicode definition (HO)
+Now handling font encoding PU ...
+... no UTF-8 mapping file for font encoding PU
+)
+Package hyperref Info: Option `pdftoolbar' set `true' on input line 220.
+Package hyperref Info: Option `pdfmenubar' set `true' on input line 220.
+Package hyperref Info: Option `pdffitwindow' set `false' on input line 220.
+Package hyperref Info: Option `pdfnewwindow' set `true' on input line 220.
+Package hyperref Info: Option `colorlinks' set `true' on input line 220.
+
+(/usr/share/texmf-texlive/tex/latex/titlesec/block.tss
+File: block.tss 2007/08/12
+))
+(/usr/share/texmf-texlive/tex/latex/oberdiek/epstopdf.sty
+Package: epstopdf 2009/10/17 v2.4 Conversion with epstopdf on the fly (HO)
+
+(/usr/share/texmf-texlive/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2009/10/17 v2.4 Base part for package epstopdf
+
+(/usr/share/texmf-texlive/tex/latex/oberdiek/grfext.sty
+Package: grfext 2007/09/30 v1.0 Managing graphics extensions (HO)
+)
+
+Package epstopdf Warning: Shell escape feature is not enabled.
+
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 433.
+(/usr/share/texmf-texlive/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2009/10/26 v1.1 Configuration of epstopdf for TeX Live
+)))
+(/usr/share/texmf-texlive/tex/latex/algorithms/algorithm.sty
+Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating enviro
+nment
+\@float@every@algorithm=\toks54
+\c@algorithm=\count332
+)
+(/usr/share/texmf-texlive/tex/latex/algorithmicx/algpseudocode.sty
+Package: algpseudocode 
+
+(/usr/share/texmf-texlive/tex/latex/algorithmicx/algorithmicx.sty
+Package: algorithmicx 2005/04/27 v1.2 Algorithmicx
+
+Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
+\c@ALG@line=\count333
+\c@ALG@rem=\count334
+\c@ALG@nested=\count335
+\ALG@tlm=\skip124
+\ALG@thistlm=\skip125
+\c@ALG@Lnr=\count336
+\c@ALG@blocknr=\count337
+\c@ALG@storecount=\count338
+\c@ALG@tmpcounter=\count339
+\ALG@tmplength=\skip126
+)
+Document Style - pseudocode environments for use with the `algorithmicx' style
+)
+Package biblatex Info: Trying to load language 'english'...
+Package biblatex Info: ... file 'english.lbx' found.
+ (/usr/share/texmf/tex/latex/biblatex/lbx/english.lbx
+File: english.lbx 2011/11/13 v1.7 biblatex localization
+)
+\@quotereset=\count340
+
+
+LaTeX Warning: Unused global option(s):
+    [13pt].
+
+(./report_en.aux (./tikz_style.aux) (./en/00_00_title.aux)
+(./en/00_01_copyright.aux) (./en/00_02_abstract.aux) (./en/00_03_ack.aux)
+
+LaTeX Warning: Label `table:flow_traffic' multiply defined.
+
+
+LaTeX Warning: Label `fig:insession_mean_p' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:insession_mean_p' multiply defined.
+
+
+LaTeX Warning: Label `fig:insession_mean_p_all' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:insession_mean_p_all' multiply defined.
+
+)
+\openout1 = `report_en.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 45.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 45.
+ (/usr/share/texmf-texlive/tex/latex/base/ts1cmr.fd
+File: ts1cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Try loading font information for T1+pplx on input line 45.
+
+(/usr/share/texmf-texlive/tex/latex/psnfss/t1pplx.fd
+File: t1pplx.fd 2004/09/06 font definitions for T1/pplx.
+)
+*geometry auto-detecting driver*
+*geometry detected driver: pdftex*
+-------------------- Geometry parameters
+paper: a4paper
+landscape: --
+twocolumn: --
+twoside: true
+asymmetric: --
+h-parts: 71.70166pt, 0.7\paperwidth , 107.55254pt (default)
+v-parts: 101.40665pt, 0.7\paperheight , 152.11pt (default)
+hmarginratio: 2:3
+vmarginratio: 2:3
+lines: --
+heightrounded: --
+bindingoffset: 0.0pt
+truedimen: --
+includehead: --
+includefoot: --
+includemp: --
+driver: pdftex
+-------------------- Page layout dimensions and switches
+\paperwidth  597.50787pt
+\paperheight 845.04684pt
+\textwidth  418.25368pt
+\textheight 640.0pt
+\oddsidemargin  -0.56833pt
+\evensidemargin 35.28255pt
+\topmargin  -7.86334pt
+\headheight 12.0pt
+\headsep    25.0pt
+\footskip   30.0pt
+\marginparwidth 111.0pt
+\marginparsep   11.0pt
+\columnsep  10.0pt
+\skip\footins  9.0pt plus 4.0pt minus 2.0pt
+\hoffset 0.0pt
+\voffset 0.0pt
+\mag 1000
+\@twosidetrue \@mparswitchtrue 
+(1in=72.27pt, 1cm=28.45pt)
+-----------------------
+(/usr/share/texmf-texlive/tex/context/base/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count341
+\scratchdimen=\dimen201
+\scratchbox=\box74
+\nofMPsegments=\count342
+\nofMParguments=\count343
+\everyMPshowfont=\toks55
+\MPscratchCnt=\count344
+\MPscratchDim=\dimen202
+\MPnumerator=\count345
+\everyMPtoPDFconversion=\toks56
+)
+Package caption Info: Begin \AtBeginDocument code.
+Package caption3 Info: subfig package 1.2 or 1.3 is loaded.
+LaTeX Info: Redefining \subref on input line 45.
+Package caption Info: float package is loaded.
+Package caption Info: hyperref package is loaded.
+Package caption Info: listings package is loaded.
+Package caption Info: longtable package is loaded.
+ (/usr/share/texmf-texlive/tex/latex/caption/ltcaption.sty
+Package: ltcaption 2008/03/28 v1.2 longtable captions (AR)
+)
+Package caption Info: End \AtBeginDocument code.
+\c@lstlisting=\count346
+LaTeX Info: Redefining \microtypecontext on input line 45.
+Package microtype Info: Generating PDF output.
+Package microtype Info: Character protrusion enabled (level 2).
+Package microtype Info: Using default protrusion set `alltext'.
+Package microtype Info: Automatic font expansion enabled (level 2),
+(microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
+Package microtype Info: Using default expansion set `basictext'.
+Package microtype Info: No tracking.
+Package microtype Info: No adjustment of interword spacing.
+Package microtype Info: No adjustment of character kerning.
+
+(/usr/share/texmf-texlive/tex/latex/microtype/mt-ppl.cfg
+File: mt-ppl.cfg 2005/11/16 v1.6 microtype config. file: Palatino (RS)
+)
+ABD: EveryShipout initializing macros
+Package biblatex Info: Input encoding 'utf8' detected.
+Package biblatex Info: Automatic encoding selection.
+(biblatex)             Assuming data encoding 'utf8'.
+
+
+Package biblatex Warning: Data encoding is 'utf8'.
+(biblatex)                Use backend=biber.
+
+\openout5 = `report_en-blx.bib'.
+
+Package biblatex Info: Trying to load bibliographic data...
+Package biblatex Info: ... file 'report_en.bbl' found.
+(./report_en.bbl
+
+Package biblatex Warning: BibTeX reported the following issues
+(biblatex)                with 'DSA-Emp':
+(biblatex)                - Can't use 'location' + 'address'.
+
+
+Package biblatex Warning: BibTeX reported the following issues
+(biblatex)                with 'Campus-WLAN':
+(biblatex)                - Can't use 'location' + 'address'.
+
+)
+Package biblatex Info: Reference section=0 on input line 45.
+Package biblatex Info: Reference segment=0 on input line 45.
+Package hyperref Info: Link coloring ON on input line 45.
+ (/usr/share/texmf-texlive/tex/latex/hyperref/nameref.sty
+Package: nameref 2007/05/29 v2.31 Cross-referencing by name of section
+
+(/usr/share/texmf-texlive/tex/latex/oberdiek/refcount.sty
+Package: refcount 2008/08/11 v3.1 Data extraction from references (HO)
+)
+\c@section@level=\count347
+)
+LaTeX Info: Redefining \ref on input line 45.
+LaTeX Info: Redefining \pageref on input line 45.
+ (./report_en.out)
+(./report_en.out)
+\@outlinefile=\write6
+\openout6 = `report_en.out'.
+
+\AtBeginShipoutBox=\box75
+\openout2 = `tikz_style.aux'.
+
+ (./tikz_style.tex
+(/usr/share/texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryarrow
+s.code.tex
+File: tikzlibraryarrows.code.tex 2008/01/09 v2.10 (rcs-revision 1.1)
+
+(/usr/share/texmf/tex/generic/pgf/libraries/pgflibraryarrows.code.tex
+File: pgflibraryarrows.code.tex 2008/10/27 v2.10 (rcs-revision 1.9)
+\arrowsize=\dimen203
+))
+(/usr/share/texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshape
+s.code.tex
+File: tikzlibraryshapes.code.tex 2008/01/09 v2.10 (rcs-revision 1.1)
+
+(/usr/share/texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshape
+s.geometric.code.tex
+File: tikzlibraryshapes.geometric.code.tex 2008/01/09 v2.10 (rcs-revision 1.1)
+
+(/usr/share/texmf/tex/generic/pgf/libraries/shapes/pgflibraryshapes.geometric.c
+ode.tex
+File: pgflibraryshapes.geometric.code.tex 2008/06/26 v2.10 (rcs-revision 1.1)
+))
+(/usr/share/texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshape
+s.misc.code.tex
+File: tikzlibraryshapes.misc.code.tex 2008/01/09 v2.10 (rcs-revision 1.1)
+
+(/usr/share/texmf/tex/generic/pgf/libraries/shapes/pgflibraryshapes.misc.code.t
+ex
+File: pgflibraryshapes.misc.code.tex 2008/10/07 v2.10 (rcs-revision 1.3)
+))
+(/usr/share/texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshape
+s.symbols.code.tex
+File: tikzlibraryshapes.symbols.code.tex 2008/01/09 v2.10 (rcs-revision 1.1)
+
+(/usr/share/texmf/tex/generic/pgf/libraries/shapes/pgflibraryshapes.symbols.cod
+e.tex
+File: pgflibraryshapes.symbols.code.tex 2009/10/27 v2.10 (rcs-revision 1.3)
+))
+(/usr/share/texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshape
+s.arrows.code.tex
+File: tikzlibraryshapes.arrows.code.tex 2008/01/09 v2.10 (rcs-revision 1.1)
+
+(/usr/share/texmf/tex/generic/pgf/libraries/shapes/pgflibraryshapes.arrows.code
+.tex
+File: pgflibraryshapes.arrows.code.tex 2008/06/26 v2.10 (rcs-revision 1.1)
+))
+(/usr/share/texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshape
+s.callouts.code.tex
+(/usr/share/texmf/tex/generic/pgf/libraries/shapes/pgflibraryshapes.callouts.co
+de.tex))
+(/usr/share/texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshape
+s.multipart.code.tex
+File: tikzlibraryshapes.multipart.code.tex 2008/01/09 v2.10 (rcs-revision 1.1)
+
+(/usr/share/texmf/tex/generic/pgf/libraries/shapes/pgflibraryshapes.multipart.c
+ode.tex
+File: pgflibraryshapes.multipart.code.tex 2010/01/07 v2.10 (rcs-revision 1.2)
+\pgfnodepartlowerbox=\box76
+\pgfnodeparttwobox=\box77
+\pgfnodepartthreebox=\box78
+\pgfnodepartfourbox=\box79
+\pgfnodeparttwentybox=\box80
+\pgfnodepartnineteenbox=\box81
+\pgfnodeparteighteenbox=\box82
+\pgfnodepartseventeenbox=\box83
+\pgfnodepartsixteenbox=\box84
+\pgfnodepartfifteenbox=\box85
+\pgfnodepartfourteenbox=\box86
+\pgfnodepartthirteenbox=\box87
+\pgfnodeparttwelvebox=\box88
+\pgfnodepartelevenbox=\box89
+\pgfnodeparttenbox=\box90
+\pgfnodepartninebox=\box91
+\pgfnodeparteightbox=\box92
+\pgfnodepartsevenbox=\box93
+\pgfnodepartsixbox=\box94
+\pgfnodepartfivebox=\box95
+)))
+(/usr/share/texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryautom
+ata.code.tex
+File: tikzlibraryautomata.code.tex 2008/07/14 v2.10 (rcs-revision 1.3)
+)
+(/usr/share/texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarybackg
+rounds.code.tex
+File: tikzlibrarybackgrounds.code.tex 2010/02/08 v2.10 (rcs-revision 1.2)
+\pgf@layerbox@background=\box96
+\pgf@layerboxsaved@background=\box97
+)
+(/usr/share/texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarypetri
+.code.tex
+File: tikzlibrarypetri.code.tex 2008/06/18 v2.10 (rcs-revision 1.2)
+)
+(/usr/share/texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshado
+ws.code.tex
+File: tikzlibraryshadows.code.tex 2008/01/13 v2.10 (rcs-revision 1.3)
+
+(/usr/share/texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryfadin
+gs.code.tex
+File: tikzlibraryfadings.code.tex 2009/11/15 v2.10 (rcs-revision 1.2)
+
+(/usr/share/texmf/tex/generic/pgf/libraries/pgflibraryfadings.code.tex
+File: pgflibraryfadings.code.tex 2008/02/07 v2.10 (rcs-revision 1.3)
+)))
+(/usr/share/texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryfit.c
+ode.tex
+File: tikzlibraryfit.code.tex 2008/06/21 v2.10 (rcs-revision 1.3)
+)
+(/usr/share/texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryposit
+ioning.code.tex
+File: tikzlibrarypositioning.code.tex 2008/10/06 v2.10 (rcs-revision 1.7)
+)
+(/usr/share/texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarypatte
+rns.code.tex
+File: tikzlibrarypatterns.code.tex 2008/01/15 v2.10 (rcs-revision 1.2)
+
+(/usr/share/texmf/tex/generic/pgf/libraries/pgflibrarypatterns.code.tex
+File: pgflibrarypatterns.code.tex 2008/03/03 v2.10 (rcs-revision 1.13)
+))
+(/usr/share/texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecor
+ations.code.tex
+(/usr/share/texmf/tex/generic/pgf/modules/pgfmoduledecorations.code.tex
+\pgfdecoratedcompleteddistance=\dimen204
+\pgfdecoratedremainingdistance=\dimen205
+\pgfdecoratedinputsegmentcompleteddistance=\dimen206
+\pgfdecoratedinputsegmentremainingdistance=\dimen207
+\pgf@decorate@distancetomove=\dimen208
+\pgf@decorate@repeatstate=\count348
+\pgfdecorationsegmentamplitude=\dimen209
+\pgfdecorationsegmentlength=\dimen210
+)
+\tikz@lib@dec@box=\box98
+)
+(/usr/share/texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecor
+ations.pathreplacing.code.tex
+(/usr/share/texmf/tex/generic/pgf/libraries/decorations/pgflibrarydecorations.p
+athreplacing.code.tex)))
+\openout2 = `en/00_00_title.aux'.
+
+ (./en/00_00_title.tex
+<images/logo_kth.pdf, id=262, 370.38374pt x 370.38374pt>
+File: images/logo_kth.pdf Graphic file (type pdf)
+
+<use images/logo_kth.pdf>
+LaTeX Font Info:    Font shape `T1/pplx/bx/n' in size <14.4> not available
+(Font)              Font shape `T1/pplx/b/n' tried instead on input line 32.
+
+
+LaTeX Font Warning: Font shape `T1/pplx/bx/sc' undefined
+(Font)              using `T1/pplx/bx/n' instead on input line 32.
+
+LaTeX Font Info:    Font shape `T1/pplx/bx/n' in size <10> not available
+(Font)              Font shape `T1/pplx/b/n' tried instead on input line 41.
+LaTeX Font Info:    Font shape `T1/pplx/bx/n' in size <21> not available
+(Font)              Font shape `T1/pplx/b/n' tried instead on input line 48.
+LaTeX Font Info:    Font shape `T1/pplx/bx/sc' in size <21> not available
+(Font)              Font shape `T1/pplx/b/n' tried instead on input line 48.
+[1
+
+
+
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./images/logo_kth.pdf>])
+\openout2 = `en/00_01_copyright.aux'.
+
+(./en/00_01_copyright.tex) [2
+
+
+]
+\openout2 = `en/00_02_abstract.aux'.
+
+ (./en/00_02_abstract.tex) [3
+
+
+
+
+]
+\openout2 = `en/00_03_ack.aux'.
+
+
+(./en/00_03_ack.tex [4
+
+
+
+
+]) [5] [6
+
+
+
+] (./report_en.toc
+(/usr/share/texmf-texlive/tex/latex/microtype/mt-cmr.cfg
+File: mt-cmr.cfg 2008/02/29 v1.9a microtype config. file: Computer Modern Roman
+ (RS)
+)
+LaTeX Font Info:    Try loading font information for U+zeur on input line 5.
+
+(/usr/share/texmf-texlive/tex/latex/eulervm/uzeur.fd
+File: uzeur.fd 2005/01/11 v4.0 (WaS)
+)
+(/usr/share/texmf-texlive/tex/latex/microtype/mt-eur.cfg
+File: mt-eur.cfg 2006/07/31 v1.1 microtype config. file: AMS Euler Roman (RS)
+)
+LaTeX Font Info:    Try loading font information for U+zeus on input line 5.
+
+(/usr/share/texmf-texlive/tex/latex/eulervm/uzeus.fd
+File: uzeus.fd 2005/01/11 v4.0 (WaS)
+)
+(/usr/share/texmf-texlive/tex/latex/microtype/mt-eus.cfg
+File: mt-eus.cfg 2006/07/28 v1.2 microtype config. file: AMS Euler Script (RS)
+)
+LaTeX Font Info:    Try loading font information for U+zeuex on input line 5.
+
+(/usr/share/texmf-texlive/tex/latex/eulervm/uzeuex.fd
+File: uzeuex.fd 2005/01/11 v4.0 (WaS)
+)
+(/usr/share/texmf-texlive/tex/latex/microtype/mt-msa.cfg
+File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
+)
+(/usr/share/texmf-texlive/tex/latex/microtype/mt-msb.cfg
+File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
+)
+LaTeX Font Info:    Try loading font information for U+lasy on input line 5.
+
+(/usr/share/texmf-texlive/tex/latex/base/ulasy.fd
+File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
+)
+LaTeX Font Info:    Try loading font information for U+rsfs on input line 5.
+
+(/usr/share/texmf-texlive/tex/latex/jknapltx/ursfs.fd
+File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
+)
+LaTeX Font Info:    Font shape `T1/pplx/bx/n' in size <12> not available
+(Font)              Font shape `T1/pplx/b/n' tried instead on input line 13.
+ [7])
+\tf@toc=\write7
+\openout7 = `report_en.toc'.
+
+ [8]
+(./en/introduction/01_introduction.tex
+Chapter 1.
+) (./en/introduction/01_01_scenario.tex
+LaTeX Font Info:    Font shape `T1/pplx/bx/sc' in size <14.4> not available
+(Font)              Font shape `T1/pplx/b/n' tried instead on input line 1.
+ [1
+
+
+
+
+]
+<images/introduction/scenario.pdf, id=403, 464.73625pt x 213.79875pt>
+File: images/introduction/scenario.pdf Graphic file (type pdf)
+
+<use images/introduction/scenario.pdf>
+LaTeX Font Info:    Try loading font information for T1+iwona on input line 7.
+
+(/usr/share/texmf-texlive/tex/latex/iwona/t1iwona.fd
+File: t1iwona.fd 2005/10/05 v1.2 font definition file for T1/iwona (MW)
+)
+LaTeX Font Info:    Font shape `T1/iwona/bx/n' in size <9> not available
+(Font)              Font shape `T1/iwona/b/n' tried instead on input line 7.
+
+<images/introduction/wlan_stack.pdf, id=414, 633.36626pt x 372.39125pt>
+File: images/introduction/wlan_stack.pdf Graphic file (type pdf)
+
+<use images/introduction/wlan_stack.pdf>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+) (./en/introduction/01_02_related_work.tex [2 <./images/introduction/scenario.
+pdf>] [3 <./images/introduction/wlan_stack.pdf>])
+(./en/introduction/01_03_main_contribution.tex) [4] [5] [6
+
+
+]
+LaTeX Font Info:    Font shape `T1/pplx/bx/n' in size <20.74> not available
+(Font)              Font shape `T1/pplx/b/n' tried instead on input line 70.
+ [7] [8]
+(./en/models/model.tex
+Chapter 2.
+<images/model/model.pdf, id=552, 409.53pt x 430.60875pt>
+File: images/model/model.pdf Graphic file (type pdf)
+
+<use images/model/model.pdf>
+<images/model/semi-markov_gv.pdf, id=556, 253.94875pt x 123.46124pt>
+File: images/model/semi-markov_gv.pdf Graphic file (type pdf)
+
+<use images/model/semi-markov_gv.pdf> [9
+
+
+ <./images/model/model.pdf> <./images/model/semi-markov_gv.pdf>]) (./en/models/
+globalview/01_model_globalview.tex
+Package microtype Info: Character `029' is missing
+(microtype)             in font `T1/pplx/m/sc/9'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `029' is missing
+(microtype)             in font `T1/pplx/m/sc/7'.
+(microtype)             Ignoring protrusion settings for this character.
+
+[10]) (./en/models/globalview/01_01_gv_scenario.tex
+LaTeX Font Info:    Font shape `T1/pplx/bx/sc' in size <10> not available
+(Font)              Font shape `T1/pplx/b/n' tried instead on input line 1.
+
+<images/model/GV_scenario.pdf, id=643, 388.45125pt x 388.45125pt>
+File: images/model/GV_scenario.pdf Graphic file (type pdf)
+
+<use images/model/GV_scenario.pdf>)
+(./en/models/globalview/01_02_gv_estimation.tex [11 <./images/model/GV_scenario
+.pdf>]) (./en/models/localview/02_model_localview.tex)
+(./en/models/localview/02_01_scenario.tex
+<images/model/LV_scenario.pdf, id=686, 388.45125pt x 388.45125pt>
+File: images/model/LV_scenario.pdf Graphic file (type pdf)
+
+<use images/model/LV_scenario.pdf>
+LaTeX Font Info:    Font shape `T1/iwona/bx/n' in size <8> not available
+(Font)              Font shape `T1/iwona/b/n' tried instead on input line 9.
+
+<images/model/binary.pdf, id=687, 493.845pt x 361.35pt>
+File: images/model/binary.pdf Graphic file (type pdf)
+
+<use images/model/binary.pdf>
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<images/model/semi-markov_lv.pdf, id=693, 407.5225pt x 123.46124pt>
+File: images/model/semi-markov_lv.pdf Graphic file (type pdf)
+
+<use images/model/semi-markov_lv.pdf>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[12]) (./en/models/localview/02_02_laplace_estimator.tex [13 <./images/model/LV
+_scenario.pdf> <./images/model/binary.pdf> <./images/model/semi-markov_lv.pdf>]
+LaTeX Font Info:    Font shape `T1/pplx/bx/it' in size <10> not available
+(Font)              Font shape `T1/pplx/b/it' tried instead on input line 8.
+
+Package acronym Warning: Acronym `LT' is not defined on input line 16.
+
+LaTeX Font Info:    Font shape `T1/pplx/bx/n' in size <8> not available
+(Font)              Font shape `T1/pplx/b/n' tried instead on input line 16.
+
+Package acronym Warning: Acronym `LT' is not defined on input line 18.
+
+
+Package acronym Warning: Acronym `LT' is not defined on input line 27.
+
+Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
+put line 46.
+[14]) (./en/models/traffic/03_traffic_model.tex [15] [16
+
+
+]
+Chapter 3.
+
+
+pdfTeX warning: pdflatex (file ./images/model/traffic/traffic_model.pdf): PDF i
+nclusion: found PDF version <1.5>, but at most version <1.4> allowed
+<images/model/traffic/traffic_model.pdf, id=805, 641.39626pt x 283.0575pt>
+File: images/model/traffic/traffic_model.pdf Graphic file (type pdf)
+
+<use images/model/traffic/traffic_model.pdf> [17 <./images/model/traffic/traffi
+c_model.pdf>] [18]) [19] [20
+
+
+] [21] [22] (./en/simulation/simulation.tex
+Chapter 4.
+<images/simulation/protocol_stack.png, id=875, 554.07pt x 318.43968pt>
+File: images/simulation/protocol_stack.png Graphic file (type png)
+
+<use images/simulation/protocol_stack.png>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[23
+
+
+]
+
+Package acronym Warning: Acronym `RTS' is not defined on input line 36.
+
+
+Package acronym Warning: Acronym `CTS' is not defined on input line 36.
+
+[24 <./images/simulation/protocol_stack.png (PNG copy)>] [25]
+Overfull \hbox (1.77382pt too wide) in paragraph at lines 100--110
+ [] 
+ []
+
+) (./en/results/globalview/globalview.tex [26]
+Chapter 5.
+) (./en/results/globalview/01-gv_methodology.tex [27
+
+
+] [28] [29])
+(./en/results/globalview/02-gv_results.tex)
+(./en/results/globalview/0201-gv_results_idle.tex
+<images/results/GlobalView/test_model_network.png, id=1002, 642.4pt x 617.30624
+pt>
+File: images/results/GlobalView/test_model_network.png Graphic file (type png)
+ <use images/results/GlobalView/test_model_network.png>
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[30]
+<images/results/GlobalView/cdf_globalview.pdf, id=1023, 987.69pt x 346.29375pt>
+File: images/results/GlobalView/cdf_globalview.pdf Graphic file (type pdf)
+<use images/results/GlobalView/cdf_globalview.pdf> [31 <./images/results/Global
+View/cdf_globalview.pdf> <./images/results/GlobalView/test_model_network.png (P
+NG copy)>]
+<images/results/GlobalView/cdf_pkt_sizes.pdf, id=1040, 987.69pt x 335.2525pt>
+File: images/results/GlobalView/cdf_pkt_sizes.pdf Graphic file (type pdf)
+
+<use images/results/GlobalView/cdf_pkt_sizes.pdf>
+<images/results/GlobalView/cdf_exponential.pdf, id=1043, 987.69pt x 335.2525pt>
+File: images/results/GlobalView/cdf_exponential.pdf Graphic file (type pdf)
+<use images/results/GlobalView/cdf_exponential.pdf>
+Overfull \hbox (5.82pt too wide) in paragraph at lines 62--63
+ [][] 
+ []
+
+
+<images/results/GlobalView/cdf_idle_same_mean.pdf, id=1045, 987.69pt x 335.2525
+pt>
+File: images/results/GlobalView/cdf_idle_same_mean.pdf Graphic file (type pdf)
+ <use images/results/GlobalView/cdf_idle_same_mean.pdf>
+Overfull \hbox (5.82pt too wide) in paragraph at lines 67--68
+ [][] 
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+) (./en/results/globalview/0202-gv_results_mle.tex [32
+
+ <./images/results/GlobalView/cdf_pkt_sizes.pdf>]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+) (./en/results/globalview/0203-gv_results_ks.tex [33 <./images/results/GlobalV
+iew/cdf_exponential.pdf> <./images/results/GlobalView/cdf_idle_same_mean.pdf>]
+Overfull \hbox (3.82776pt too wide) in paragraph at lines 12--23
+ [] 
+ []
+
+[34]
+<images/results/GlobalView/KS/cdf_p_interarrivals_10_samples.pdf, id=1121, 987.
+69pt x 371.3875pt>
+File: images/results/GlobalView/KS/cdf_p_interarrivals_10_samples.pdf Graphic f
+ile (type pdf)
+
+<use images/results/GlobalView/KS/cdf_p_interarrivals_10_samples.pdf>
+<images/results/GlobalView/KS/ks_fail.pdf, id=1124, 987.69pt x 347.2975pt>
+File: images/results/GlobalView/KS/ks_fail.pdf Graphic file (type pdf)
+
+<use images/results/GlobalView/KS/ks_fail.pdf> [35 <./images/results/GlobalView
+/KS/ks_fail.pdf> <./images/results/GlobalView/KS/cdf_p_interarrivals_10_samples
+.pdf>]
+<images/results/GlobalView/KS/ks_optimization/pvalue_exponential100ms.pdf, id=1
+157, 987.69pt x 334.24875pt>
+File: images/results/GlobalView/KS/ks_optimization/pvalue_exponential100ms.pdf 
+Graphic file (type pdf)
+
+<use images/results/GlobalView/KS/ks_optimization/pvalue_exponential100ms.pdf>
+Overfull \hbox (14.25014pt too wide) in paragraph at lines 81--87
+ [][] 
+ []
+
+) (./en/results/globalview/0205-gv_results_final.tex [36 <./images/results/Glob
+alView/KS/ks_optimization/pvalue_exponential100ms.pdf>]
+<images/results/GlobalView/sessions/3sessions.png, id=1185, 642.4pt x 617.30624
+pt>
+File: images/results/GlobalView/sessions/3sessions.png Graphic file (type png)
+ <use images/results/GlobalView/sessions/3sessions.png>
+<images/results/GlobalView/sessions/9sessions.png, id=1186, 642.4pt x 617.30624
+pt>
+File: images/results/GlobalView/sessions/9sessions.png Graphic file (type png)
+ <use images/results/GlobalView/sessions/9sessions.png>
+<images/results/GlobalView/sessions/18sessions.png, id=1187, 642.4pt x 617.3062
+4pt>
+File: images/results/GlobalView/sessions/18sessions.png Graphic file (type png)
+
+ <use images/results/GlobalView/sessions/18sessions.png>
+Overfull \hbox (13.27977pt too wide) in paragraph at lines 25--34
+ [][][][][][] 
+ []
+
+[37 <./images/results/GlobalView/sessions/3sessions.png (PNG copy)> <./images/r
+esults/GlobalView/sessions/9sessions.png (PNG copy)> <./images/results/GlobalVi
+ew/sessions/18sessions.png (PNG copy)>]
+<images/results/GlobalView/sessions/sessions_composed_cdf.pdf, id=1200, 987.69p
+t x 378.41376pt>
+File: images/results/GlobalView/sessions/sessions_composed_cdf.pdf Graphic file
+ (type pdf)
+
+<use images/results/GlobalView/sessions/sessions_composed_cdf.pdf> [38 <./image
+s/results/GlobalView/sessions/sessions_composed_cdf.pdf>]
+<images/results/GlobalView/flows/cdf_load.pdf, id=1228, 987.69pt x 334.24875pt>
+File: images/results/GlobalView/flows/cdf_load.pdf Graphic file (type pdf)
+<use images/results/GlobalView/flows/cdf_load.pdf>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[39 <./images/results/GlobalView/flows/cdf_load.pdf>]
+<images/results/GlobalView/flows/cdf_p.pdf, id=1245, 987.69pt x 334.24875pt>
+File: images/results/GlobalView/flows/cdf_p.pdf Graphic file (type pdf)
+
+<use images/results/GlobalView/flows/cdf_p.pdf>
+<images/results/GlobalView/flows/cdf_d.pdf, id=1246, 987.69pt x 345.29pt>
+File: images/results/GlobalView/flows/cdf_d.pdf Graphic file (type pdf)
+
+<use images/results/GlobalView/flows/cdf_d.pdf>
+<images/results/GlobalView/flows/n_tests.pdf, id=1249, 987.69pt x 334.24875pt>
+File: images/results/GlobalView/flows/n_tests.pdf Graphic file (type pdf)
+
+<use images/results/GlobalView/flows/n_tests.pdf>
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[40 <./images/results/GlobalView/flows/cdf_p.pdf> <./images/results/GlobalView/
+flows/cdf_d.pdf>]
+<images/results/GlobalView/flows/load_vs_p.pdf, id=1274, 987.69pt x 334.24875pt
+>
+File: images/results/GlobalView/flows/load_vs_p.pdf Graphic file (type pdf)
+ <use images/results/GlobalView/flows/load_vs_p.pdf>
+<images/results/GlobalView/flows/load_vs_p_all.pdf, id=1275, 987.69pt x 328.226
+26pt>
+File: images/results/GlobalView/flows/load_vs_p_all.pdf Graphic file (type pdf)
+
+ <use images/results/GlobalView/flows/load_vs_p_all.pdf>
+<images/results/GlobalView/flows/load_vs_d.pdf, id=1277, 987.69pt x 328.22626pt
+>
+File: images/results/GlobalView/flows/load_vs_d.pdf Graphic file (type pdf)
+ <use images/results/GlobalView/flows/load_vs_d.pdf>
+<images/results/GlobalView/flows/load_vs_d_all.pdf, id=1278, 987.69pt x 328.226
+26pt>
+File: images/results/GlobalView/flows/load_vs_d_all.pdf Graphic file (type pdf)
+
+ <use images/results/GlobalView/flows/load_vs_d_all.pdf>
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+) (./en/results/globalview/0206-gv_autocorrelation_active.tex [41 <./images/res
+ults/GlobalView/flows/n_tests.pdf> <./images/results/GlobalView/flows/load_vs_p
+.pdf> <./images/results/GlobalView/flows/load_vs_p_all.pdf>] [42 <./images/resu
+lts/GlobalView/flows/load_vs_d.pdf> <./images/results/GlobalView/flows/load_vs_
+d_all.pdf>]
+<images/results/autocorrelation/sessions/5sessions.pdf, id=1333, 449.68pt x 338
+.26375pt>
+File: images/results/autocorrelation/sessions/5sessions.pdf Graphic file (type 
+pdf)
+ <use images/results/autocorrelation/sessions/5sessions.pdf>
+<images/results/autocorrelation/sessions/10sessions.pdf, id=1335, 449.68pt x 33
+8.26375pt>
+File: images/results/autocorrelation/sessions/10sessions.pdf Graphic file (type
+ pdf)
+ <use images/results/autocorrelation/sessions/10sessions.pdf>
+<images/results/autocorrelation/sessions/20sessions.pdf, id=1337, 449.68pt x 33
+8.26375pt>
+File: images/results/autocorrelation/sessions/20sessions.pdf Graphic file (type
+ pdf)
+ <use images/results/autocorrelation/sessions/20sessions.pdf>
+Overfull \hbox (13.27977pt too wide) in paragraph at lines 20--29
+ [][][][][][] 
+ []
+
+<images/results/autocorrelation/load/14.pdf, id=1343, 449.68pt x 338.26375pt>
+File: images/results/autocorrelation/load/14.pdf Graphic file (type pdf)
+
+<use images/results/autocorrelation/load/14.pdf>
+<images/results/autocorrelation/load/21.pdf, id=1345, 449.68pt x 338.26375pt>
+File: images/results/autocorrelation/load/21.pdf Graphic file (type pdf)
+
+<use images/results/autocorrelation/load/21.pdf>
+Overfull \hbox (11.64pt too wide) in paragraph at lines 43--47
+ [][][][] 
+ []
+
+<images/results/autocorrelation/load/37.pdf, id=1347, 449.68pt x 338.26375pt>
+File: images/results/autocorrelation/load/37.pdf Graphic file (type pdf)
+
+<use images/results/autocorrelation/load/37.pdf>
+<images/results/autocorrelation/load/49.pdf, id=1349, 449.68pt x 338.26375pt>
+File: images/results/autocorrelation/load/49.pdf Graphic file (type pdf)
+
+<use images/results/autocorrelation/load/49.pdf>
+Overfull \hbox (11.64pt too wide) in paragraph at lines 51--56
+ [][][][] 
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+) (./en/results/localview/localview.tex [43 <./images/results/autocorrelation/s
+essions/5sessions.pdf> <./images/results/autocorrelation/sessions/10sessions.pd
+f> <./images/results/autocorrelation/sessions/20sessions.pdf>] [44 <./images/re
+sults/autocorrelation/load/14.pdf> <./images/results/autocorrelation/load/21.pd
+f> <./images/results/autocorrelation/load/37.pdf> <./images/results/autocorrela
+tion/load/49.pdf>]
+Chapter 6.
+) (./en/results/localview/01-lv_methodology.tex [45
+
+
+])
+(./en/results/localview/02-lv_results.tex)
+(./en/results/localview/0201-lv_acf_localview_experiment.tex [46]
+<images/results/autocorrelation/localview/8sessions.png, id=1443, 642.4pt x 617
+.30624pt>
+File: images/results/autocorrelation/localview/8sessions.png Graphic file (type
+ png)
+ <use images/results/autocorrelation/localview/8sessions.png>
+<images/results/autocorrelation/localview/15sessions.png, id=1445, 642.4pt x 61
+7.30624pt>
+File: images/results/autocorrelation/localview/15sessions.png Graphic file (typ
+e png)
+ <use images/results/autocorrelation/localview/15sessions.png>
+Overfull \hbox (11.64pt too wide) in paragraph at lines 11--16
+ [][][][] 
+ []
+
+
+<images/results/autocorrelation/localview/8sessions_sensor0.pdf, id=1452, 449.6
+8pt x 338.26375pt>
+File: images/results/autocorrelation/localview/8sessions_sensor0.pdf Graphic fi
+le (type pdf)
+
+<use images/results/autocorrelation/localview/8sessions_sensor0.pdf>
+<images/results/autocorrelation/localview/8sessions_sensor1.pdf, id=1454, 449.6
+8pt x 338.26375pt>
+File: images/results/autocorrelation/localview/8sessions_sensor1.pdf Graphic fi
+le (type pdf)
+
+<use images/results/autocorrelation/localview/8sessions_sensor1.pdf>
+<images/results/autocorrelation/localview/8sessions_sensor2.pdf, id=1456, 449.6
+8pt x 338.26375pt>
+File: images/results/autocorrelation/localview/8sessions_sensor2.pdf Graphic fi
+le (type pdf)
+
+<use images/results/autocorrelation/localview/8sessions_sensor2.pdf>
+Overfull \hbox (13.27977pt too wide) in paragraph at lines 30--39
+ [][][][][][] 
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+<images/results/autocorrelation/localview/15sessions_sensor0.pdf, id=1458, 449.
+68pt x 338.26375pt>
+File: images/results/autocorrelation/localview/15sessions_sensor0.pdf Graphic f
+ile (type pdf)
+
+<use images/results/autocorrelation/localview/15sessions_sensor0.pdf>
+<images/results/autocorrelation/localview/15sessions_sensor1.pdf, id=1460, 449.
+68pt x 338.26375pt>
+File: images/results/autocorrelation/localview/15sessions_sensor1.pdf Graphic f
+ile (type pdf)
+
+<use images/results/autocorrelation/localview/15sessions_sensor1.pdf>
+<images/results/autocorrelation/localview/15sessions_sensor2.pdf, id=1462, 449.
+68pt x 338.26375pt>
+File: images/results/autocorrelation/localview/15sessions_sensor2.pdf Graphic f
+ile (type pdf)
+
+<use images/results/autocorrelation/localview/15sessions_sensor2.pdf>
+Overfull \hbox (13.27977pt too wide) in paragraph at lines 48--57
+ [][][][][][] 
+ []
+
+
+<images/results/autocorrelation/localview/15sessions_sensor3.pdf, id=1464, 449.
+68pt x 338.26375pt>
+File: images/results/autocorrelation/localview/15sessions_sensor3.pdf Graphic f
+ile (type pdf)
+
+<use images/results/autocorrelation/localview/15sessions_sensor3.pdf>
+<images/results/autocorrelation/localview/15sessions_sensor4.pdf, id=1466, 449.
+68pt x 338.26375pt>
+File: images/results/autocorrelation/localview/15sessions_sensor4.pdf Graphic f
+ile (type pdf)
+
+<use images/results/autocorrelation/localview/15sessions_sensor4.pdf>
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[47 <./images/results/autocorrelation/localview/8sessions.png> <./images/result
+s/autocorrelation/localview/15sessions.png>] [48 <./images/results/autocorrelat
+ion/localview/8sessions_sensor0.pdf> <./images/results/autocorrelation/localvie
+w/8sessions_sensor1.pdf> <./images/results/autocorrelation/localview/8sessions_
+sensor2.pdf> <./images/results/autocorrelation/localview/15sessions_sensor0.pdf
+> <./images/results/autocorrelation/localview/15sessions_sensor1.pdf> <./images
+/results/autocorrelation/localview/15sessions_sensor2.pdf> <./images/results/au
+tocorrelation/localview/15sessions_sensor3.pdf> <./images/results/autocorrelati
+on/localview/15sessions_sensor4.pdf>]
+<images/results/autocorrelation/localview/fitting/8sessions_sensor0.pdf, id=154
+7, 979.66pt x 334.24875pt>
+File: images/results/autocorrelation/localview/fitting/8sessions_sensor0.pdf Gr
+aphic file (type pdf)
+
+<use images/results/autocorrelation/localview/fitting/8sessions_sensor0.pdf>
+Overfull \hbox (5.82pt too wide) in paragraph at lines 100--109
+ [][] 
+ []
+
+
+<images/results/autocorrelation/localview/fitting/15sessions_sensor4.pdf, id=15
+48, 987.69pt x 339.2675pt>
+File: images/results/autocorrelation/localview/fitting/15sessions_sensor4.pdf G
+raphic file (type pdf)
+
+<use images/results/autocorrelation/localview/fitting/15sessions_sensor4.pdf>
+Overfull \hbox (5.82pt too wide) in paragraph at lines 134--135
+ [][] 
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[49 <./images/results/autocorrelation/localview/fitting/8sessions_sensor0.pdf>]
+[50 <./images/results/autocorrelation/localview/fitting/15sessions_sensor4.pdf>
+]
+<images/results/autocorrelation/localview/mse/8sessions_MSE.pdf, id=1597, 987.6
+9pt x 333.245pt>
+File: images/results/autocorrelation/localview/mse/8sessions_MSE.pdf Graphic fi
+le (type pdf)
+
+<use images/results/autocorrelation/localview/mse/8sessions_MSE.pdf>
+Overfull \hbox (5.82pt too wide) in paragraph at lines 167--167
+ [][] 
+ []
+
+
+<images/results/autocorrelation/localview/mse/15sessions_MSE.pdf, id=1598, 987.
+69pt x 333.245pt>
+File: images/results/autocorrelation/localview/mse/15sessions_MSE.pdf Graphic f
+ile (type pdf)
+
+<use images/results/autocorrelation/localview/mse/15sessions_MSE.pdf>
+Overfull \hbox (5.82pt too wide) in paragraph at lines 171--172
+ [][] 
+ []
+
+
+<images/results/autocorrelation/localview/chi2/8sessions_cdf_p.png, id=1599, 61
+3.492pt x 385.44pt>
+File: images/results/autocorrelation/localview/chi2/8sessions_cdf_p.png Graphic
+ file (type png)
+
+<use images/results/autocorrelation/localview/chi2/8sessions_cdf_p.png>
+<images/results/autocorrelation/localview/chi2/15sessions_cdf_p.png, id=1600, 6
+13.492pt x 385.44pt>
+File: images/results/autocorrelation/localview/chi2/15sessions_cdf_p.png Graphi
+c file (type png)
+
+<use images/results/autocorrelation/localview/chi2/15sessions_cdf_p.png>
+Overfull \hbox (11.64pt too wide) in paragraph at lines 181--186
+ [][][][] 
+ []
+
+
+<images/results/autocorrelation/localview/chi2/8sessions_sensor2_badpvalue.png,
+ id=1601, 988.493pt x 578.963pt>
+File: images/results/autocorrelation/localview/chi2/8sessions_sensor2_badpvalue
+.png Graphic file (type png)
+
+<use images/results/autocorrelation/localview/chi2/8sessions_sensor2_badpvalue.
+png>
+<images/results/autocorrelation/localview/chi2/8sessions_sensor0_goodpvalue.png
+, id=1602, 988.493pt x 578.963pt>
+File: images/results/autocorrelation/localview/chi2/8sessions_sensor0_goodpvalu
+e.png Graphic file (type png)
+
+<use images/results/autocorrelation/localview/chi2/8sessions_sensor0_goodpvalue
+.png>
+Overfull \hbox (11.64pt too wide) in paragraph at lines 195--200
+ [][][][] 
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+) (./en/results/localview/0202-lv_final_localview_experiment.tex [51 <./images/
+results/autocorrelation/localview/mse/8sessions_MSE.pdf> <./images/results/auto
+correlation/localview/mse/15sessions_MSE.pdf> <./images/results/autocorrelation
+/localview/chi2/8sessions_cdf_p.png (PNG copy)> <./images/results/autocorrelati
+on/localview/chi2/15sessions_cdf_p.png (PNG copy)>]
+<images/results/localview/session_experiment/5sessions_3sensors.pdf, id=1627, 6
+43.40375pt x 643.40375pt>
+File: images/results/localview/session_experiment/5sessions_3sensors.pdf Graphi
+c file (type pdf)
+
+<use images/results/localview/session_experiment/5sessions_3sensors.pdf>
+<images/results/localview/session_experiment/10sessions_3sensors.pdf, id=1628, 
+643.40375pt x 643.40375pt>
+File: images/results/localview/session_experiment/10sessions_3sensors.pdf Graph
+ic file (type pdf)
+
+<use images/results/localview/session_experiment/10sessions_3sensors.pdf>
+<images/results/localview/session_experiment/15sessions_5sensors.pdf, id=1629, 
+643.40375pt x 643.40375pt>
+File: images/results/localview/session_experiment/15sessions_5sensors.pdf Graph
+ic file (type pdf)
+
+<use images/results/localview/session_experiment/15sessions_5sensors.pdf>
+<images/results/localview/session_experiment/20sessions_5sensors.pdf, id=1630, 
+643.40375pt x 643.40375pt>
+File: images/results/localview/session_experiment/20sessions_5sensors.pdf Graph
+ic file (type pdf)
+
+<use images/results/localview/session_experiment/20sessions_5sensors.pdf>
+Overfull \hbox (23.28001pt too wide) in paragraph at lines 11--21
+ [][][][][][][][] 
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[52 <./images/results/autocorrelation/localview/chi2/8sessions_sensor2_badpvalu
+e.png (PNG copy)> <./images/results/autocorrelation/localview/chi2/8sessions_se
+nsor0_goodpvalue.png (PNG copy)> <./images/results/localview/session_experiment
+/5sessions_3sensors.pdf> <./images/results/localview/session_experiment/10sessi
+ons_3sensors.pdf> <./images/results/localview/session_experiment/15sessions_5se
+nsors.pdf> <./images/results/localview/session_experiment/20sessions_5sensors.p
+df>]
+<images/results/localview/session_experiment/5sessions.pdf, id=1665, 987.69pt x
+ 563.10374pt>
+File: images/results/localview/session_experiment/5sessions.pdf Graphic file (t
+ype pdf)
+ <use images/results/localview/session_experiment/5sessions.pdf>
+Overfull \hbox (5.82pt too wide) in paragraph at lines 65--65
+ [][] 
+ []
+
+
+<images/results/localview/session_experiment/10sessions.pdf, id=1666, 987.69pt 
+x 563.10374pt>
+File: images/results/localview/session_experiment/10sessions.pdf Graphic file (
+type pdf)
+
+<use images/results/localview/session_experiment/10sessions.pdf>
+Overfull \hbox (5.82pt too wide) in paragraph at lines 69--70
+ [][] 
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+<images/results/localview/session_experiment/15sessions.pdf, id=1667, 987.69pt 
+x 563.10374pt>
+File: images/results/localview/session_experiment/15sessions.pdf Graphic file (
+type pdf)
+
+<use images/results/localview/session_experiment/15sessions.pdf>
+Overfull \hbox (5.82pt too wide) in paragraph at lines 79--79
+ [][] 
+ []
+
+
+<images/results/localview/session_experiment/20sessions.pdf, id=1668, 987.69pt 
+x 563.10374pt>
+File: images/results/localview/session_experiment/20sessions.pdf Graphic file (
+type pdf)
+
+<use images/results/localview/session_experiment/20sessions.pdf>
+Overfull \hbox (5.82pt too wide) in paragraph at lines 83--84
+ [][] 
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[53] [54 <./images/results/localview/session_experiment/5sessions.pdf> <./image
+s/results/localview/session_experiment/10sessions.pdf>] [55 <./images/results/l
+ocalview/session_experiment/15sessions.pdf> <./images/results/localview/session
+_experiment/20sessions.pdf>]
+<images/results/localview/load_experiment/8sessions_3sensors.pdf, id=1715, 643.
+40375pt x 643.40375pt>
+File: images/results/localview/load_experiment/8sessions_3sensors.pdf Graphic f
+ile (type pdf)
+
+<use images/results/localview/load_experiment/8sessions_3sensors.pdf>
+File: images/results/localview/session_experiment/15sessions_5sensors.pdf Graph
+ic file (type pdf)
+
+<use images/results/localview/session_experiment/15sessions_5sensors.pdf>
+Overfull \hbox (11.64pt too wide) in paragraph at lines 107--111
+ [][][][] 
+ []
+
+
+<images/results/localview/load_experiment/8sessions_25load_2.pdf, id=1720, 987.
+69pt x 563.10374pt>
+File: images/results/localview/load_experiment/8sessions_25load_2.pdf Graphic f
+ile (type pdf)
+
+<use images/results/localview/load_experiment/8sessions_25load_2.pdf>
+Overfull \hbox (5.82pt too wide) in paragraph at lines 124--124
+ [][] 
+ []
+
+
+<images/results/localview/load_experiment/15sessions_25load_2.pdf, id=1721, 987
+.69pt x 563.10374pt>
+File: images/results/localview/load_experiment/15sessions_25load_2.pdf Graphic 
+file (type pdf)
+
+<use images/results/localview/load_experiment/15sessions_25load_2.pdf>
+Overfull \hbox (5.82pt too wide) in paragraph at lines 128--129
+ [][] 
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+<images/results/localview/load_experiment/8sessions_35load_2.pdf, id=1722, 987.
+69pt x 563.10374pt>
+File: images/results/localview/load_experiment/8sessions_35load_2.pdf Graphic f
+ile (type pdf)
+
+<use images/results/localview/load_experiment/8sessions_35load_2.pdf>
+Overfull \hbox (5.82pt too wide) in paragraph at lines 138--138
+ [][] 
+ []
+
+
+<images/results/localview/load_experiment/15sessions_35load_2.pdf, id=1723, 987
+.69pt x 563.10374pt>
+File: images/results/localview/load_experiment/15sessions_35load_2.pdf Graphic 
+file (type pdf)
+
+<use images/results/localview/load_experiment/15sessions_35load_2.pdf>
+Overfull \hbox (5.82pt too wide) in paragraph at lines 142--143
+ [][] 
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+) (./en/00_04_conclusions.tex [56
+
+ <./images/results/localview/load_experiment/8sessions_3sensors.pdf>] [57 <./im
+ages/results/localview/load_experiment/8sessions_25load_2.pdf> <./images/result
+s/localview/load_experiment/15sessions_25load_2.pdf>] [58 <./images/results/loc
+alview/load_experiment/8sessions_35load_2.pdf> <./images/results/localview/load
+_experiment/15sessions_35load_2.pdf>]
+Chapter 7.
+[59
+
+
+]) (./en/99_acronyms.tex [60]
+LaTeX Font Info:    Font shape `T1/iwona/bx/n' in size <10> not available
+(Font)              Font shape `T1/iwona/b/n' tried instead on input line 3.
+Package acronym Info: Acronym AP used in text but not spelled out in full in te
+xt on input line 4.
+Package acronym Info: Acronym ACK used in text but not spelled out in full in t
+ext on input line 5.
+Package acronym Info: Acronym CBR used in text but not spelled out in full in t
+ext on input line 6.
+Package acronym Info: Acronym CCA used in text but not spelled out in full in t
+ext on input line 7.
+Package acronym Info: Acronym CDF used in text but not spelled out in full in t
+ext on input line 8.
+Package acronym Info: Acronym CMA used in text but not spelled out in full in t
+ext on input line 10.
+Package acronym Info: Acronym CW used in text but not spelled out in full in te
+xt on input line 13.
+Package acronym Info: Acronym GNU used in text but not spelled out in full in t
+ext on input line 17.
+Package acronym Info: Acronym GSL used in text but not spelled out in full in t
+ext on input line 18.
+Package acronym Info: Acronym IEEE used in text but not spelled out in full in 
+text on input line 19.
+Package acronym Info: Acronym K-S used in text but not spelled out in full in t
+ext on input line 22.
+Package acronym Info: Acronym MLE used in text but not spelled out in full in t
+ext on input line 27.
+Package acronym Info: Acronym ME used in text but not spelled out in full in te
+xt on input line 29.
+Package acronym Info: Acronym MSE used in text but not spelled out in full in t
+ext on input line 30.
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 31.
+
+(/usr/share/texmf-texlive/tex/latex/base/t1cmtt.fd
+File: t1cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+Package acronym Info: Acronym NS used in text but not spelled out in full in te
+xt on input line 31.
+Package acronym Info: Acronym PDF used in text but not spelled out in full in t
+ext on input line 34.
+Package acronym Info: Acronym SIFS used in text but not spelled out in full in 
+text on input line 39.
+Package acronym Info: Acronym TCP used in text but not spelled out in full in t
+ext on input line 41.
+Package acronym Info: Acronym WLAN used in text but not spelled out in full in 
+text on input line 45.
+Package acronym Info: Acronym WS used in text but not spelled out in full in te
+xt on input line 46.
+Package acronym Info: Acronym WSN used in text but not spelled out in full in t
+ext on input line 47.
+)
+LaTeX Font Info:    Font shape `T1/pplx/bx/n' in size <24.88> not available
+(Font)              Font shape `T1/pplx/b/n' tried instead on input line 99.
+ (./report_en.lof [61
+
+
+])
+\tf@lof=\write8
+\openout8 = `report_en.lof'.
+
+
+(./report_en.lot [62])
+\tf@lot=\write9
+\openout9 = `report_en.lot'.
+
+ [63] [64
+
+
+]
+Package microtype Info: Character `029' is missing
+(microtype)             in font `T1/pplx/m/sc/10'.
+(microtype)             Ignoring protrusion settings for this character.
+ [65] (./report_en.aux (./tikz_style.aux)
+(./en/00_00_title.aux) (./en/00_01_copyright.aux) (./en/00_02_abstract.aux)
+(./en/00_03_ack.aux))
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
+Package logreq Info: Writing requests to 'report_en.run.xml'.
+\openout1 = `report_en.run.xml'.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 32656 strings out of 495061
+ 588169 string characters out of 1182621
+ 793912 words of memory out of 3000000
+ 34137 multiletter control sequences out of 15000+50000
+ 141877 words of font info for 472 fonts, out of 3000000 for 9000
+ 28 hyphenation exceptions out of 8191
+ 56i,15n,71p,2113b,2292s stack positions out of 5000i,500n,10000p,200000b,50000s
+ </home/alex/.texmf-var/fonts/pk/ljfour/jknappen/ec/ectt1000.600pk>{/usr/shar
+e/texmf-texlive/fonts/enc/dvips/base/8r.enc}{/usr/share/texmf-texlive/fonts/enc
+/dvips/iwona/iwona-ec.enc}</usr/share/texmf-texlive/fonts/type1/public/amsfonts
+/cm/cmb10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmex10.p
+fb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/sha
+re/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-texl
+ive/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-texlive/fonts/t
+ype1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf-texlive/fonts/type1/public/
+amsfonts/euler/euex10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts
+/euler/eufm10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/euler/e
+ufm7.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/euler/eurm10.pfb
+></usr/share/texmf-texlive/fonts/type1/public/amsfonts/euler/eurm5.pfb></usr/sh
+are/texmf-texlive/fonts/type1/public/amsfonts/euler/eurm7.pfb></usr/share/texmf
+-texlive/fonts/type1/public/fpl/fplrc8a.pfb></usr/share/texmf-texlive/fonts/typ
+e1/public/iwona/iwonab.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfont
+s/symbols/msam10.pfb></usr/share/texmf-texlive/fonts/type1/urw/palatino/uplb8a.
+pfb></usr/share/texmf-texlive/fonts/type1/urw/palatino/uplbi8a.pfb></usr/share/
+texmf-texlive/fonts/type1/urw/palatino/uplr8a.pfb></usr/share/texmf-texlive/fon
+ts/type1/urw/palatino/uplri8a.pfb>
+Output written on report_en.pdf (73 pages, 3110479 bytes).
+PDF statistics:
+ 2116 PDF objects out of 2487 (max. 8388607)
+ 293 named destinations out of 1000 (max. 500000)
+ 66608 words of extra memory for PDF output out of 74296 (max. 10000000)
+

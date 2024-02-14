@@ -1,0 +1,134 @@
+\usetikzlibrary{arrows}
+\usetikzlibrary{shapes}
+\usetikzlibrary{automata}
+\usetikzlibrary{backgrounds}
+\usetikzlibrary{petri}
+\usetikzlibrary{shadows}
+\usetikzlibrary{fit}
+\usetikzlibrary{positioning}
+\usetikzlibrary{patterns}
+\usetikzlibrary{decorations}
+\usetikzlibrary{decorations.pathreplacing}
+
+
+\tikzstyle{on status}=[
+	circle,
+	minimum size=15mm,
+	drop shadow,
+	thick,
+	draw=red!75,
+	fill=red!20
+]
+
+\tikzstyle{off status}=[
+	on status,
+	draw=green!75,
+	fill=green!20
+]
+
+\tikzstyle{on background}=[
+	rectangle,
+	dashed,
+	inner sep=0.5cm,
+	rounded corners=5mm,
+	fill=red!5,
+	draw=gray,
+]
+
+\tikzstyle{off background}=[
+	on background,
+	fill=green!5,
+]
+
+\tikzstyle{neuron}=[
+	circle,
+	draw=black!90,
+	fill=gray!25,
+	minimum size=17pt,
+	inner sep=0pt
+]
+
+\tikzstyle{input layer}=[
+	off background,
+	fill=green!10,
+	inner xsep=1.6cm,
+	inner ysep=0.5cm,
+]
+
+\tikzstyle{hidden layer}=[
+	input layer,
+	fill=gray!10,
+]
+
+\tikzstyle{output layer}=[
+	input layer,
+	fill=red!10,
+]
+
+\tikzstyle{annot}=[
+	text width=10em,
+	text centered
+]
+
+\tikzstyle{measure}=[
+	rectangle,
+	align=center,
+	text centered,
+	fill=blue!20,
+	draw=blue!80,
+	minimum height=2cm,
+	minimum width=2cm,
+]
+
+\tikzstyle{cognitive}=[
+	align=center,
+	text centered,
+	minimum width=5cm,
+	minimum height=2cm,
+	pattern=vertical lines,
+	pattern color=green!70,
+]
+
+\tikzstyle{stack}=[
+	rectangle,
+	align=left,
+	font=\ttfamily\small,
+	fill=colorbase!20,
+	draw=colorbase!80,
+	minimum width=6cm,
+	text width=6cm,
+	minimum height=1cm,
+]
+
+\tikzstyle{channel}=[
+	rectangle,
+	align=center,
+	font=\ttfamily\small,
+	minimum width=15cm,
+	minimum height=1cm,
+	fill=colordark!20,
+	draw=colordark!80,
+]
+
+\tikzstyle{session}=[
+	rectangle,
+	dashed,
+	inner sep=0.5cm,
+	rounded corners=5mm,
+	fill=colorbase!5,
+	draw=colorbase,
+	minimum width=5cm
+]
+
+\tikzstyle{flow}=[
+	session,
+	fill=colordark!5,
+	draw=colordark
+]
+
+\tikzstyle{packet}=[
+	rectangle,
+	inner sep=0.5cm,
+	fill=colorlight!5,
+	draw=colorlight
+]

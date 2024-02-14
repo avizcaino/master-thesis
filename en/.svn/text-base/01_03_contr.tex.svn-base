@@ -1,0 +1,11 @@
+\section{Main Contribution} \label{sec:contribution}
+
+In this report we first extend the model of the busy and idle transmission periods in the \ac{WLAN}, proposed in \cite{DSA-Emp}. We enhance the original model with a \textit{local view} component, by considering also the limited detection range of the sensors.
+
+Since we focus on sensors that are hardware-constrained devices, we also propose computationally efficient ways to estimate the parameters of the model and its extension. For both models we use mathematical methods like the \acf{MLE} and the \acf{MV}, but in addition we employ a Neural Network based approach for the model extension for the local view.
+
+Furthermore, the parameter estimation processes are accomplished locally and without any collaboration among sensors, since the communication for exchanging information increases the energy overhead and, hence, it drains the battery.
+
+Our contribution includes a statistical evaluation of the algorithms proposed. We show that the estimation can achieve good approximation of the parameters for idle period distribution of the \ac{WLAN} traffic, even when sensor can only see partially this distribution.
+
+The proposed algorithms will be included in the energy-efficient cross-layer communication framework, building a \textit{cognitive} communication protocol that is able to optimize packet transmission time and distance, accordingly to the parameters estimated by only measuring the wireless spectrum activity.

@@ -1,0 +1,47 @@
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=2.9cm,
+                    semithick]
+
+	\linespread{0.7}
+	\tikzset{
+	  every node/.style={scale=0.9}
+	}
+
+	% on - off
+	\node [off status]	(off) 	[label=above:$f_I(t)$,minimum size=17mm]					{Idle};
+	\node [on status]	(oni)	[right of=off,text width=1cm,align=center,label=above:$f_A(t)$]		{\small Active in CCA};
+	\node [on status]	(ono)	[left of=off,text width=1cm,align=center,label=above:$f_A(t)$]		{\small Active out CCA};
+	\path
+		(off)	edge [bend left]	node {$p_{CCA}$} 		(oni)
+		(off)	edge [bend left]	node {$1 - p_{CCA}$} 	(ono)
+		(oni)	edge [bend left]	node {1}				(off)
+		(ono)	edge [bend left]	node {1}				(off)
+	;
+	
+    \begin{pgfonlayer}{background}
+        \node 	[off background,
+                    fit=(off) (ono),
+			  	] {};
+    \end{pgfonlayer}
+
+	\node [off status]	(off2)
+	[
+		right of=oni,
+		text width=1.5cm,
+		align=center,
+		label=above:$f_{\tilde{I}}(t)$
+	] {\footnotesize Idle/\\Active out CCA};
+
+	\node [on status]	(on2)
+	[
+		right of=off2,
+		text width=1.5cm,
+		align=center,
+		label=above:$f_{\tilde{A}}(t)$
+	] {\small Active\\ in\\ CCA};
+
+	\path
+		(off2)	edge [bend left]	node {} 		(on2)
+		(on2)	edge [bend left]	node {} 		(off2)
+	;
+
+\end{tikzpicture}

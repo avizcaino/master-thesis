@@ -1,0 +1,32 @@
+\documentclass {article}
+
+% example taken from 
+% http://www.guitex.org/home/images/doc/GuideGuIT/introingtikz.pdf
+
+\usepackage {tikz}
+\usetikzlibrary {positioning}
+\usepackage {xcolor}
+\definecolor {processblue}{cmyk}{0.96,0,0,0}
+\begin {document}
+\begin {center}
+\begin {tikzpicture}[-latex ,auto ,node distance =4 cm and 5cm ,on grid ,
+semithick , active/.style ={ circle ,top color =blue!70 , draw,black , text=black , minimum width =2.5 cm}, idle/.style ={ circle ,top color =green!70 , draw,black , text=black , minimum width =2.5 cm}]
+
+\node[active] (A) {$Data$};
+\node[active] (B) [right =of A] {$SIFS$};
+\node[active] (C) [right =of B] {$ACK$};
+\node[idle] (D) [below =of B] {$CW$};
+\node[idle] (E) [below =of D] {$WS$};
+
+\path (A) edge [bend left =25] node[above] {$1$} (B);
+\path (B) edge [bend left =25] node[above] {$1$} (C);
+
+\path (C) edge [bend left =25] node[above] {$p$} (D);
+\path (C) edge [bend left =25] node[below] {$1-p$} (E);
+
+\path (D) edge [bend left =25] node[above] {$1$} (A);
+\path (E) edge [bend left =25] node[above] {$1$} (A);
+
+\end{tikzpicture}
+\end{center}
+\end{document}

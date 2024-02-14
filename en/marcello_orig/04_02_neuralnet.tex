@@ -1,0 +1,103 @@
+\section{Neural Network} \label{sec:loc_nn}
+
+As we will explain in the Section \ref{sec:loc_results_est} the analytic way of estimating the four parameters' vector could be impractical due to the complex dimensional space and its exploration through different steps, where the support datasets are difficult to generate and errors can be easily propagated. Therefore, we propose also another approach with Neural Networks \cite{NN-Theo, NN-App}.
+
+The output layer is chosen to have the four-ordered vector of $(\hat{\xi}, \hat{\sigma}, \hat{p}, \hat{p}_{CCA})$  as output, since we could estimate $f_A(t)$ and its parameter with the method proposed in Section \ref{sec:active_distr}. The input layer on the other hand needs to be structured but also be small, so we get a simpler network that can be managed by memory constrained devices. At the same time the small input vector needs to contain as much information as possible about the idle times.
+
+Thus, the number of inputs should be decoupled from the number of acquired samples, since the more samples the sensor gathers the more is the information gained. A way to guarantee the decoupling is to build an empirical distribution from the dataset and choose as neural network's input a subset of points from its \ac{PDF} or its \ac{CDF}.
+
+The training process is memory and \acs{CPU} intensive and should be clearly done off-line. Accordingly, we should produce a neural network to be saved on each sensor (using only 100 Kb), that is capable of generalizing every single case, not only the combination of the four parameters vector but also to account other hidden variables (the local view contains, indeed, the Active Distribution so it is related to $\alpha_{on}$ and $\beta$, too).
+
+Those values could be part of the input vector since they are either known or estimated, but for increasing the accuracy we can also include other sources of information like the mean $(\mu)$ and the variance $(\sigma^2)$ of gathered samples coming from $f_{\tilde{I}}(t)$. In Figure \ref{fig:neural_network} we provide an example of architecture for a generic Neural Network that we used for the results, with all the four parameters $(\alpha_{on}, \beta, \mu, \sigma^2)$ in addition to $k$ points of the Empirical Distribution.
+
+\begin{figure}[!htbp]
+	\begin{center}
+		%\includegraphics[trim = 25mm 170mm 100mm 25mm, clip]{images/neural_net.pdf}
+		\input{images/neural_net}
+	\end{center}
+	\caption{Neural Network}
+	\label{fig:neural_network}
+\end{figure}
+
+\subsection{Point Selection} \label{sec:nn_point_selection}
+
+We mentioned above that a vector of samples should not be directly used as input of neural network because it is not structured and the information is better coded in the \ac{PDF} domain. Both problems can be easily resolved by selecting a fixed series of points in the time domain from which retrieve the \ac{CDF} or a \ac{RSF} values of the empirical distribution and use those values as $x_i$ in the input vector (Figure \ref{fig:neural_network}).
+
+To see how to select this serie of points for the input vector, in Figure \ref{fig:local_impact} we depict different empirical \ac{CDF} curves for evaluating graphically the expected trend and the impact of each parameter. The curves are generated accordingly with the values in Table \ref{tab:local_cdf}.
+
+\begin{table}[!htbp]
+	\begin{center}
+		\begin{tabular}{ c | c c c c }
+			Name & $\xi$ & $\sigma$ & $p$ & $p_{\text{CCA}}$ \\
+			\hline
+			Global & 0.3095 & 0.005 & 0.5 & 1 \\
+			Default & 0.3095 & 0.005 & 0.5 & 0.5 \\
+			$p_{\text{CCA}}$ = 0.75 & 0.3095 & 0.002 & 0.5 & 0.75 \\
+			$\xi = 0.1$ & 0.1 & 0.005 & 0.5 & 0.5 \\
+			$\sigma = 0.05$ & 0.3095 & 0.05 & 0.5 & 0.5 \\
+		\end{tabular}
+		\caption{Parameters Randomization: Local View}
+		\label{tab:local_cdf}
+	\end{center}
+\end{table}
+
+The distance between most of the curves is restrained in the first $100 ms$ (Figure \ref{fig:local_impact_det}). Hence, most of the information on the parameters is contained in that part and choosing uniform distributed points among any interval could lead to a dataset having contradictory vectors, that yields to difficult even impossible neural network's training.
+
+\begin{figure}[!htbp]
+	\centering
+	\subfloat[General View]{
+		\label{fig:local_impact_gen}
+		\includegraphics[width=0.48\textwidth]{images/local_cdf.pdf}
+	}          
+	\subfloat[Detailed View]{
+		\label{fig:local_impact_det}
+		\includegraphics[width=0.48\textwidth]{images/local_cdf_mixed.pdf}
+	}
+	\caption{Local View: parameters' impact on \ac{CDF}.}
+	\label{fig:local_impact}
+\end{figure}
+
+Thus, we address this issue by choosing a density-varying set of points, mainly selected from the interval $[0,200 ms]$. We propose a set of logarithmic-like functions (Figure \ref{fig:local_sampling}) that, given the vector size $N$ return the fixed $x_i$ point in the time domain where to get the \ac{CDF} or \ac{RSF} value,  the maximum sample size $s$ and the index $i$.
+
+\begin{figure}[!htbp]
+	\begin{center}
+		\includegraphics{images/local_sampling.pdf}
+	\end{center}
+	\caption{Local View: selecting the points for \ac{RSF}/\ac{CDF}.}
+	\label{fig:local_sampling}
+\end{figure}
+
+\begin{description}
+	\item[Logarithmic]
+		\begin{equation} \label{eqn:nn_log}
+			f(i,N,s) := \left(\dfrac{1}{log(e + N - i)} - \dfrac{1}{log(e + N)} \right) s
+		\end{equation}
+		
+	\item[LogarithmicAlt]
+		\begin{equation}
+			f(i,N,s) := \left(1 - \dfrac{log(N - i)}{log(N)}\right) s
+		\end{equation}
+	
+	\item[Proportional]
+		\begin{equation}
+			f(i,N,s) := \left(\dfrac{1}{N - i} - \dfrac{1}{N}\right) s
+		\end{equation}
+		
+	\item[PseudoLogarithmic]
+		\begin{align}
+			q(N) &:= N / 4 \nonumber \\
+			w(i,N) &:= 4 - (i / q(N)) \nonumber \\
+			f(i,N,s) &:= \dfrac{s}{10^{w(i,N)}} + \dfrac{9 s}{10^{w(i,N)} q(N)} \cdot \left( i \text{ mod } q(N) \right)
+		\end{align}
+		
+\end{description}
+
+For each function we have two different choices: using the \ac{RSF} or the \ac{CDF} of the Empirical Distribution built on samples. That is, considering the Empirical Distribution with density $g(x)$:
+\begin{subequations}
+	\begin{align}
+		\text{\ac{RSF}: } \quad \quad x_i &= \int_{f(i - 1, N, s)}^{f(i, N, s)} g(t) dt \\
+		\text{\ac{CDF}: } \quad \quad x_i &= \int_{-\infty}^{f(i, N, s)} g(t) dt = \int_{0}^{f(i, N, s)} g(t) dt
+	\end{align}
+\end{subequations}
+
+We will use only the Logarithmic function \eqref{eqn:nn_log} in the results provided in Section \ref{sec:loc_results}, since is halfway between all proposed functions. Other approaches are reserved for future work.

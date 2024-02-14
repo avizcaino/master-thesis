@@ -1,0 +1,2 @@
+
+The report is organized as follows. In the remaining part of this chapter, we describe in detail the considered networking scenario (Sec. \ref{sec:scenario}), we introduce the main contribution provided (Sec. \ref{sec:contribution}) and finally we discuss the related work on cognitive spectrum access (Sec. \ref{sec:related_work}). In Chapter \ref{sec:model} we define the global and the local view model, while we provide algorithms for their parameter estimation in Chapter \ref{sec:global} and \ref{sec:local}, respectively.

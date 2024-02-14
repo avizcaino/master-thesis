@@ -1,0 +1,254 @@
+#LyX 1.6.5 created this file. For more info see http://www.lyx.org/
+\lyxformat 345
+\begin_document
+\begin_header
+\textclass article
+\use_default_options true
+\language english
+\inputencoding auto
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\paperfontsize default
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\cite_engine basic
+\use_bibtopic false
+\paperorientation portrait
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\author "" 
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+documentclass[a4paper,13pt,openright,english,twoside]{report}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+usepackage[T1]{fontenc}     			             		% font encoding 
+\backslash
+usepackage[utf8]{inputenc} 			          		% input encoding
+\end_layout
+
+\begin_layout Plain Layout
+
+% KTH colors
+\end_layout
+
+\begin_layout Plain Layout
+
+% site: % {0.435294118,0.647058824,0.831372549} % {0.88627451,0.88627451,0.88627451}
+ % {0.705882353,0.784313725,0.882352941} % {0.666666667,0.717647059,0.8} % {0.866666667
+,0.866666667,0.866666667}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+usepackage[	 	language=english,															% language 	author={Alexandre
+ Vizcaino Luna},											% author 	title={Characterizing WLAN Channel
+ Occupancy},								% title 	subtitle={for Cognitive Networking},										%
+ subtitle 	degree={Master's Degree Project},											% thesis type 	university
+={KTH Royal Institute of Technology},								% university %	university={Kungliga
+ Tekniska högskolan},									% university 	faculty={School of Electrical
+ Engineering},									% faculty 	department={Laboratory of Communication
+ Networks},							% department 	proffirst={Prof.
+ Ioannis Glaropoulos},									% advisor 	profsecond={Prof.
+ Viktoria Fodor},											% examiner %	proffirstloc={Kungliga Tekniska
+ högskolan},									% second adviser location 	location=Stockholm,													
+		% where 	date={June 2012},														% when %	year={A/A 2010/2011},								
+						% academic year %	colorbase={0.003921569,0.388235294,0.682352941},							%
+ default color [blue] 	colorbase={0,0,0},															% default color
+ [black] 	colordark={0.666666667,0.717647059,0.8},									% darker color 	colorlig
+ht={0.866666667,0.866666667,0.866666667},							% lighter color o	bibpath=bibliogra
+phy,														% bibliography database path %	xmppath=metadata_it,											
+			% license metadata path ]{thesis}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{document}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+pagenumbering{roman} 
+\end_layout
+
+\begin_layout Plain Layout
+
+	%
+\backslash
+include{tikz_style} 	
+\backslash
+include{en/00_00_title} 
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+include{en/00_01_copyright} 	
+\backslash
+include{en/00_02_abstract} 	
+\backslash
+include{en/00_03_ack}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+tableofcontents 	
+\backslash
+thispagestyle{begin}		% bug on tocloftpagestyle
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+cleardoublepage 	
+\backslash
+pagenumbering{arabic} 	
+\backslash
+setcounter{page}{1}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+input{en/01_00_intro} 	
+\backslash
+input{en/01_01_contr} %	
+\backslash
+input{en/01_01_scenario} %	
+\backslash
+input{en/01_03_contr} %	
+\backslash
+input{en/01_04_contr_sim} %	
+\backslash
+input{en/01_05_related}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+part{Estimation Model} 	
+\backslash
+input{en/02_model} 	
+\backslash
+input{en/02_01_semimarkov} %	
+\backslash
+input{en/03_global} %	
+\backslash
+input{en/04_00_local} %	
+\backslash
+input{en/04_01_analysis} %	
+\backslash
+input{en/04_02_neuralnet} %	
+\backslash
+input{en/04_03_result}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+part{Global View} 	
+\backslash
+input{en/02_model} 	
+\backslash
+input{en/02_01_semimarkov}
+\end_layout
+
+\begin_layout Plain Layout
+
+% %	
+\backslash
+part{Simulation} %	
+\backslash
+input{en/05_00_simulation} %	
+\backslash
+input{en/05_01_structure} %	
+\backslash
+input{en/05_02_results}
+\end_layout
+
+\begin_layout Plain Layout
+
+%	
+\backslash
+input{en/06_00_conclusion} %	
+\backslash
+input{en/06_01_conc_it} %	
+\backslash
+input{en/06_01_simulation}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+input{en/99_acronyms} 	
+\backslash
+listoffigures 	
+\backslash
+listoftables 	
+\backslash
+lstlistoflistings % 	
+\backslash
+printbibliography 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{document} 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

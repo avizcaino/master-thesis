@@ -1,0 +1,11 @@
+\chapter{Local View Estimation} \label{sec:local}
+
+In this Chapter we address the problem of estimating the parameters for the local view model (Figure \ref{fig:model_local}).
+
+Despite the similarity with the global view case, we do not have a closed form expression in the probability domain for \eqref{eqn:local_view}. Thus, we could either try to use \ac{MLE} in the probability domain, but also evaluating numerically the Laplace transform on each Newton's method step, that double the complexity. Or we could try to fit the functions directly in the Laplace domain, but this does not guarantee that the values found also maximize the likelihood in the probability domain.
+
+This is not the only difference with the global view case. In the formulation also $f_A(t)$ appears and, thus, we need to estimate $\alpha_{on}$ and $\beta$ as well.
+
+Thus, in the following sections we propose two different approaches for estimating the vector of parameters $(\xi, \sigma, p, p_{\text{CCA}})$ plus $(\alpha_{on}, \beta)$ without dealing with the Laplace transform: analysis based on mixed \ac{MLE}/\ac{MV} estimation (Sec. \ref{sec:loc_analysis}) and employing neural networks (Sec. \ref{sec:loc_nn}).
+
+In Section \ref{sec:loc_results} we will prove that the first attempt would be unsuccessful compared to the neural network approach.

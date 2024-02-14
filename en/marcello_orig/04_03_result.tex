@@ -1,0 +1,143 @@
+\newpage
+
+\section{Results} \label{sec:loc_results}
+
+\subsection{Combined MLE-MV estimation} \label{sec:loc_results_est}
+
+Again, we generate $f_{\tilde{I}}(t)$ and $f_{\tilde{A}}(t)$ as in Section \ref{sec:glob_result} with parameters randomized following the rules in Table \ref{tab:local_param}. The analytical method introduces problems already in the first step of $(\xi, \sigma)$ estimation (Sec. \ref{sec:loc_pareto}). This approach is not applicable because the Newton's method fails around the 75\% of the times also with vectors of $100\,000$ samples (Figure \ref{fig:loc_mle_fail}), and when it does not fail, it reaches unusable values, far from the actual ones.
+
+\begin{figure}[!htbp]
+	\begin{center}
+		\includegraphics{images/local_mle_fail.pdf}
+	\end{center}
+	\caption{Local View: Fails in Newton's method.}
+	\label{fig:loc_mle_fail}
+\end{figure}
+
+The cause of such behavior lies first of all in the size of the support dataset. In Figure \ref{fig:loc_mle_sec} we depict the percentage of samples that fall in the Mixture sector $[0,\alpha_{bk}]$, in the \textit{pure} Pareto sector $[\alpha_{bk}, \alpha_{on}]$ and in the tail $[\alpha_{on}, \infty]$ that contains unseen cycles between idle-active. Samples belonging to the Pareto are only the 0.2\%.
+
+\begin{figure}[!htbp]
+	\begin{center}
+		\includegraphics{images/local_mle_sec.pdf}
+	\end{center}
+	\caption{Local View: percentage of samples in each sector.}
+	\label{fig:loc_mle_sec}
+\end{figure}
+
+Even if we reach a consistent number of samples in the area $[\alpha_{bk}, \alpha_{on}]$, it is highly impractical though due to the significant long sensing time, the log-likelihood function \eqref{eqn:loc_loglike} always shows a flat surface as depicted in Figure \ref{fig:loc_mle_flat}, no matter how many samples have been gathered.
+
+\begin{figure}[!htbp]
+	\centering
+	\subfloat[With 10 Samples]{
+		\includegraphics[trim = 5mm 5mm 5mm 5mm, width=0.48\textwidth]{images/local_mle_flat_10.pdf}
+	}          
+	\subfloat[With 10000 Samples]{
+		\includegraphics[trim = 5mm 5mm 5mm 5mm,width=0.48\textwidth]{images/local_mle_flat_10000.pdf}
+	}
+	\caption{Local View: flat log-likelihood.}
+	\label{fig:loc_mle_flat}
+\end{figure}
+
+In that small area, all the \ac{CDF} have almost the similar behavior which leads to an ``infinite'' set of solutions and this prevents the Newton's method from stabilizing and from returning a valid answer to the maximization problem.
+
+\subsection{Neural Network} \label{sec:loc_nn_results}
+
+The Neural Network solution gives so many combination that would be impossible to cover all test's related aspects. Some are: number of idle samples for training or testing, type and function for point selection (Sec. \ref{sec:nn_point_selection}), size of training dataset, neural network architecture (layers, neurons in each layer and connections), training options, etc.
+
+Thus, in this section we present only results concerning the utilization of 200 \ac{CDF} or \ac{RSF} values, using a logarithmic \eqref{eqn:nn_log} point selection, with a neural network having only one hidden layer of 100 neurons.
+
+We have generated different dataset for training and testing containing each 10000 vectors, derived from samples gathered from distribution with parameters randomized following the rules in Table \ref{tab:local_param} and their trends are the same for the global view (Figure \ref{fig:glob_param}).
+
+\begin{table}[!htbp]
+	\begin{center}
+		\begin{tabular}{ c c c c c c }
+			Parameter & Distribution & Min & Max & Mean & StdDev \\
+			\hline
+			$\xi$ & Truncated Gaussian & 0.1 & 0.4 & 0.3095 & 0.1 \\
+			$\sigma$ & Truncated Gaussian & 1e-4 & 0.1 & 0.02 & 0.2 \\
+			$p$ & Uniform & 0.1 & 1.0 & - & - \\
+			$p_{\text{CCA}}$ & Uniform & 0.1 & 1.0 & - & - \\
+			$\alpha_{on}$ & Uniform & 0.0008 & 0.001 & - & - \\
+			$\beta$ & Uniform & $\alpha_{on}$ & 0.0015 & - & - \\
+		\end{tabular}
+		\caption{Parameters Randomization: Local View.}
+		\label{tab:local_param}
+	\end{center}
+\end{table}
+
+Training datasets differ from each other by the number of samples used to build the empirical distribution, which introduces different amount of noise that results in different gaps between the real idle distribution and its empirical view. Therefore we choose to train off-line different neural networks with increasing \textit{precision} in the dataset to see how this relaxation affects the estimation performance.
+
+On the other hand, the testing datasets are also built with increasing order of magnitude in the number of samples but, this time, it represents the precision that a sensor could achieve on-line, exposing the trade-off between sampling period length and accuracy expected.
+
+\begin{figure}[!htbp]
+	\centering
+	\subfloat[$\xi$-estimation]{
+		\includegraphics[width=0.48\textwidth]{images/local_1000_xi.pdf}
+	}          
+	\subfloat[$\sigma$-estimation]{
+		\label{fig:local_est_nn_1000:sigma}
+		\includegraphics[width=0.48\textwidth]{images/local_1000_sigma.pdf}
+	} \\
+	\subfloat[$p$-estimation]{
+		\includegraphics[width=0.48\textwidth]{images/local_1000_p.pdf}
+	}
+	\subfloat[$p_{\text{CCA}}$-estimation]{
+		\includegraphics[width=0.48\textwidth]{images/local_1000_pcca.pdf}
+	}
+	\caption{Neural Network trained with \ac{RSF} generated by $1\,000$ samples.}
+	\label{fig:local_est_nn_1000}
+\end{figure}
+
+In Figure \ref{fig:local_est_nn_1000} and \ref{fig:local_est_nn_100000} we depict the results (following the schema in Sec. \ref{sec:glob_result}) for networks trained with datasets containing \ac{RSF}-vectors generated with $1\,000$ and $100\,000$ samples, respectively.
+
+In this case, the \textit{Missed Estimation} accounts the times that an output neuron retrieves a value out of the parameter's range. This means we discard values, for instance, $\hat{\xi} \not \in [0,0.5]$ or $\hat{p} \not \in [0,1]$.
+
+\begin{figure}[!htbp]
+	\centering
+	\subfloat[$\xi$-estimation]{
+		\includegraphics[width=0.48\textwidth]{images/local_100000_xi.pdf}
+	}          
+	\subfloat[$\sigma$-estimation]{
+		\includegraphics[width=0.48\textwidth]{images/local_100000_sigma.pdf}
+	} \\
+	\subfloat[$p$-estimation]{
+		\includegraphics[width=0.48\textwidth]{images/local_100000_p.pdf}
+	}
+	\subfloat[$p_{\text{CCA}}$-estimation]{
+		\includegraphics[width=0.48\textwidth]{images/local_100000_pcca.pdf}
+	}
+	\caption{Neural Network trained with \ac{RSF} generated by $100\,000$ samples}
+	\label{fig:local_est_nn_100000}
+\end{figure}
+
+Both figures show good approximations especially for $p$ and $p_{\text{CCA}}$, giving an average confidence interval of $\pm 0.1$ (10\%) around the actual value for empirical distributions built on only $1\,000$ samples, number that can be gathered in one second.
+
+
+On the other hand for $(\hat{\xi}, \hat{\sigma})$ the accuracy drops, even out of range for the $\sigma$ under-estimation. In those figures we have also plotted the mean absolute error to see how far from the actual one the value is: referring to Figure \ref{fig:local_est_nn_1000:sigma}, for $1\,000$ samples the $MAE^+$ is around 0.013 while the $MAE^-$ is -0.012. Thus, the high $MPE^-$ value comes with \textit{small} absolute differences between estimated and actual values, but when dividing by even smaller actual values, the \ac{MPE} increases.
+
+The comparison between the figures shows an interesting aspect: counter-intuitively the more is the precision of the training dataset ($1\,000$ vs. $100\,000$ samples), the less is the accuracy with the testing dataset. This happens because the neural network learned how to estimate parameters from examples finer than the tested ones and it expects data with the same (or even better) precision.
+
+The results for networks trained with 200 \ac{CDF} selected points are reported in Figure \ref{fig:local_est_nn_cdf} and they are the same for each dataset precision we choose. The accuracy does neither increase for different number of testing samples nor for different training precision. We can explain this behavior by considering that, due to the use of \ac{CDF}, the noise and the error are cumulated for each subsequent input value, instead of being limited in each step. Therefore, the datasets will contain more contradictory vectors since the error can easily compensate. And also latest neurons will loose importance since their values contain in percentage less information. Thus, the learning process reaches a saturation point and the accuracy will be always the same.
+
+\begin{figure}[!hb]
+	\centering
+	\subfloat[$\xi$-estimation]{
+		\includegraphics[width=0.48\textwidth]{images/local_1000_xi-cdf.pdf}
+	}
+	\subfloat[$\sigma$-estimation]{
+		\includegraphics[width=0.48\textwidth]{images/local_1000_sigma-cdf.pdf}
+	} \\
+	\subfloat[$p$-estimation]{
+		\includegraphics[width=0.48\textwidth]{images/local_1000_p-cdf.pdf}
+	}
+	\subfloat[$p_{\text{CCA}}$-estimation]{
+		\includegraphics[width=0.48\textwidth]{images/local_1000_pcca-cdf.pdf}
+	}
+	\caption{Neural Network trained with \ac{CDF} generated by 1000 samples.}
+	\label{fig:local_est_nn_cdf}
+\end{figure}
+
+
+Sensors could easily estimate the parameters for the local view case using neural network, since the complexity of this method is affordable also for that hardware-constrained kind of devices. We suggest to use \ac{RSF} values in the input vector and dataset built with only $1\,000$ samples for the off-line training process. Once the network has been finalized and loaded into the sensor, the on-line measurement process should gather $10\,000$ samples to build the empirical distribution from which get the \ac{RSF} values. Nevertheless, this number is acceptable with the same considerations as the global view in Section \ref{sec:glob_result}.
+
+On the other hand, the accuracy achieved is lower than the global case (Figures \ref{fig:local_est_nn_1000} and \ref{fig:glob_est}), especially for the generalized Pareto parameters $(\xi, \sigma)$. The effects of the error introduced in the estimation can be only seen with a system level performance evaluation, but we believe that \ac{MAE} values of $\pm 0.05$ are still acceptable.

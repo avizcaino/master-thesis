@@ -1,0 +1,21 @@
+\section{Testing the estimation process} \label{sec:MLE2}
+The second part of this chapter will test the estimation process of the proposed model. As it is introduced before in this document and in \cite{ioannis} and \cite{marcello} the estimation process is carried using Maximum Likelihood Estimation (\acs{MLE}). The correct functioning of this process is a key point of the model since these parameters will be used by the sensors in order to reconstruct the behavior of the network and predict when it will be idle and, therefore, be able to send data. The estimated parameters should be the same for the same traffic input sequence. 
+
+In order to tests the \acs{MLE}, the same simulation with a fixed configuration will be run several times and the estimation parameters will be extracted in order to study them later. If the estimated parameters do not differ in a high manner, then the estimation process is carried correctly. In each of the tests the session and flow levels are fixed and always the same for all the tests while the packet level has been randomized. We have compared different random distributions in the packet level in order to test the estimation process. From the estimated parameters of the different tests, the mean and standard deviation has been extracted. Table \ref{table:MLE} shows the mean and standard for one of these tests since the results obtained for different packet distributions have shown the same behavior.
+
+% JOHN: This section is ok; I would, though, try to be more direct: What we check here is whether the randomization in the packet-process level affects the estimation performance. We check this by running the same experiment many times, doing exactly this i.e. randomizing the packet-process input, that is the interarrival times and packet lengths. 
+
+% And, of course, the results are ok, showing that the GV model estimation accuracy is insensitive to the packet process, as long as the upper layer statistics are fixed....
+\begin{table}[h]
+	\centering
+	\begin{tabular}{ c | c | c }
+		& Mean & Std. Deviation \\ \hline
+		$\xi$ & 0.286202 & 0.0181086 \\ 
+		$\sigma$ & 0.00457597 & 0.000237009 \\
+		$p$ & 0.398975 & 0.0229502 \\
+	\end{tabular}
+	\caption{Estimation parameters statistics - Uniform Packet Size (mean: 1550 bytes), Exponential Interarrival (mean: 100 ms)}
+	\label{table:MLE}
+\end{table}
+
+As it can be observed in the standard deviation in Table \ref{table:MLE}, the variation in the estimation of the parameters of the Idle distribution is almost negligible, which sustains the proper functioning of the \acs{MLE} for the estimation of the parameters. From these parameters, the sensors will be able to reconstruct and predict the network's behavior.

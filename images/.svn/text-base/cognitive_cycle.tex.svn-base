@@ -1,0 +1,19 @@
+\begin{tikzpicture}[node distance=0cm]
+
+	\node []			(r1)	[]										{};
+	\node [measure]		(m1)	[right=of r1]							{Measure \\ process};
+	\node [cognitive]	(c1)	[right=of m1]							{MAC \\ duty-cycle};
+	\node [measure]		(m2)	[right=of c1]							{Measure \\ process};
+	\node [cognitive]	(c2)	[right=of m2,minimum width=2cm]			{MAC \\ duty-cycle};
+	\node []			(dots)	[right=of c2]							{...};
+	
+	\begin{pgfonlayer}{background}
+		\node 	[
+				on background,
+				fill=gray!5,
+				fit=(m1) (c1),
+				label=above:Cognitive Cycle
+		        ] {};
+	\end{pgfonlayer}	
+
+\end{tikzpicture}

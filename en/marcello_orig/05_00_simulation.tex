@@ -1,0 +1,8 @@
+\chapter{Simulation} \label{sec:simulation}
+
+In the previous sections we studied the estimation problem investigating the estimation accuracy of the proposed algorithms, providing some valuable insight on the expected accuracy of the process with an arbitrary input. Here we also develop a simulation framework to test our algorithm in a real network scenario, pointing out different aspects that could be possible remained hidden in the numerical analysis. For instance, our numerical analysis does not show whether sensors in a \ac{WSN} will have a similar understanding of the channel occupancy distribution, a desirable property for efficient cognitive networking.
+
+The study of this aspect is performed with a simulation-based evaluation, using the \acs{NS-Miracle} framework \cite{NSMiracle} and implementing the parameter estimation process on the neural network. We also develop the simulator for the future objective of protocol implementation.
+
+The chapter is structured as follows. We first describe the simulation structure in Section \ref{sec:sim_struct}, providing an high-level documentation of all the software developed, in particular the traffic generation in Section \ref{sec:sim_traffic} and the estimation library in Section \ref{sec:sim_estimation}. In Section \ref{sec:sim_results} we describe the simulation testbed and we provide demonstrative results for the algorithm validation. We first analyze the performance of the model complaint traffic in Section \ref{sec:sim_model} and then we evaluate the applicability of the proposed model to a more realistic \ac{WLAN} traffic generation in Section \ref{sec:sim_real}.
+

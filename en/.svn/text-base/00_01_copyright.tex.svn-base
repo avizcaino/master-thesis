@@ -1,0 +1,29 @@
+%\newpage
+\thispagestyle{empty}
+
+\hfill
+ 
+\vfill
+% 
+% \pdfbookmark{Colophon}{colophon}
+% 
+% \makeatletter
+% \noindent\@author: \textit{\@title},
+% Tesi di Laurea Specialistica,
+% \ccLogo\ \@date.
+% \makeatother
+% 
+% \bigskip
+% 
+% \noindent Quest'opera è stata rilasciata con licenza Creative Commons Attribution -- NonCommercial -- ShareAlike 3.0 Italy.
+% 
+% %Per leggere una copia della licenza visita il sito web \href{http://creativecommons.org/licenses/by-nc-sa/3.0/it/}{\texttt{http://creative}\\\texttt{commons.org/licenses/by-nc-sa/3.0/it/}} o spedisci una lettera a Creative Commons, 171 Second Street, Suite 300, San Francisco, California, 94105, USA.
+% 
+% Per leggere una copia della licenza visita il sito web \\ \url{http://creativecommons.org/licenses/by-nc-sa/3.0/it/} o spedisci una lettera a Creative Commons, 171 Second Street, Suite 300, San Francisco, California, 94105, USA.
+% 
+% \smallskip
+% 
+% \begin{figure}[bp]
+% \centering
+% \href{http://creativecommons.org/licenses/by-nc-sa/3.0/it/}{\includegraphics[width=0.2\columnwidth]{images/CC.pdf}}
+% \end{figure}

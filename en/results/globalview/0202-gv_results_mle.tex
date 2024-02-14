@@ -1,0 +1,20 @@
+\subsection{Estimation Process - Results} \label{sec:mle-results}
+Once the we proved that the distribution of the idle periods can be modeled using the proposed mixture idle distribution, it is necessary to test the estimation process carried by the sensors. As it has been explained, the estimation process of the parameters for the mixture idle distribution is done using Maximum Likelihood Estimation (\acs{MLE}). The correct functioning of the estimation process is crucial in order to be able to reconstruct the spectrum activity in the sensors.
+
+We run a medium-load traffic with the simulator using the same configuration for the multi-layer traffic model used in Section \ref{sec:idle-results}, fixing the values for the session and flow levels and randomizing for the packet sizes and the inter-arrival times using different random distributions for each set of runs. We run several times the same configuration of the simulation and extracted the estimated parameters $\xi$, $\sigma$ and $p$. From the extracted parameters we obtained the mean and standard deviation in order to study the deviation between the estimated parameters and decide whether or not the \acs{MLE} is working properly.
+
+Table \ref{table:MLE} shows the mean and standard deviation for one of these tests since the results obtained for different random distributions have shown the same behavior.
+
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{ c | c | c }
+		& Mean & Std. Deviation \\ \hline
+		$\xi$ & 0.117043 & 0.011688 \\ 
+		$\sigma$ & 0.00610565 & 8.42259e-05 \\
+		$p$ & 0.134211 & 0.00375842 \\
+	\end{tabular}
+	\caption{Estimation parameters statistics - 5 users - Uniform Packet Size (mean: 384 bytes), Exponential Interarrival (mean: 100 ms) - 100 runs}
+	\label{table:MLE}
+\end{table}
+
+As it can be observed in the standard deviation in Table \ref{table:MLE}, the variation in the estimation of the parameters of the mixture idle distribution is almost negligible for a same traffic configuration. Since the only level randomized is the packet level, the distribution of the active and idle periods is similar for each run, giving similar estimated parameters, which sustains the proper functioning of the \acs{MLE} for the estimation of the parameters. From these parameters, the sensors will be able to reconstruct and predict the spectrum activity. We can conclude that the estimation quality is insensitive to the packetization.

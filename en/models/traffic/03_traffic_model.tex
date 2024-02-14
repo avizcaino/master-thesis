@@ -1,0 +1,77 @@
+\chapter{Multi-Layer WLAN Usage Model} \label{chapter:traffic_model}
+Our main concern in this project is to test the validity of the presented spectrum activity model against different traffic scenarios. NS2 and its extension NSMiracle provide a simple Constant BitRate (\acs{CBR}) traffic generator, which will not comply our effort of testing the model against real traffic scenarios. This issue is solved in \cite{marcello-thesis}, in which the multi-layer traffic model studied in \cite{Campus-WLAN} is implemented and extended with the packet level. This multi-layer traffic model solves our approach of study a real traffic scenario in which validate our Global View and Local View models. 
+
+In \cite{Campus-WLAN}, an extensive study with measurements on real \acs{WLAN} traffic of a Campus \acs{WLAN} is developed. This study aims at finding the proper distributions that allow to model the traffic behavior in such scenarios. 
+
+The document presents an extensive study of the session and flow levels present in a \acs{WLAN} network and the distributions that can be used to model both levels. The document present the modelling for multiple access points in the Campus \acs{WLAN}. We will focus our work on scenarios with a single \acs{AP} which is also defined in the same document.
+
+In \cite{marcello-thesis} the so-called multi-layer traffic model is implemented with the addition of the packet level. The packet level allows to map the traffic model to spectrum usage. This multi-layer traffic model will give us an insight of how our spectrum occupancy model will behave in this type of scenario.
+
+The traffic for each one of the levels is obtained via randomization following the distributions presented in \cite{Campus-WLAN}, and that we will present in this chapter. In addition, other distributions had been selected to randomize the traffic for the packet level.
+
+Figure \ref{fig:traffic_hierarchy} represents the traffic hierarchy of the multi-layer traffic model that we are going to use for our simulations.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.8\textwidth]{images/model/traffic/traffic_model}
+	\caption{Multi-layer WLAN traffic model}
+	\label{fig:traffic_hierarchy}
+\end{figure}
+
+As it can be observed, the session level (which represents a user in the \acs{WLAN}) is composed by the flows and its inter-arrival times. At the same time, each flow comprise of packets with its sizes and its inter-arrivals.
+
+The next sections present a detailed description of the configuration and the distributions to model each one of the levels in the multi-layer traffic model. For a better understanding on how each one of the levels behave, it is necessary to address to the study developed in \cite{Campus-WLAN}. An extensive presentation on how to define the traffic in the simulator will be presented later in the chapter dedicated to that topic.
+
+\section{Session Level} \label{sec:session_level}
+The session level is the highest level in this multi-layer traffic model. Each session represents a \acs{WLAN} user in the network, that connects with an access-point \acs{AP}. Each session connects to the \acs{AP} following a time-varying Poisson distribution. This session is composed by a determined number of flows, its inter-arrival times and its sizes.
+
+In \cite{Campus-WLAN} it is shown that a bi-Pareto distribution is the best distribution to model the number of flows within a session. On the other hand, the flow inter-arrivals are shown to be log-normal distribution is the best fit. 
+
+The parameters that determine both distributions are presented in Table \ref{table:session_traffic}.
+
+\begin{table}[h!]
+	\begin{center}
+		\begin{tabular}{ l | c | c }
+			Modeled Variable & Distribution & Parameters \\ \hline
+			Session arrival & Poisson & $min = 1$, $max = 928$, $median = 11$\\
+			Flow number & Bi-Pareto & $\alpha = 0.07$, $\beta = 1.75$, $c = 295.38$, $k = 1$\\
+			Flow inter-arrival & Log-normal & $\mu = -1.6355$, $\sigma = 2.6286$\\
+		\end{tabular}
+		\caption{Session level traffic configuration according to the model in \cite{Campus-WLAN}.}
+		\label{table:session_traffic}
+	\end{center}
+\end{table}
+
+\section{Flow level} \label{sec:flow_level}
+As it has been said, each session consists of a determined number of flows with its inter-arrival times and sizes.
+
+The flow level is characterized by the flow sizes and includes the packet level.
+
+As it is studied in \cite{Campus-WLAN}, the flow size follows the same type of distribution used for the flow number and can be modeled with a bi-Pareto distribution with the following parameters configuration:
+
+\begin{table}[h!]
+	\begin{center}
+		\begin{tabular}{ l | c | c }
+			Modeled Variable & Distribution & Parameters \\ \hline
+			Flow size (bytes) & Bi-Pareto & $\alpha = 0.00$, $\beta = 1.02$, $c = 15.56$, $k = 111$\\
+		\end{tabular}
+		\caption{Flow size traffic configuration according to the model in \cite{Campus-WLAN}.}
+		\label{table:flow_traffic}
+	\end{center}
+\end{table}
+
+\section{Packet level} \label{sec:packet_level}
+Finally, the lower level in this multi-layer traffic model is the packet level. Each flow includes a series of packets and its inter-arrival times. No extended study has been done of this traffic level yet. We will introduce a series of tests to study this level in this project and how it affects to our modeling.
+
+Four different distributions had been implemented to generate the packet sizes and its inter-arrival times: uniform and constant for the packet sizes, and uniform, exponential, log-normal and constant for the inter-arrival times.
+
+\section{MAC/PHY layers} \label{sec:mac-phy_level}
+NS-Miracle and the different modules that compose the software allows to configure the different layers that conform the \acs{WLAN} communication. The different parameters for the configuration of the physical and MAC layer can be defined in the TCL simulation configuration files provided in the implementation developed in \cite{marcello-thesis}.
+
+Each \acs{WLAN} node is composed by an omni-antenna and transmits with a power of 18 dBm. The different \acs{WLAN} packets generated by the nodes are transported through the channel and received by the physical layer. It is possible to choose between different propagation models for the packets inside the channel. In our case, following the work developed in \cite{marcello-thesis}, the model selected is a simple path-loss propagation model. The transport protocol used for the \acs{WLAN} communications in our project is TCP/IP.
+
+In our case, as it has been said before, we work with a simplex communication in which the different \acs{WLAN} nodes deployed in the network will send its packets to the \acs{AP}.
+
+Once a packet is received by the physical layer, this will decide whether the packet is really observed or not. In a real \acs{WLAN}, the packet transported through the channel will not be sensed if its power is not enough to be sensed by a \acs{WLAN} node. In our simulation environment, all the packets can be received by the nodes and then will be filtered. This is done by comparing the power of the received packet with the determined threshold and discarding the packet in case this should not be sensed.
+
+If the packet can be sensed by the node, then it is sent to the next layer: MAC layer. In this layer, the packet is decoded and sent to the proper receiver. The MAC layer takes also control over the shared media as it can be the wireless channel through the media access protocol, detecting and avoiding the re-transmissions and collisions of the packets when accessing to the shared medium. The different parameters for this layer can also be configured through the TCL configuration files provided for the project.
